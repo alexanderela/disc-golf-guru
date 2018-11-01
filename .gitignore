@@ -22,7 +22,7 @@ export const api
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-/apiKeys
+/src/apiKeys
 
 
 
