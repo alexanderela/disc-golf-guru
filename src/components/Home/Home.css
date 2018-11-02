@@ -1,12 +1,13 @@
 .Home {
 	align-items: center;
-	border: 2px solid #2c9a2c;
+	background-color: #FFF;
+	/*border: 2px solid #2c9a2c;*/
 	border-radius: 10px;
 	display: flex;
 	flex-direction: column;
 	height: 15rem;
 	justify-content: space-around;
-	margin: 2rem 14rem;
+	margin: 1.1rem 14rem;
 	padding: 0 2rem;
 }
 
