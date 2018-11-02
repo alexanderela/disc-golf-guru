@@ -5,7 +5,6 @@ export const fetchGolfCoursesByZip = async (enteredZipCode) => {
 	const url = `https://www.dgcoursereview.com/api_test/?key=${APIKey.discGolfKey}&mode=findzip&zip=${enteredZipCode}&rad=10&sig=${APIKey.discGolfSig}`
 	const golfCourseData = await API.fetchData(url)
 	const golfCourseResults = await returnGolfCourseData(golfCourseData)
-	// console.log(golfCourseResults)
 	return golfCourseResults
 }
 
@@ -23,6 +22,9 @@ export const returnGolfCourseData = async (golfCourses) => {
 			reviews: course.reviews,
 			rating: course.rating,
 			payToPlay: course.paytoplay,
+			courseDisplayInfo: [
+
+			]
 			// reviewsLink: course.dgcr_url,
 		}
 	})
