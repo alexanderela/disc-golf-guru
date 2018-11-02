@@ -1,10 +1,37 @@
 .Header {
 	align-items: center;
-	background-color: #03ad03;
+	/*background-color: #03ad03;*/
+	background: url('../../assets/disc-golf-field-2.jpg');
+	background-repeat: no-repeat;
+  background-position: center;
+  /* background-position-y: center; */
+  background-size: 108%;
+  background-position-x: -5rem;
 	color: white;
 	display: flex;
 	justify-content: center;
-	height: 5rem;
+	height: 12rem;
 	margin: 0;
 	width: 100%;
+/*font-family: 'Pacifico', cursive;*/
+font-family: 'Open Sans', sans-serif;
+font-family: 'Holtwood One SC', serif;
+/*font-family: 'Sriracha', cursive;*/
+/*font-family: 'Sedgwick Ave Display', cursive;*/
+}
+
+.NavLink-site-title {
+	text-decoration: none;
+	color: #FFF;
+}
+
+.site-title {
+	font-size: 3rem;
+	background-color: rgba(255,255,255, 0);
+	/*padding: 0 5rem 0 0;*/
+	text-shadow: #000 5px 5px 5px;
+}
+
+.fa-cloudscale {
+	font-size: 3rem;	
 }
