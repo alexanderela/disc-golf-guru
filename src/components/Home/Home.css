@@ -1,0 +1,26 @@
+.Home {
+	border: 2px solid #03ad03;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	margin: 2rem 14rem;
+	padding: 0 2rem;
+	height: 15rem;
+}
+
+.home-intro {
+	font-size: 1.5rem;
+}
+
+.home-search {
+	border-radius: 20px;
+	padding: 0 0 0 1rem;
+	border-style: solid;
+	width: 50%;
+	height: 3rem;
+	font-size: 1rem;
+  outline-width: 0;
+	font-family: 'Open Sans', sans-serif;
+}
