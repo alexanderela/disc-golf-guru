@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import * as DataCleaner from '../../utilities/DataCleaner'
-import Header from '../../components/Header'
-import Home from '../../components/Home'
-import Nav from '../../containers/Nav'
+import * as DataCleaner from '../../utilities/DataCleaner';
+import Header from '../../components/Header';
+import Nav from '../Nav';
+import MainPage from '../MainPage';
 import { Route, Redirect, Switch } from 'react-router-dom';
 
 class App extends Component {
@@ -27,8 +27,8 @@ class App extends Component {
       	<Header />
       	<Nav />
 	      <Switch>
-	      	<Route exact path='/' render={() => <Home />}/>
-	    		<Route exact path='/findcourses' />
+	      	<Route exact path='/' render={() => <MainPage pageName={'Home'}/> }/>
+	    		<Route exact path='/findcourses' render={() => <MainPage pageName={'Find A Course'}/> }/>
 	    		<Route exact path='/favorites' />
 	      </Switch>
       </div>
