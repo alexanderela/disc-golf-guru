@@ -66,7 +66,7 @@ class MainPage extends Component {
 	}
 }
 
-export const mapStateToProps = ({golfCourses}) => ({golfCourses});
+export const mapStateToProps = ({ golfCourses }) => ({ golfCourses });
 
 export const mapDispatchToProps = (dispatch) => ({
 	setCourses: (courses) => dispatch(setCourses(courses))

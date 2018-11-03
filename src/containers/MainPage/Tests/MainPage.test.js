@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import MainPage from '../';
+import { mapStateToProps, mapDispatchToProps } from '../';
 import { shallow } from 'enzyme';
-import mockCoursesCleaned from '../../mockData/mockCoursesCleaned.js';
+import mockCoursesCleaned from '../../../mockData/mockCoursesCleaned.js';
 
 describe('MainPage', () => {
 	let mockFunc;
@@ -18,53 +19,71 @@ describe('MainPage', () => {
 	})
 	
 	describe('handleInputChange', () => {
-		it('should call handleInputChange when searchTerms are changed', () => {
+		xit('should call handleInputChange when searchTerms are changed', () => {
 
 		})
 
-		it('should update state', () => {
+		xit('should update state', () => {
 
 		})
 	})
 
 	describe('handleSubmit', () => {
-		it('should call handleSubmit upon submission of form', () => {
+		xit('should call handleSubmit upon submission of form', () => {
 
 		})
 
-		it('should call getGolfCourses when handleSubmit is called', () => {
+		xit('should call getGolfCourses when handleSubmit is called', () => {
 
 		})
 
-		it('should update state', () => {
+		xit('should update state', () => {
 
 		})
 	})
 
 	describe('getGolfCourses', () => {
-		it('should call setCourses when getGolfCourses is called', () => {
+		xit('should call setCourses when getGolfCourses is called', () => {
 
 		})
 
-		it('should update state', () => {
+		xit('should update state', () => {
 
 		})
 	})
 	
 
 	describe('mapStateToProps', () => {
+
 		it('should create the correct props object', () => {
-			
+			const expected = {
+				golfCourses: [{ id: 1234, name: 'mockCourse1'}, { id: 4321, name: 'mockCourse2'}]
+			}
+			const result = mapStateToProps(expected);
+			expect(result).toEqual(expected);
 		})
 	})
 
 	describe('mapDispatchToProps', () => {
+		let dispatch;
+
+		beforeEach(() => {
+			dispatch = jest.fn();
+		})
+
 		it('should map a key of setCourses', () => {
-			
+			const dispatchedProps = mapDispatchToProps(dispatch);
+			expect(dispatchedProps.setCourses).toBeDefined()
 		})
 
 		it('setCourses should call dispatch', () => {
-			
+			const dispatchedProps = mapDispatchToProps(dispatch);
+			const expected = {
+				type: 'SET_COURSES',
+				courses: mockCoursesCleaned
+			}
+			dispatchedProps.setCourses(mockCoursesCleaned);
+			expect(dispatch).toHaveBeenCalledWith(expected);
 		})
 	})
 

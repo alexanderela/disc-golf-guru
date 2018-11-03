@@ -3,7 +3,10 @@
 exports[`MainPage should render like snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <withRouter(Connect(MainPage)) />,
+  Symbol(enzyme.__unrendered__): <withRouter(Connect(MainPage))
+    golfCourses={Object {}}
+    setCourses={[MockFunction]}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
