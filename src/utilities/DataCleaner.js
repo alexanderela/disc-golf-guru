@@ -13,6 +13,7 @@ export const returnGolfCourseData = async (golfCourses) => {
 		return {
 			id: course.course_id,
 			name: course.name,
+			isFavorite: false,
 			holes: course.holes,
 			city: course.city,
 			state: course.state,
