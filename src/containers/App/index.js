@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import * as DataCleaner from '../../utilities/DataCleaner';
 import Header from '../../components/Header';
 import Nav from '../Nav';
 import MainPage from '../MainPage';
@@ -12,13 +11,6 @@ class App extends Component {
     this.state = {
       golfCourses: []
     }
-  }
-
-  async componentDidMount() {
-    // const zip = 14526
-    // const golfCourses = await DataCleaner.fetchGolfCoursesByZip(zip)
-    // console.log(golfCourses)
-    // this.setState({ golfCourses })
   }
 
   render() {

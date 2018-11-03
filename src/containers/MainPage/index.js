@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import CardContainer from '../../components/CardContainer';
-import CourseCard from '../../containers/CourseCard';
+import SearchResultsCard from '../../containers/SearchResultsCard';
 import './MainPage.css';
 import * as DataCleaner from '../../utilities/DataCleaner';
 import { connect } from 'react-redux';
@@ -24,7 +24,7 @@ class MainPage extends Component {
 	handleSubmit = (e) => {
 		e.preventDefault();
 		this.getGolfCourses(this.state.searchTerms)
-		this.setState({ searchTerms: '' })
+		// this.setState({ searchTerms: '' })
 	}
 
 	getGolfCourses = async (searchTerms) => {
@@ -52,15 +52,15 @@ class MainPage extends Component {
 					onChange={this.handleSearchInput}
 				/>
 				{showSearchResults &&
-					<CourseCard 
+					<SearchResultsCard 
 						courses={golfCourses}
 						showCourseDetails={this.showCourseDetails}/>
 				}
 				{showCourseDetails && 
-					<CourseCard 
+					<SearchResultsCard 
 						courses={golfCourses}
 						showCourseDetails={this.showCourseDetails}/>
-				}}
+				}
 			</form>
 		)
 	}
