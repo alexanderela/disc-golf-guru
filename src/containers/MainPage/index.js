@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import CardContainer from '../../components/CardContainer';
 import SearchResultsCard from '../../containers/SearchResultsCard';
 import './MainPage.css';
 import * as DataCleaner from '../../utilities/DataCleaner';
@@ -7,7 +6,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { setCourses } from '../../actions/courseActions';
 
-class MainPage extends Component {
+export class MainPage extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -17,7 +16,7 @@ class MainPage extends Component {
 		}
 	}
 
-	handleSearchInput = (e) => {
+	handleInputChange = (e) => {
 		this.setState({ searchTerms: e.target.value })
 	}
 
@@ -49,7 +48,7 @@ class MainPage extends Component {
 					placeholder='Search for a zip code or city' 
 					className='search-input'
 					value={searchTerms}
-					onChange={this.handleSearchInput}
+					onChange={this.handleInputChange}
 				/>
 				{showSearchResults &&
 					<SearchResultsCard 
@@ -66,7 +65,7 @@ class MainPage extends Component {
 	}
 }
 
-export const mapStateToProps = ({golfCourses}) => ({golfCourses});
+export const mapStateToProps = ({ golfCourses }) => ({ golfCourses });
 
 export const mapDispatchToProps = (dispatch) => ({
 	setCourses: (courses) => dispatch(setCourses(courses))

@@ -8,16 +8,15 @@ describe('SearchResultsCard', () => {
 	let wrapper;
 
 	beforeEach(() => {
-		wrapper = shallow(<SearchResultsCard courses={mockCourses} />)
+		wrapper = shallow(<SearchResultsCard courses={mockCourses} />);
 	})
 
 	it('should render like snapshot', () => {
-		expect(wrapper).toMatchSnapshot()
+		expect(wrapper).toMatchSnapshot();
 	})
 
 	it('should render an entry for each golf course', () => {
-		expect(wrapper.find('p').length).toEqual(5)
-		// expect(wrapper.find(Card).length).toEqual(1)
+		expect(wrapper.find('p').length).toEqual(5);
 	})
 	
 })
