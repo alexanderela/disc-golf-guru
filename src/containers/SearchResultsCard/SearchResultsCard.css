@@ -9,6 +9,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  padding: 0 0 1rem 0;
 }
 
 .course-search-result {
@@ -32,9 +33,13 @@
 }
 
 .search-result-header {
-
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #524949;
 }
 
 .nearby-courses {
-
+  font-size: 1.25rem;
+  color: #2c9a2c;
+  font-weight: 600;
 }
