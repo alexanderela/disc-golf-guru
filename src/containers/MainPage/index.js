@@ -17,7 +17,7 @@ class MainPage extends Component {
 		}
 	}
 
-	handleSearchInput = (e) => {
+	handleInputChange = (e) => {
 		this.setState({ searchTerms: e.target.value })
 	}
 
@@ -49,7 +49,7 @@ class MainPage extends Component {
 					placeholder='Search for a zip code or city' 
 					className='search-input'
 					value={searchTerms}
-					onChange={this.handleSearchInput}
+					onChange={this.handleInputChange}
 				/>
 				{showSearchResults &&
 					<SearchResultsCard 
