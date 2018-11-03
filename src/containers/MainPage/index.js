@@ -1,33 +1,62 @@
 import React, { Component } from 'react';
 import CardContainer from '../../components/CardContainer';
 import './MainPage.css';
+import * as DataCleaner from '../../utilities/DataCleaner';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
+import { setCourses } from '../../actions/courseActions';
 
 class MainPage extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-
+			searchTerms: ''
 		}
 	}
 
+	handleSearchInput = (e) => {
+		this.setState({ searchTerms: e.target.value })
+	}
+
+	handleSubmit = (e) => {
+		e.preventDefault();
+		this.getGolfCourses(this.state.searchTerms)
+		this.setState({ searchTerms: '' })
+	}
+
+	getGolfCourses = async (searchTerms) => {
+		const fetchedGolfCourses = await DataCleaner.fetchGolfCoursesByZip(searchTerms)
+		this.props.setCourses(fetchedGolfCourses)
+	}
+
+
 	render() {
-		const { pageName } = this.props
+		const { pageName, golfCourses } = this.props;
+		const { searchTerms } = this.state;
 
 		return(
-			<div className='MainPage'>
+			<form className='MainPage' onSubmit={this.handleSubmit}>
 				<p className='page-name'>{pageName}</p>
 				<input
 					type='search' 
 					placeholder='Search for a zip code or city' 
 					className='search-input'
+					value={searchTerms}
+					onChange={this.handleSearchInput}
 				/>
-				<CardContainer />
-			</div>
+				<CardContainer courses={golfCourses}/>
+			</form>
 		)
 	}
 }
 
-export default MainPage
+export const mapStateToProps = ({golfCourses}) => ({golfCourses});
+
+export const mapDispatchToProps = (dispatch) => ({
+	setCourses: (courses) => dispatch(setCourses(courses))
+});
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MainPage));
 
 // import React from 'react';
 // import './Home.css'

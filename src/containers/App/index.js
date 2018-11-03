@@ -15,10 +15,10 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    const zip = 14526
-    const golfCourses = await DataCleaner.fetchGolfCoursesByZip(zip)
-    console.log(golfCourses)
-    this.setState({ golfCourses })
+    // const zip = 14526
+    // const golfCourses = await DataCleaner.fetchGolfCoursesByZip(zip)
+    // console.log(golfCourses)
+    // this.setState({ golfCourses })
   }
 
   render() {
@@ -28,8 +28,8 @@ class App extends Component {
       	<Nav />
 	      <Switch>
 	      	<Route exact path='/' render={() => <MainPage pageName={'Home'}/> }/>
-	    		<Route exact path='/findcourses' render={() => <MainPage pageName={'Find A Course'}/> }/>
-	    		<Route exact path='/favorites' />
+	    		<Route path='/findcourses' render={() => <MainPage pageName={'Find A Course'}/> }/>
+	    		<Route path='/favorites' />
 	      </Switch>
       </div>
     );
