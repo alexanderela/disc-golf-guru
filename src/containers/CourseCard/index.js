@@ -4,7 +4,7 @@ import './CourseCard.css'
 const CourseCard = ({courses, showCourseDetails}) => {
 	const courseResults = courses.map(course => {
 		const { name, address, city, state, zip, id } = course
-		return <div className='search-result'>
+		return <div className='search-result' key={id}>
 							<p>{`${name} ${address}, ${city}, ${state} ${zip}`}</p>
 							<button 
 								className='search-result-btn'

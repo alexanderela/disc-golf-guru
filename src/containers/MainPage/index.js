@@ -12,7 +12,8 @@ class MainPage extends Component {
 		super(props);
 		this.state = {
 			searchTerms: '',
-			showSearchResults: false
+			showSearchResults: false,
+			showCourseDetails: false
 		}
 	}
 
@@ -38,7 +39,7 @@ class MainPage extends Component {
 
 	render() {
 		const { pageName, golfCourses } = this.props;
-		const { searchTerms, showSearchResults } = this.state;
+		const { searchTerms, showSearchResults, showCourseDetails } = this.state;
 
 		return(
 			<form className='MainPage' onSubmit={this.handleSubmit}>
@@ -55,6 +56,11 @@ class MainPage extends Component {
 						courses={golfCourses}
 						showCourseDetails={this.showCourseDetails}/>
 				}
+				{showCourseDetails && 
+					<CourseCard 
+						courses={golfCourses}
+						showCourseDetails={this.showCourseDetails}/>
+				}}
 			</form>
 		)
 	}
