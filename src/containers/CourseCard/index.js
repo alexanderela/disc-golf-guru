@@ -1,12 +1,15 @@
 import React from 'react';
 import './CourseCard.css'
 
-const CourseCard = ({courses}) => {
+const CourseCard = ({courses, showCourseDetails}) => {
 	const courseResults = courses.map(course => {
-		const { name, address, city, state, zip } = course
-		return <div>
-							<p>{`${name} - ${address}, ${city}, ${state} ${zip}`}</p>
-							<button>Select</button>
+		const { name, address, city, state, zip, id } = course
+		return <div className='search-result'>
+							<p>{`${name} ${address}, ${city}, ${state} ${zip}`}</p>
+							<button 
+								className='search-result-btn'
+								onClick={() => showCourseDetails(id)}>Select
+							</button>
 						</div>
 	})
 	return(

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import CardContainer from '../../components/CardContainer';
+// import CardContainer from '../../components/CardContainer';
+import CourseCard from '../../containers/CourseCard';
 import './MainPage.css';
 import * as DataCleaner from '../../utilities/DataCleaner';
 import { connect } from 'react-redux';
@@ -31,6 +32,9 @@ class MainPage extends Component {
 		this.setState({ showSearchResults: true })
 	}
 
+	showCourseDetails = (id) => {
+		console.log(id)
+	}
 
 	render() {
 		const { pageName, golfCourses } = this.props;
@@ -47,7 +51,9 @@ class MainPage extends Component {
 					onChange={this.handleSearchInput}
 				/>
 				{showSearchResults &&
-					<CardContainer courses={golfCourses}/>
+					<CourseCard 
+						courses={golfCourses}
+						showCourseDetails={this.showCourseDetails}/>
 				}
 			</form>
 		)
