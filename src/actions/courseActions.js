@@ -3,13 +3,14 @@ export const setCourses = (courses) => ({
 	courses
 })
 
+export const setSelectedCourse = (course) => ({
+	type: 'SET_SELECTED_COURSE',
+	course
+})
+
 export const toggleFavorite = (courseId) => ({
 	type: 'TOGGLE_FAVORITE',
 	courseId
 })
 
-// export const setFavorites = (favoriteCourses) => ({
-// 	type: 'SET_FAVORITES',
-// 	favoriteCourses
-// })
 

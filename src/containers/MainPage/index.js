@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import SearchResultsCard from '../../containers/SearchResultsCard';
+import CourseInfoCard from '../../containers/CourseInfoCard';
 import './MainPage.css';
 import * as DataCleaner from '../../utilities/DataCleaner';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import { setCourses } from '../../actions/courseActions';
+import { setCourses, setSelectedCourse } from '../../actions/courseActions';
 
 export class MainPage extends Component {
 	constructor(props) {
@@ -33,7 +34,16 @@ export class MainPage extends Component {
 	}
 
 	showCourseDetails = (id) => {
-		console.log(id)
+		const { golfCourses, setSelectedCourse } = this.props
+			const selectedCourse = golfCourses.find(course => {
+				return course
+			})
+			setSelectedCourse(selectedCourse)
+			this.setState({ 
+				showCourseDetails: true, 
+				showSearchResults: false 
+			})
+		return selectedCourse
 	}
 
 	render() {
@@ -56,9 +66,7 @@ export class MainPage extends Component {
 						showCourseDetails={this.showCourseDetails}/>
 				}
 				{showCourseDetails && 
-					<SearchResultsCard 
-						courses={golfCourses}
-						showCourseDetails={this.showCourseDetails}/>
+					<CourseInfoCard course={golfCourses} />
 				}
 			</form>
 		)
@@ -68,7 +76,8 @@ export class MainPage extends Component {
 export const mapStateToProps = ({ golfCourses }) => ({ golfCourses });
 
 export const mapDispatchToProps = (dispatch) => ({
-	setCourses: (courses) => dispatch(setCourses(courses))
+	setCourses: (courses) => dispatch(setCourses(courses)),
+	setSelectedCourse: (course) => dispatch(setSelectedCourse(course))
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MainPage));
