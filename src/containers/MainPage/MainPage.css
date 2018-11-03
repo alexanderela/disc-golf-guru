@@ -1,7 +1,27 @@
-.Home {
+.page-name {
+	font-size: 1.5rem;
+	color: #524949;
+	margin: 1rem 0;
+	font-weight: 700;
+}
+
+.search-input {
+	border: 3px solid #febb00;
+	border-radius: 20px;
+	border-style: solid;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1rem;
+	height: 3rem;
+  outline-width: 0;
+	padding: 0 0 0 1rem;
+	width: 60%;
+}
+
+/*Home CSS*/
+
+/*.Home {
 	align-items: center;
 	background-color: #FFF;
-	/*border: 2px solid #2c9a2c;*/
 	border-radius: 10px;
 	display: flex;
 	flex-direction: column;
@@ -25,5 +45,5 @@
 	height: 3rem;
   outline-width: 0;
 	padding: 0 0 0 1rem;
-	width: 50%;
-}
+	width: 66%;
+}*/

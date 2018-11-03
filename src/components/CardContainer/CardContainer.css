@@ -1,0 +1,8 @@
+.CardContainer {
+	border: 3px solid #febb00;
+	width: 50%;
+	margin: 1rem auto;
+	height: 20rem;
+	background-color: #FFF;
+	border-radius: 10px;
+}

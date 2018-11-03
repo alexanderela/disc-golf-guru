@@ -13,26 +13,21 @@ class Nav extends Component {
 	render() {
 		return(
 			<div className='Nav'>		
-				<div className='button-container'>
-					<button className='nav-button'>
-						<NavLink 
-							to='/' 
-							className='NavLink-button'>Home
-						</NavLink>
+				<NavLink 
+					to='/'>
+					<button className='nav-button'>Home
 					</button>				
-					<button className='nav-button'>
-						<NavLink 
-							to='/findcourses' 
-							className='NavLink-button'>Find A Course
-						</NavLink>
+				</NavLink>
+				<NavLink 
+					to='/findcourses'>
+					<button className='nav-button'>Find A Course
 					</button>
-					<button className='nav-button'>
-						<NavLink 
-							to='/favorites' 
-							className='NavLink-button'>Favorite Courses
-						</NavLink>
+				</NavLink>
+				<NavLink 
+					to='/favorites'>
+					<button className='nav-button'>Favorite Courses
 					</button>
-				</div>
+				</NavLink>
 			</div>
 		)
 	}
