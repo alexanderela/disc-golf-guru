@@ -23,10 +23,6 @@ export const returnGolfCourseData = async (golfCourses) => {
 			reviews: course.reviews,
 			rating: course.rating,
 			payToPlay: course.paytoplay,
-			courseDisplayInfo: [
-
-			]
-			// reviewsLink: course.dgcr_url,
 		}
 	})
 	return Promise.all(golfCoursePromises)
