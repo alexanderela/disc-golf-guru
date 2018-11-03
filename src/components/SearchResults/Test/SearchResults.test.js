@@ -1,18 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from '../';
+import SearchResults from '../';
 import { shallow } from 'enzyme';
 
-
-describe('App', () => {
+describe('SearchResults', () => {
 	let wrapper;
 
 	beforeEach(() => {
-		wrapper = shallow(<App />)
+		wrapper = shallow(<SearchResults />)
 	})
-
 	it('should render like snapshot', () => {
 		expect(wrapper).toMatchSnapshot()
 	})
-
+	
 })

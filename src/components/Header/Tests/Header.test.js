@@ -1,18 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from '../';
+import Header from '../';
 import { shallow } from 'enzyme';
 
-
-describe('App', () => {
+describe('Header', () => {
 	let wrapper;
 
 	beforeEach(() => {
-		wrapper = shallow(<App />)
+		wrapper = shallow(<Header />)
 	})
-
 	it('should render like snapshot', () => {
 		expect(wrapper).toMatchSnapshot()
 	})
-
+	
 })

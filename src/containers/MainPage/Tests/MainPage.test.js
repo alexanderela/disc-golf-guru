@@ -1,18 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from '../';
+import MainPage from '../';
 import { shallow } from 'enzyme';
 
-
-describe('App', () => {
+describe('MainPage', () => {
 	let wrapper;
 
 	beforeEach(() => {
-		wrapper = shallow(<App />)
+		wrapper = shallow(<MainPage />)
 	})
-
 	it('should render like snapshot', () => {
 		expect(wrapper).toMatchSnapshot()
 	})
-
+	
 })

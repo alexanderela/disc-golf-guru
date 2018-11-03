@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CardContainer from '../../components/CardContainer';
+import './MainPage.css';
 
 class MainPage extends Component {
 	constructor(props) {
@@ -14,11 +15,11 @@ class MainPage extends Component {
 
 		return(
 			<div className='MainPage'>
-				<p className='file-path'>{pageName}</p>
+				<p className='page-name'>{pageName}</p>
 				<input
 					type='search' 
 					placeholder='Search for a zip code or city' 
-					className='home-search'
+					className='search-input'
 				/>
 				<CardContainer />
 			</div>
