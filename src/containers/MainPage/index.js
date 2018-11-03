@@ -10,7 +10,8 @@ class MainPage extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			searchTerms: ''
+			searchTerms: '',
+			showSearchResults: false
 		}
 	}
 
@@ -27,12 +28,13 @@ class MainPage extends Component {
 	getGolfCourses = async (searchTerms) => {
 		const fetchedGolfCourses = await DataCleaner.fetchGolfCoursesByZip(searchTerms)
 		this.props.setCourses(fetchedGolfCourses)
+		this.setState({ showSearchResults: true })
 	}
 
 
 	render() {
 		const { pageName, golfCourses } = this.props;
-		const { searchTerms } = this.state;
+		const { searchTerms, showSearchResults } = this.state;
 
 		return(
 			<form className='MainPage' onSubmit={this.handleSubmit}>
@@ -44,7 +46,9 @@ class MainPage extends Component {
 					value={searchTerms}
 					onChange={this.handleSearchInput}
 				/>
-				<CardContainer courses={golfCourses}/>
+				{showSearchResults &&
+					<CardContainer courses={golfCourses}/>
+				}
 			</form>
 		)
 	}
