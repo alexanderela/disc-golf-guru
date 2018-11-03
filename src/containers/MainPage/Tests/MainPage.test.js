@@ -5,6 +5,7 @@ import { MainPage } from '../';
 import { mapStateToProps, mapDispatchToProps } from '../';
 import { shallow, mount } from 'enzyme';
 import mockCoursesCleaned from '../../../mockData/mockCoursesCleaned.js';
+jest.mock('../../../utilities/API');
 
 describe('MainPage', () => {
 	let mockFunc;
@@ -23,45 +24,68 @@ describe('MainPage', () => {
 	})
 	
 	describe('handleInputChange', () => {
+		let mockEvent;
+
+		beforeEach(() => {
+			mockEvent = { target: { value: 'white plains'} }
+		})
 
 		it('should call handleInputChange when searchTerms are changed', () => {
-					wrapper = mount(
-									<MainPage 
-										setCourses={mockFunc} 
-										golfCourses={mockCoursesCleaned}/>);
 			const spy = spyOn(wrapper.instance(), 'handleInputChange');
 			wrapper.instance().forceUpdate();
-			const mockEvent = { target: { value: 'white plains'} }
 			wrapper.find('.search-input').simulate('change', mockEvent)
 			expect(spy).toHaveBeenCalled()
 		})
 
 		it('should update state', () => {
-
+			wrapper.instance().handleInputChange(mockEvent);
+			expect(wrapper.state('searchTerms')).toBe('white plains')
 		})
 	})
 
 	describe('handleSubmit', () => {
-		xit('should call handleSubmit upon submission of form', () => {
+		let mockEvent;
 
+		beforeEach(() => {
+			mockEvent = { preventDefault: jest.fn() }
+		})
+		
+		it('should call handleSubmit upon submission of form', () => {
+			const spy = spyOn(wrapper.instance(), 'handleSubmit');
+			wrapper.instance().forceUpdate();
+			wrapper.find('form').simulate('submit', mockEvent)
+			expect(spy).toHaveBeenCalled();
 		})
 
-		xit('should call getGolfCourses when handleSubmit is called', () => {
-
+		it('should call getGolfCourses when handleSubmit is called', () => {
+			wrapper.instance().getGolfCourses = jest.fn();
+			wrapper.instance().handleSubmit(mockEvent);
+			expect(wrapper.instance().getGolfCourses).toHaveBeenCalled();
 		})
 
-		xit('should update state', () => {
-
+		it('should update state', () => {
+			wrapper.setState({ searchTerms: 'white plains' })
+			wrapper.instance().handleSubmit(mockEvent);
+			expect(wrapper.state('searchTerms')).toBe('');
 		})
 	})
 
 	describe('getGolfCourses', () => {
-		xit('should call setCourses when getGolfCourses is called', () => {
+		let mockZip;
 
+		beforeEach(() => {
+			mockZip = 14526;
 		})
 
-		xit('should update state', () => {
+		it('should call setCourses when getGolfCourses is called', async () => {
+			await wrapper.instance().getGolfCourses(mockZip);
+			expect(mockFunc).toHaveBeenCalled();
+		})
 
+		it('should update state', async () => {
+			wrapper.setState({ showSearchResults: false });
+			await wrapper.instance().getGolfCourses(mockZip);
+			expect(wrapper.state('showSearchResults')).toBe(true);
 		})
 	})
 	
