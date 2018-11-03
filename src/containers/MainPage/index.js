@@ -24,7 +24,7 @@ class MainPage extends Component {
 	handleSubmit = (e) => {
 		e.preventDefault();
 		this.getGolfCourses(this.state.searchTerms)
-		// this.setState({ searchTerms: '' })
+		this.setState({ searchTerms: '' })
 	}
 
 	getGolfCourses = async (searchTerms) => {

@@ -3,7 +3,7 @@
 exports[`MainPage should render like snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <MainPage />,
+  Symbol(enzyme.__unrendered__): <withRouter(Connect(MainPage)) />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -15,117 +15,25 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "class",
     "props": Object {
-      "children": Array [
-        <p
-          className="page-name"
-        />,
-        <input
-          className="search-input"
-          placeholder="Search for a zip code or city"
-          type="search"
-        />,
-        <CardContainer />,
-      ],
-      "className": "MainPage",
+      "children": [Function],
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": undefined,
-          "className": "page-name",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": "p",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "className": "search-input",
-          "placeholder": "Search for a zip code or city",
-          "type": "search",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": "input",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {},
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-    ],
-    "type": "div",
+    "rendered": [Function],
+    "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "host",
+      "nodeType": "class",
       "props": Object {
-        "children": Array [
-          <p
-            className="page-name"
-          />,
-          <input
-            className="search-input"
-            placeholder="Search for a zip code or city"
-            type="search"
-          />,
-          <CardContainer />,
-        ],
-        "className": "MainPage",
+        "children": [Function],
       },
       "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": undefined,
-            "className": "page-name",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": "p",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "className": "search-input",
-            "placeholder": "Search for a zip code or city",
-            "type": "search",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": "input",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {},
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-      ],
-      "type": "div",
+      "rendered": [Function],
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {

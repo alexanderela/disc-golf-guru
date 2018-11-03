@@ -1,5 +1,5 @@
 import React from 'react';
-import CourseCard from '../../containers/CourseCard';
+import SearchResultsCard from '../../containers/CourseCard';
 import './CardContainer.css';
 
 const CardContainer = ({ courses }) => {
