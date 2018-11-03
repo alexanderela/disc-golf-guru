@@ -5,12 +5,12 @@ import mockCourses from '../../mockData/mockCourses.js';
 jest.mock('../API');
 
 describe('DataCleaner', () => {
-	describe('fetchGolfCoursesByZip', () => {
 		let url;
 		let mockZip;
 		let expected;
-
-
+		let result;
+		
+	describe('fetchGolfCoursesByZip', () => {
 		beforeEach(() => {
 			mockZip = 14526;
 		})
@@ -22,14 +22,15 @@ describe('DataCleaner', () => {
 		})
 
 		it('should return a resolved array', async () => {
-			const courses = await DataCleaner.fetchGolfCoursesByZip(mockZip);
-			expect(courses).toEqual([]);
+			result = await DataCleaner.fetchGolfCoursesByZip(mockZip);
+			expect(result).toEqual([]);
 		})
 	})
 
 	describe('returnGolfCourseData', () => {
-		it('should format golf course objects', () => {
-
+		it('should format golf course objects', async () => {
+			result = DataCleaner.returnGolfCourseData(mockCourses);
+			expect(result).toMatchSnapshot();
 		})
 	})
 })

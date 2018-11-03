@@ -5,12 +5,10 @@ export const fetchGolfCoursesByZip = async (enteredZipCode) => {
 	const url = `https://www.dgcoursereview.com/api_test/?key=${APIKey.discGolfKey}&mode=findzip&zip=${enteredZipCode}&rad=10&sig=${APIKey.discGolfSig}`
 	const golfCourseData = await API.fetchData(url)
 	const golfCourseResults = await returnGolfCourseData(golfCourseData)
-	console.log(golfCourseResults)
 	return golfCourseResults
 }
 
 export const returnGolfCourseData = async (golfCourses) => {
-		console.log(golfCourses)
 	const golfCoursePromises = golfCourses.map( async course => {
 		return {
 			id: course.course_id,
