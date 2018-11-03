@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MainPage from '../';
+import { Switch } from 'react-router-dom';
+import { MainPage } from '../';
 import { mapStateToProps, mapDispatchToProps } from '../';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import mockCoursesCleaned from '../../../mockData/mockCoursesCleaned.js';
 
 describe('MainPage', () => {
@@ -11,7 +12,10 @@ describe('MainPage', () => {
 
 	beforeEach(() => {
 		mockFunc = jest.fn();
-		wrapper = shallow(<MainPage setCourses={mockFunc} golfCourses={mockCoursesCleaned}/>);
+		wrapper = shallow(
+									<MainPage 
+										setCourses={mockFunc} 
+										golfCourses={mockCoursesCleaned}/>);
 	})
 
 	it('should render like snapshot', () => {
@@ -19,11 +23,20 @@ describe('MainPage', () => {
 	})
 	
 	describe('handleInputChange', () => {
-		xit('should call handleInputChange when searchTerms are changed', () => {
 
+		it('should call handleInputChange when searchTerms are changed', () => {
+					wrapper = mount(
+									<MainPage 
+										setCourses={mockFunc} 
+										golfCourses={mockCoursesCleaned}/>);
+			const spy = spyOn(wrapper.instance(), 'handleInputChange');
+			wrapper.instance().forceUpdate();
+			const mockEvent = { target: { value: 'white plains'} }
+			wrapper.find('.search-input').simulate('change', mockEvent)
+			expect(spy).toHaveBeenCalled()
 		})
 
-		xit('should update state', () => {
+		it('should update state', () => {
 
 		})
 	})

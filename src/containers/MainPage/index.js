@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import CardContainer from '../../components/CardContainer';
 import SearchResultsCard from '../../containers/SearchResultsCard';
 import './MainPage.css';
 import * as DataCleaner from '../../utilities/DataCleaner';
@@ -7,7 +6,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { setCourses } from '../../actions/courseActions';
 
-class MainPage extends Component {
+export class MainPage extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
