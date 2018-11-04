@@ -1,0 +1,830 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CourseInfoCard should render like snapshot 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <CourseInfoCard
+    course={
+      Object {
+        "address": "99 Elmwood Ave.",
+        "city": "Rochester",
+        "country": "United States",
+        "holes": "18",
+        "id": "4712",
+        "isFavorite": false,
+        "name": "Genesee Valley Park",
+        "payToPlay": "0",
+        "rating": "3.29",
+        "reviews": "7",
+        "state": "NY",
+        "zip": "14620",
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="header-container"
+        >
+          <h2
+            className="course-name"
+          >
+            Genesee Valley Park
+          </h2>
+          <button
+            className="favorite-btn"
+          >
+            <i
+              class="fas fa-heart"
+            />
+          </button>
+        </div>,
+        <div
+          className="course-address"
+        >
+          <p>
+            99 Elmwood Ave.
+          </p>
+          <p>
+            Rochester, NY 14620
+          </p>
+        </div>,
+        <p
+          className="course-info"
+        >
+          <span
+            className="course-info-header"
+          >
+            Number of holes:
+          </span>
+           
+          18
+        </p>,
+        <p
+          className="course-info"
+        >
+          <span
+            className="course-info-header"
+          >
+            Rating:
+          </span>
+           
+          3.29
+        </p>,
+        <p
+          className="course-info"
+        >
+          <span
+            className="course-info-header"
+          >
+            Private:
+          </span>
+           
+        </p>,
+        <p
+          className="course-info"
+        >
+          <span
+            className="course-info-header"
+          >
+            Pay to play:
+          </span>
+           
+        </p>,
+        <p
+          className="course-info"
+        >
+          <span
+            className="course-info-header"
+          >
+            Reviews:
+          </span>
+           
+          7
+        </p>,
+        <button
+          className="course-weather-btn"
+        >
+          Course Weather Forecast
+        </button>,
+      ],
+      "className": "CourseInfoCard",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h2
+              className="course-name"
+            >
+              Genesee Valley Park
+            </h2>,
+            <button
+              className="favorite-btn"
+            >
+              <i
+                class="fas fa-heart"
+              />
+            </button>,
+          ],
+          "className": "header-container",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Genesee Valley Park",
+              "className": "course-name",
+            },
+            "ref": null,
+            "rendered": "Genesee Valley Park",
+            "type": "h2",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <i
+                class="fas fa-heart"
+              />,
+              "className": "favorite-btn",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "class": "fas fa-heart",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "i",
+            },
+            "type": "button",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <p>
+              99 Elmwood Ave.
+            </p>,
+            <p>
+              Rochester, NY 14620
+            </p>,
+          ],
+          "className": "course-address",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "99 Elmwood Ave.",
+            },
+            "ref": null,
+            "rendered": "99 Elmwood Ave.",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Rochester, NY 14620",
+            },
+            "ref": null,
+            "rendered": "Rochester, NY 14620",
+            "type": "p",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <span
+              className="course-info-header"
+            >
+              Number of holes:
+            </span>,
+            " ",
+            "18",
+          ],
+          "className": "course-info",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Number of holes:",
+              "className": "course-info-header",
+            },
+            "ref": null,
+            "rendered": "Number of holes:",
+            "type": "span",
+          },
+          " ",
+          "18",
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <span
+              className="course-info-header"
+            >
+              Rating:
+            </span>,
+            " ",
+            "3.29",
+          ],
+          "className": "course-info",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Rating:",
+              "className": "course-info-header",
+            },
+            "ref": null,
+            "rendered": "Rating:",
+            "type": "span",
+          },
+          " ",
+          "3.29",
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <span
+              className="course-info-header"
+            >
+              Private:
+            </span>,
+            " ",
+            undefined,
+          ],
+          "className": "course-info",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Private:",
+              "className": "course-info-header",
+            },
+            "ref": null,
+            "rendered": "Private:",
+            "type": "span",
+          },
+          " ",
+          undefined,
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <span
+              className="course-info-header"
+            >
+              Pay to play:
+            </span>,
+            " ",
+            undefined,
+          ],
+          "className": "course-info",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Pay to play:",
+              "className": "course-info-header",
+            },
+            "ref": null,
+            "rendered": "Pay to play:",
+            "type": "span",
+          },
+          " ",
+          undefined,
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <span
+              className="course-info-header"
+            >
+              Reviews:
+            </span>,
+            " ",
+            "7",
+          ],
+          "className": "course-info",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Reviews:",
+              "className": "course-info-header",
+            },
+            "ref": null,
+            "rendered": "Reviews:",
+            "type": "span",
+          },
+          " ",
+          "7",
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Course Weather Forecast",
+          "className": "course-weather-btn",
+        },
+        "ref": null,
+        "rendered": "Course Weather Forecast",
+        "type": "button",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="header-container"
+          >
+            <h2
+              className="course-name"
+            >
+              Genesee Valley Park
+            </h2>
+            <button
+              className="favorite-btn"
+            >
+              <i
+                class="fas fa-heart"
+              />
+            </button>
+          </div>,
+          <div
+            className="course-address"
+          >
+            <p>
+              99 Elmwood Ave.
+            </p>
+            <p>
+              Rochester, NY 14620
+            </p>
+          </div>,
+          <p
+            className="course-info"
+          >
+            <span
+              className="course-info-header"
+            >
+              Number of holes:
+            </span>
+             
+            18
+          </p>,
+          <p
+            className="course-info"
+          >
+            <span
+              className="course-info-header"
+            >
+              Rating:
+            </span>
+             
+            3.29
+          </p>,
+          <p
+            className="course-info"
+          >
+            <span
+              className="course-info-header"
+            >
+              Private:
+            </span>
+             
+          </p>,
+          <p
+            className="course-info"
+          >
+            <span
+              className="course-info-header"
+            >
+              Pay to play:
+            </span>
+             
+          </p>,
+          <p
+            className="course-info"
+          >
+            <span
+              className="course-info-header"
+            >
+              Reviews:
+            </span>
+             
+            7
+          </p>,
+          <button
+            className="course-weather-btn"
+          >
+            Course Weather Forecast
+          </button>,
+        ],
+        "className": "CourseInfoCard",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h2
+                className="course-name"
+              >
+                Genesee Valley Park
+              </h2>,
+              <button
+                className="favorite-btn"
+              >
+                <i
+                  class="fas fa-heart"
+                />
+              </button>,
+            ],
+            "className": "header-container",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Genesee Valley Park",
+                "className": "course-name",
+              },
+              "ref": null,
+              "rendered": "Genesee Valley Park",
+              "type": "h2",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <i
+                  class="fas fa-heart"
+                />,
+                "className": "favorite-btn",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "class": "fas fa-heart",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "i",
+              },
+              "type": "button",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <p>
+                99 Elmwood Ave.
+              </p>,
+              <p>
+                Rochester, NY 14620
+              </p>,
+            ],
+            "className": "course-address",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "99 Elmwood Ave.",
+              },
+              "ref": null,
+              "rendered": "99 Elmwood Ave.",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Rochester, NY 14620",
+              },
+              "ref": null,
+              "rendered": "Rochester, NY 14620",
+              "type": "p",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <span
+                className="course-info-header"
+              >
+                Number of holes:
+              </span>,
+              " ",
+              "18",
+            ],
+            "className": "course-info",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Number of holes:",
+                "className": "course-info-header",
+              },
+              "ref": null,
+              "rendered": "Number of holes:",
+              "type": "span",
+            },
+            " ",
+            "18",
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <span
+                className="course-info-header"
+              >
+                Rating:
+              </span>,
+              " ",
+              "3.29",
+            ],
+            "className": "course-info",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Rating:",
+                "className": "course-info-header",
+              },
+              "ref": null,
+              "rendered": "Rating:",
+              "type": "span",
+            },
+            " ",
+            "3.29",
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <span
+                className="course-info-header"
+              >
+                Private:
+              </span>,
+              " ",
+              undefined,
+            ],
+            "className": "course-info",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Private:",
+                "className": "course-info-header",
+              },
+              "ref": null,
+              "rendered": "Private:",
+              "type": "span",
+            },
+            " ",
+            undefined,
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <span
+                className="course-info-header"
+              >
+                Pay to play:
+              </span>,
+              " ",
+              undefined,
+            ],
+            "className": "course-info",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Pay to play:",
+                "className": "course-info-header",
+              },
+              "ref": null,
+              "rendered": "Pay to play:",
+              "type": "span",
+            },
+            " ",
+            undefined,
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <span
+                className="course-info-header"
+              >
+                Reviews:
+              </span>,
+              " ",
+              "7",
+            ],
+            "className": "course-info",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Reviews:",
+                "className": "course-info-header",
+              },
+              "ref": null,
+              "rendered": "Reviews:",
+              "type": "span",
+            },
+            " ",
+            "7",
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Course Weather Forecast",
+            "className": "course-weather-btn",
+          },
+          "ref": null,
+          "rendered": "Course Weather Forecast",
+          "type": "button",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

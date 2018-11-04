@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchResultsCard from '../../containers/CourseCard';
+import SearchResultsCard from '../../containers/SearchResultsCard';
 import './CardContainer.css';
 
 const CardContainer = ({ courses }) => {
@@ -8,7 +8,7 @@ const CardContainer = ({ courses }) => {
 	// })
 	return(
 		<div className='CardContainer'>
-			<CourseCard courses={courses}/>
+			<SearchResultsCard courses={courses}/>
 		</div>
 	)
 }
