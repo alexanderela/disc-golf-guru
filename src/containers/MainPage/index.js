@@ -6,6 +6,7 @@ import './MainPage.css';
 import * as DataCleaner from '../../utilities/DataCleaner';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
+import { NavLink } from 'react-router-dom';
 import { setCourses, setSelectedCourse, clearCourses } from '../../actions/courseActions';
 
 export class MainPage extends Component {
@@ -37,9 +38,9 @@ export class MainPage extends Component {
 	}
 
 	displayCourseDetails = (id) => {
-		clearCourses();
-		this.clearDisplay()
 		const { golfCourses, setSelectedCourse } = this.props
+		clearCourses();
+		this.clearDisplay();
 		const { showSearchResults } = this.state
 		if(showSearchResults) {
 			const selectedCourse = golfCourses.find(course => {
@@ -78,13 +79,16 @@ export class MainPage extends Component {
 		return(
 			<form className='MainPage' onSubmit={this.handleSubmit}>
 				<p className='page-name'>{pageName}</p>
-				<input
-					type='search' 
-					placeholder='Search for a zip code or city' 
-					className='search-input'
-					value={searchTerms}
-					onChange={this.handleInputChange}
-				/>
+				{ (!showSearchResults && !showCourseDetails && !showWeather) 
+					?	<input
+									type='search' 
+									placeholder='Search for a zip code or city' 
+									className='search-input'
+									value={searchTerms}
+									onChange={this.handleInputChange}
+								/>
+					: <NavLink to='/findcourses'>Back to Search</NavLink>
+							}
 	
 				{showSearchResults &&
 					<SearchResultsCard 
