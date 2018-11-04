@@ -3,7 +3,7 @@ import './App.css';
 import Header from '../../components/Header';
 import Nav from '../Nav';
 import MainPage from '../MainPage';
-import { Route, Redirect, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
