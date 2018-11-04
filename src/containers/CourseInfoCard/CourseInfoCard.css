@@ -1,8 +1,8 @@
 .CourseInfoCard {
 	border: 3px solid #febb00;
-	width: 60%;
+	width: 30rem;
 	margin: 1rem auto;
-	height: 20rem;
+	height: 24rem;
 	background-color: #FFF;
 	border-radius: 10px;
   display: flex;
@@ -10,6 +10,13 @@
   justify-content: space-around;
   align-items: center;
   padding: 0 0 1rem 0;
+}
+
+.header-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 90%;
 }
 
 .favorite-btn {
@@ -22,6 +29,7 @@
 	background-color: #febb00;
 	cursor: pointer;
 	border: none;
+	justify-self: right;
 }
 
 .favorite-btn:hover {
@@ -39,7 +47,9 @@
 }
 
 .course-name {
-
+  font-size: 1.25rem;
+  color: #2c9a2c;
+  font-weight: 600;
 }
 
 .course-address {
@@ -51,7 +61,7 @@
 }
 
 .course-info {
-
+	/*margin: 0 auto;*/
 }
 
 .course-weather-btn {
