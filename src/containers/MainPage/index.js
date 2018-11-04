@@ -43,6 +43,7 @@ export class MainPage extends Component {
 	displayCourseDetails = (id) => {
 		const { golfCourses, setSelectedCourse } = this.props
 		const { showSearchResults } = this.state
+
 		clearCourses();
 		this.clearDisplay();
 		if(showSearchResults) {
@@ -75,9 +76,8 @@ export class MainPage extends Component {
 	}
 
 	render() {
-		const { pageName, golfCourses } = this.props;
+		const { pageName, golfCourses, location } = this.props;
 		const { searchTerms, showSearchResults, showCourseDetails, showWeather } = this.state;
-		console.log(this.props)
 
 		return(
 			<form className='MainPage' onSubmit={this.handleSubmit}>
@@ -96,25 +96,33 @@ export class MainPage extends Component {
 								<i className='fas fa-caret-left'></i>
 							Back to Search</NavLink>
 				}
-				<Route exact path = '/findcourses/searchresults' render={() => {
+
+				<Route exact path='/findcourses' render={() => {
+					if (showSearchResults) {
+						return <Redirect to='/findcourses/searchresults' />
+					} else if (showCourseDetails) {
+							return <Redirect to='/findcourses/searchresults/courseinfo'/>
+					}	else if (showWeather) {
+							return <Redirect to='/findcourses/searchresults/coursedetails/weather'/>
+					} else {
+							return null
+					}
+				}}/>
+
+				<Route exact path='/findcourses/searchresults' render={() => {
 					return <SearchResultsCard 
 						courses={golfCourses}
 						displayCourseDetails={this.displayCourseDetails}/>
 				}} />
-				<Route exact path='/findcourses' render={() => {
-					if (golfCourses.length) {
-						return <Redirect to='/findcourses/searchresults' />
-					} else {
-						return <div>Yoooooooo</div>
-					}
+				
+				<Route exact path='/findcourses/searchresults/courseinfo' render={() => {
+					return <CourseInfoCard course={golfCourses[0]} displayWeather={this.displayWeather}/>
 				}}/>
 
-				{showCourseDetails && 
-					<CourseInfoCard course={golfCourses[0]} displayWeather={this.displayWeather}/>
-				}
+				<Route exact path='/findcourses/searchresults/coursedetails/weather' render={() => {
+					return <WeatherCard />
+				}}/>
 
-				{showWeather &&
-					<WeatherCard />}
 			</form>
 		)
 	}

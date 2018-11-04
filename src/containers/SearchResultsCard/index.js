@@ -3,7 +3,6 @@ import './SearchResultsCard.css'
 import { withRouter } from 'react-router';
 
 const SearchResultsCard = (props) => {
-	console.log(props)
 	const courseResults = props.courses.map(course => {
 		const { name, address, city, state, zip, id } = course
 		return <div className='course-search-result' key={name}>
