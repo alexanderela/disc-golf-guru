@@ -21,6 +21,21 @@
 .search-input::-webkit-search-cancel-button{
   cursor: pointer;
 }
+
+.back-to-search-link {
+	color: #2c9a2c;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.back-to-search-link:hover {
+	color: #302a2a;
+}
+
+.fa-caret-left {
+	margin: 0 0.25rem 0 0;
+}
+
 /*Home CSS*/
 
 /*.Home {

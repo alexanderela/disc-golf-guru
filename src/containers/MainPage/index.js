@@ -86,7 +86,11 @@ export class MainPage extends Component {
 									value={searchTerms}
 									onChange={this.handleInputChange}
 								/>
-					: <NavLink to='/findcourses'>Back to Search</NavLink>
+					: <NavLink 
+							to='/findcourses' 
+							className='back-to-search-link'>
+								<i class="fas fa-caret-left"></i>
+							Back to Search</NavLink>
 				}
 	
 				{showSearchResults &&
