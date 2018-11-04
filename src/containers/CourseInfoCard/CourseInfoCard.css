@@ -1,0 +1,29 @@
+.CourseInfoCard {
+	border: 3px solid #febb00;
+	width: 60%;
+	margin: 1rem auto;
+	height: 20rem;
+	background-color: #FFF;
+	border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 0 1rem 0;
+}
+
+.course-name {
+
+}
+
+.course-address {
+
+}
+
+.course-info {
+
+}
+
+.course-weather-btn {
+	
+}

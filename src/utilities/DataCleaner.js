@@ -22,12 +22,20 @@ export const returnGolfCourseData = async (golfCourses) => {
 			address: course.street_addr,
 			reviews: course.reviews,
 			rating: course.rating,
-			payToPlay: course.paytoplay,
+			isPrivate: convertNumToBool(course.private),
+			isFree: convertNumToBool(course.paytoplay),
 		}
 	})
 	return Promise.all(golfCoursePromises)
 }
 
+const convertNumToBool = (number) => {
+	if (number === 0) {
+		return 'Yes'
+	} else {
+		return 'No'
+	};
+};
 
 export const fetchWeather = async () => {
 

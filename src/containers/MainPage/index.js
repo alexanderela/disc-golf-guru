@@ -30,7 +30,7 @@ export class MainPage extends Component {
 	getGolfCourses = async (searchTerms) => {
 		const fetchedGolfCourses = await DataCleaner.fetchGolfCoursesByZip(searchTerms)
 		this.props.setCourses(fetchedGolfCourses)
-		this.setState({ showSearchResults: true })
+		this.setState({ showSearchResults: true, showCourseDetails: false })
 	}
 
 	showCourseDetails = (id) => {
@@ -66,7 +66,7 @@ export class MainPage extends Component {
 						showCourseDetails={this.showCourseDetails}/>
 				}
 				{showCourseDetails && 
-					<CourseInfoCard course={golfCourses} />
+					<CourseInfoCard course={golfCourses[0]} />
 				}
 			</form>
 		)
