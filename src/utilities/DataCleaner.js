@@ -12,18 +12,18 @@ export const returnGolfCourseData = async (golfCourses) => {
 	const golfCoursePromises = golfCourses.map( async course => {
 		return {
 			id: course.course_id,
-			name: course.name,
 			isFavorite: false,
-			holes: course.holes,
+			name: course.name,
+			address: course.street_addr,
 			city: course.city,
 			state: course.state,
-			country: course.country,
 			zip: course.zipcode,
-			address: course.street_addr,
-			reviews: course.reviews,
+			country: course.country,
+			holes: course.holes,
 			rating: course.rating,
 			isPrivate: convertNumToBool(course.private),
 			isFree: convertNumToBool(course.paytoplay),
+			reviews: course.reviews,
 		}
 	})
 	return Promise.all(golfCoursePromises)

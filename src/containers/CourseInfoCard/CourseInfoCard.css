@@ -12,6 +12,32 @@
   padding: 0 0 1rem 0;
 }
 
+.favorite-btn {
+	border-radius: 50%;
+	width: 3rem;
+	height: 3rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #febb00;
+	cursor: pointer;
+	border: none;
+}
+
+.favorite-btn:hover {
+	background-color: #2c9a2c;
+}
+
+.favorite-btn:hover > .fa-heart {
+	background-color: #2c9a2c;	
+	color: #febb00;
+}
+
+.fa-heart {
+	color: #2c9a2c;
+	font-size: 1.5rem;
+}
+
 .course-name {
 
 }
@@ -20,10 +46,26 @@
 
 }
 
+.course-info-header {
+	font-weight: 700;
+}
+
 .course-info {
 
 }
 
 .course-weather-btn {
-	
+	background-color: #febb00;
+  color: #524949;
+  font-weight: 700;
+  border-radius: 10px;
+  border: none;
+  margin: 0 0 0 0.5rem;		
+  outline-width: 0;
+  cursor: pointer;
+}
+
+.course-weather-btn:hover {
+	background-color: #2c9a2c;
+	color: #FFF;
 }
