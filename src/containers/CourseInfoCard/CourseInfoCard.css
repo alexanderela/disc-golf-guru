@@ -31,6 +31,7 @@
 	cursor: pointer;
 	border: none;
 	justify-self: right;
+	margin: 0 0.25rem 0 0;
 }
 
 .favorite-btn:hover {
@@ -51,6 +52,7 @@
   font-size: 1.25rem;
   color: #2c9a2c;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .course-address {
@@ -60,6 +62,7 @@
 
 .course-info-header {
 	font-weight: 700;
+	margin: 0 0 0 0.25rem;
 }
 
 .course-weather-btn {

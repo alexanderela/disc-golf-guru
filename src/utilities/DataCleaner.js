@@ -22,8 +22,7 @@ export const returnGolfCourseData = async (golfCourses) => {
 			holes: course.holes,
 			rating: course.rating,
 			isPrivate: convertNumToBool(course.private),
-			isFree: convertNumToBool(course.paytoplay),
-			reviews: course.reviews,
+			isPayToPlay: convertNumToBool(course.paytoplay)
 		}
 	})
 	return Promise.all(golfCoursePromises)

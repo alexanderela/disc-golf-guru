@@ -5,7 +5,7 @@ import './MainPage.css';
 import * as DataCleaner from '../../utilities/DataCleaner';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import { setCourses, setSelectedCourse } from '../../actions/courseActions';
+import { setCourses, setSelectedCourse, clearCourses } from '../../actions/courseActions';
 
 
 export class MainPage extends Component {
@@ -24,6 +24,7 @@ export class MainPage extends Component {
 
 	handleSubmit = (e) => {
 		e.preventDefault();
+		const { golfCourses, clearCourses } = this.props
 		this.getGolfCourses(this.state.searchTerms)
 		this.setState({ searchTerms: '' })
 	}
@@ -34,8 +35,12 @@ export class MainPage extends Component {
 		this.setState({ showSearchResults: true, showCourseDetails: false })
 	}
 
-	showCourseDetails = (id) => {
+	displayCourseDetails = (id) => {
+		clearCourses();
+		this.clearDisplay()
 		const { golfCourses, setSelectedCourse } = this.props
+		const { showSearchResults } = this.state
+		if(showSearchResults) {
 			const selectedCourse = golfCourses.find(course => {
 				return course.id === id
 			})
@@ -45,6 +50,14 @@ export class MainPage extends Component {
 				showSearchResults: false 
 			})
 		return selectedCourse
+		}
+	}
+
+	clearDisplay = () => {
+		this.setState({ 
+			showCourseDetails: false, 
+			showSearchResults: false 
+		})
 	}
 
 	render() {
@@ -66,7 +79,7 @@ export class MainPage extends Component {
 				{showSearchResults &&
 					<SearchResultsCard 
 						courses={golfCourses}
-						showCourseDetails={this.showCourseDetails}/>
+						displayCourseDetails={this.displayCourseDetails}/>
 				}
 				{showCourseDetails && 
 					<CourseInfoCard course={golfCourses[0]} />
@@ -80,7 +93,8 @@ export const mapStateToProps = ({ golfCourses }) => ({ golfCourses });
 
 export const mapDispatchToProps = (dispatch) => ({
 	setCourses: (courses) => dispatch(setCourses(courses)),
-	setSelectedCourse: (course) => dispatch(setSelectedCourse(course))
+	setSelectedCourse: (course) => dispatch(setSelectedCourse(course)),
+	clearCourses: () => dispatch(clearCourses())
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MainPage));

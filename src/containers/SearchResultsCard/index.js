@@ -1,14 +1,14 @@
 import React from 'react';
 import './SearchResultsCard.css'
 
-const SearchResultsCard = ({courses, showCourseDetails}) => {
+const SearchResultsCard = ({courses, displayCourseDetails}) => {
 	const courseResults = courses.map(course => {
 		const { name, address, city, state, zip, id } = course
 		return <div className='course-search-result' key={name}>
 							<p>{`${name} ${address}, ${city}, ${state} ${zip}`}</p>
 							<button 
 								className='search-result-btn'
-								onClick={() => showCourseDetails(id)}>Select
+								onClick={() => displayCourseDetails(id)}>Select
 							</button>
 						</div>
 	})
@@ -16,7 +16,7 @@ const SearchResultsCard = ({courses, showCourseDetails}) => {
 		<div className='SearchResultsCard'>
 			<h2 className='search-result-header'>Search Results</h2>
 			<h4 className='nearby-courses'>Nearby Courses</h4>
-			{courseResults}
+			{courses.length ? courseResults : 'Oops! There are no courses near where you searched.'}
 		</div>
 	)
 }

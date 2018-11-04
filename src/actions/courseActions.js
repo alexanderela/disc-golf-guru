@@ -8,6 +8,10 @@ export const setSelectedCourse = (course) => ({
 	course
 })
 
+export const clearCourses = () => ({
+	type: 'CLEAR_COURSES',
+})
+
 export const toggleFavorite = (courseId) => ({
 	type: 'TOGGLE_FAVORITE',
 	courseId

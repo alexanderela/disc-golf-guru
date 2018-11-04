@@ -16,11 +16,10 @@ class CourseInfoCard extends Component {
 			address, 
 			city, state, 
 			zip, 
-			holes, 
-			reviews,
+			holes,
 			rating,
 			isPrivate,
-			isFree
+			isPayToPlay
 		} = course;
 
 		return(
@@ -57,13 +56,7 @@ class CourseInfoCard extends Component {
 				<p>
 					<span className='course-info-header'>
 						Pay to play: 
-					</span> {isFree}
-				</p>
-
-				<p>
-					<span className='course-info-header'>
-					Reviews: 
-					</span> {reviews}
+					</span> {isPayToPlay}
 				</p>
 
 				<button className='course-weather-btn'>

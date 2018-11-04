@@ -15,7 +15,8 @@
 .course-search-result {
   align-items: center;
   display: flex;
-  margin: 1rem 0;
+  margin: 0 0 1.5rem;
+  overflow-wrap: break-word;
 }
 
 .search-result-btn {
@@ -45,4 +46,5 @@
   color: #2c9a2c;
   font-size: 1.25rem;
   font-weight: 600;
+  margin: 0 0 1rem 0;
 }
