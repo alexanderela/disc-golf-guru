@@ -30,11 +30,11 @@ export const returnGolfCourseData = async (golfCourses) => {
 }
 
 const convertNumToBool = (number) => {
-	if (number === 0) {
-		return 'Yes'
-	} else {
+	if (number === '0') {
 		return 'No'
-	};
+	} else {
+		return 'Yes'
+	}
 };
 
 export const fetchWeather = async () => {

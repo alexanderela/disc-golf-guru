@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { setCourses, setSelectedCourse } from '../../actions/courseActions';
 
+
 export class MainPage extends Component {
 	constructor(props) {
 		super(props);
@@ -60,6 +61,8 @@ export class MainPage extends Component {
 					value={searchTerms}
 					onChange={this.handleInputChange}
 				/>
+	
+
 				{showSearchResults &&
 					<SearchResultsCard 
 						courses={golfCourses}

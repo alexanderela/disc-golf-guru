@@ -28,7 +28,7 @@ class CourseInfoCard extends Component {
 				<div className='header-container'>
 					<h2 className='course-name'>{name}</h2>
 					<button className='favorite-btn'>
-						<i class="fas fa-heart"></i>
+						<i className="fas fa-heart"></i>
 					</button>
 				</div>
 				<div className='course-address'>
@@ -36,31 +36,31 @@ class CourseInfoCard extends Component {
 					<p>{`${city}, ${state} ${zip}`}</p>
 				</div>
 
-				<p className='course-info'>
+				<p>
 					<span className='course-info-header'>
 						Number of holes:
 					</span> {holes}
 				</p>
 
-				<p className='course-info'>
+				<p>
 					<span className='course-info-header'>
 						Rating: 
 					</span> {rating}
 				</p>
 
-				<p className='course-info'>
+				<p>
 					<span className='course-info-header'>
 						Private: 
 					</span> {isPrivate}
 					</p>
 
-				<p className='course-info'>
+				<p>
 					<span className='course-info-header'>
 						Pay to play: 
 					</span> {isFree}
 				</p>
 
-				<p className='course-info'>
+				<p>
 					<span className='course-info-header'>
 					Reviews: 
 					</span> {reviews}
