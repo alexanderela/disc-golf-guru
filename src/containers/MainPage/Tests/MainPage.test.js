@@ -88,7 +88,20 @@ describe('MainPage', () => {
 			expect(wrapper.state('showSearchResults')).toBe(true);
 		})
 	})
+
+	describe('displayCourseDetails', () => {
+
+	})
 	
+	describe('clearDisplay', () => {
+		it('should set showCourseDetails and showSearchResults to false in state', () => {
+			wrapper.setState({  showCourseDetails: true, showSearchResults: true })
+			wrapper.instance().clearDisplay()
+			expect(wrapper.state('showCourseDetails')).toBe(false)
+			expect(wrapper.state('showSearchResults')).toBe(false)
+		})
+	})
+
 
 	describe('mapStateToProps', () => {
 

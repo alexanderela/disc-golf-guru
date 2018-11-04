@@ -22,19 +22,18 @@ export const returnGolfCourseData = async (golfCourses) => {
 			holes: course.holes,
 			rating: course.rating,
 			isPrivate: convertNumToBool(course.private),
-			isFree: convertNumToBool(course.paytoplay),
-			reviews: course.reviews,
+			isPayToPlay: convertNumToBool(course.paytoplay)
 		}
 	})
 	return Promise.all(golfCoursePromises)
 }
 
 const convertNumToBool = (number) => {
-	if (number === 0) {
-		return 'Yes'
-	} else {
+	if (number === '0') {
 		return 'No'
-	};
+	} else {
+		return 'Yes'
+	}
 };
 
 export const fetchWeather = async () => {

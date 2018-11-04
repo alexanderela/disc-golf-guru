@@ -12,6 +12,8 @@ export const courseReducer = (state = [], action) => {
 			});
 		case 'SET_SELECTED_COURSE':
 			return [action.course];
+		case 'CLEAR_COURSES':
+			return []
 	default:
 		return state;
 	}
