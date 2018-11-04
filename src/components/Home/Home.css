@@ -37,6 +37,13 @@
   text-shadow: #000 0 0 0;
 }
 
+.home-search-instructions {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2c9a2c;
+  margin: 1rem 4rem 0;
+}
+
 .home-search-button:hover {
   background-color: #febb00;
   color: #524949;

@@ -10,9 +10,6 @@ import { withRouter } from 'react-router';
 class App extends Component {
   constructor() {
     super();
-    this.state = {
-      golfCourses: []
-    }
   }
 
   render() {
@@ -21,11 +18,9 @@ class App extends Component {
       	<Header />
       	<Nav />
 	      <Switch>
-	      	<Route exact path='/' component={Home}/>
-	    		<Route path='/findcourses' render={() => <MainPage pageName={'Find A Disc Golf Course'}/> }/>
-	    		<Route path='/favorites' />
-          <Route path='/searchresults' />
-          <Route path='/courseinfo' />
+	      	<Route exact path='/' render={() => <Home /> }/>
+	    		<Route path='/findcourses/' render={() => <MainPage pageName={'Find A Disc Golf Course'}/> }/>
+          <Route path='/favorites' />
 	      </Switch>
       </div>
     );

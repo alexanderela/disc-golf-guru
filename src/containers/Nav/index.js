@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Nav.css';
 import { NavLink } from 'react-router-dom';
+import { withRouter } from 'react-router';
 
 class Nav extends Component {
 	constructor(props) {
@@ -26,14 +27,15 @@ class Nav extends Component {
 	}
 
 	render() {
-		const { home, findCourse, favorites } = this.state
+		const { home, findCourse, favorites } = this.state;
+		const { location } = this.props
 
 		return(
 			<div className='Nav'>		
 				<NavLink
 					to='/'>
 					<button 
-						className={`nav-btn ${home ? 'nav-btn-active' : 'nav-btn-inactive'}`} 
+						className={`nav-btn ${home || location.pathname === '/' ? 'nav-btn-active' : 'nav-btn-inactive'}`} 
 						name='home'
 						onClick={this.handleActiveClass}>Home
 					</button>				
@@ -59,4 +61,4 @@ class Nav extends Component {
 	}
 }
 
-export default Nav
+export default withRouter(Nav)

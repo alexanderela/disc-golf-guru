@@ -7,6 +7,7 @@ import * as DataCleaner from '../../utilities/DataCleaner';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { NavLink } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import { setCourses, setSelectedCourse, clearCourses } from '../../actions/courseActions';
 
 export class MainPage extends Component {
@@ -32,9 +33,11 @@ export class MainPage extends Component {
 	}
 
 	getGolfCourses = async (searchTerms) => {
+		const { setCourses, history } = this.props
 		const fetchedGolfCourses = await DataCleaner.fetchGolfCoursesByZip(searchTerms)
-		this.props.setCourses(fetchedGolfCourses)
+		setCourses(fetchedGolfCourses)
 		this.setState({ showSearchResults: true, showCourseDetails: false })
+		// history.push({ pathname: '/searchresults', query: `query=${searchTerms}`})
 	}
 
 	displayCourseDetails = (id) => {
@@ -74,6 +77,7 @@ export class MainPage extends Component {
 	render() {
 		const { pageName, golfCourses } = this.props;
 		const { searchTerms, showSearchResults, showCourseDetails, showWeather } = this.state;
+		console.log(this.props)
 
 		return(
 			<form className='MainPage' onSubmit={this.handleSubmit}>
@@ -89,15 +93,21 @@ export class MainPage extends Component {
 					: <NavLink 
 							to='/findcourses' 
 							className='back-to-search-link'>
-								<i class="fas fa-caret-left"></i>
+								<i className='fas fa-caret-left'></i>
 							Back to Search</NavLink>
 				}
-	
-				{showSearchResults &&
-					<SearchResultsCard 
+				<Route exact path = '/findcourses/searchresults' render={() => {
+					return <SearchResultsCard 
 						courses={golfCourses}
 						displayCourseDetails={this.displayCourseDetails}/>
-				}
+				}} />
+				<Route exact path='/findcourses' render={() => {
+					if (golfCourses.length) {
+						return <Redirect to='/findcourses/searchresults' />
+					} else {
+						return <div>Yoooooooo</div>
+					}
+				}}/>
 
 				{showCourseDetails && 
 					<CourseInfoCard course={golfCourses[0]} displayWeather={this.displayWeather}/>
