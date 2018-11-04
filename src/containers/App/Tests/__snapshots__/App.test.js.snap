@@ -3,7 +3,7 @@
 exports[`App should render like snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <App />,
+  Symbol(enzyme.__unrendered__): <withRouter(App) />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -15,221 +15,25 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "class",
     "props": Object {
-      "children": Array [
-        <Header />,
-        <Nav />,
-        <Switch>
-          <Route
-            exact={true}
-            path="/"
-            render={[Function]}
-          />
-          <Route
-            path="/findcourses"
-            render={[Function]}
-          />
-          <Route
-            path="/favorites"
-          />
-        </Switch>,
-      ],
-      "className": "App",
+      "children": [Function],
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {},
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {},
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "children": Array [
-            <Route
-              exact={true}
-              path="/"
-              render={[Function]}
-            />,
-            <Route
-              path="/findcourses"
-              render={[Function]}
-            />,
-            <Route
-              path="/favorites"
-            />,
-          ],
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "exact": true,
-              "path": "/",
-              "render": [Function],
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "path": "/findcourses",
-              "render": [Function],
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "path": "/favorites",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-        ],
-        "type": [Function],
-      },
-    ],
-    "type": "div",
+    "rendered": [Function],
+    "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "host",
+      "nodeType": "class",
       "props": Object {
-        "children": Array [
-          <Header />,
-          <Nav />,
-          <Switch>
-            <Route
-              exact={true}
-              path="/"
-              render={[Function]}
-            />
-            <Route
-              path="/findcourses"
-              render={[Function]}
-            />
-            <Route
-              path="/favorites"
-            />
-          </Switch>,
-        ],
-        "className": "App",
+        "children": [Function],
       },
       "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {},
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {},
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "children": Array [
-              <Route
-                exact={true}
-                path="/"
-                render={[Function]}
-              />,
-              <Route
-                path="/findcourses"
-                render={[Function]}
-              />,
-              <Route
-                path="/favorites"
-              />,
-            ],
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "exact": true,
-                "path": "/",
-                "render": [Function],
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "path": "/findcourses",
-                "render": [Function],
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "path": "/favorites",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-          ],
-          "type": [Function],
-        },
-      ],
-      "type": "div",
+      "rendered": [Function],
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {

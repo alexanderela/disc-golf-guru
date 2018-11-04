@@ -7,7 +7,6 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { setCourses, setSelectedCourse, clearCourses } from '../../actions/courseActions';
 
-
 export class MainPage extends Component {
 	constructor(props) {
 		super(props);

@@ -47,7 +47,7 @@ ShallowWrapper {
             className="favorite-btn"
           >
             <i
-              class="fas fa-heart"
+              className="fas fa-heart"
             />
           </button>
         </div>,
@@ -61,9 +61,7 @@ ShallowWrapper {
             Rochester, NY 14620
           </p>
         </div>,
-        <p
-          className="course-info"
-        >
+        <p>
           <span
             className="course-info-header"
           >
@@ -72,9 +70,7 @@ ShallowWrapper {
            
           18
         </p>,
-        <p
-          className="course-info"
-        >
+        <p>
           <span
             className="course-info-header"
           >
@@ -83,9 +79,7 @@ ShallowWrapper {
            
           3.29
         </p>,
-        <p
-          className="course-info"
-        >
+        <p>
           <span
             className="course-info-header"
           >
@@ -93,26 +87,13 @@ ShallowWrapper {
           </span>
            
         </p>,
-        <p
-          className="course-info"
-        >
+        <p>
           <span
             className="course-info-header"
           >
             Pay to play:
           </span>
            
-        </p>,
-        <p
-          className="course-info"
-        >
-          <span
-            className="course-info-header"
-          >
-            Reviews:
-          </span>
-           
-          7
         </p>,
         <button
           className="course-weather-btn"
@@ -139,7 +120,7 @@ ShallowWrapper {
               className="favorite-btn"
             >
               <i
-                class="fas fa-heart"
+                className="fas fa-heart"
               />
             </button>,
           ],
@@ -165,7 +146,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": <i
-                class="fas fa-heart"
+                className="fas fa-heart"
               />,
               "className": "favorite-btn",
             },
@@ -175,7 +156,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "class": "fas fa-heart",
+                "className": "fas fa-heart",
               },
               "ref": null,
               "rendered": null,
@@ -242,7 +223,6 @@ ShallowWrapper {
             " ",
             "18",
           ],
-          "className": "course-info",
         },
         "ref": null,
         "rendered": Array [
@@ -277,7 +257,6 @@ ShallowWrapper {
             " ",
             "3.29",
           ],
-          "className": "course-info",
         },
         "ref": null,
         "rendered": Array [
@@ -312,7 +291,6 @@ ShallowWrapper {
             " ",
             undefined,
           ],
-          "className": "course-info",
         },
         "ref": null,
         "rendered": Array [
@@ -347,7 +325,6 @@ ShallowWrapper {
             " ",
             undefined,
           ],
-          "className": "course-info",
         },
         "ref": null,
         "rendered": Array [
@@ -365,41 +342,6 @@ ShallowWrapper {
           },
           " ",
           undefined,
-        ],
-        "type": "p",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <span
-              className="course-info-header"
-            >
-              Reviews:
-            </span>,
-            " ",
-            "7",
-          ],
-          "className": "course-info",
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Reviews:",
-              "className": "course-info-header",
-            },
-            "ref": null,
-            "rendered": "Reviews:",
-            "type": "span",
-          },
-          " ",
-          "7",
         ],
         "type": "p",
       },
@@ -437,7 +379,7 @@ ShallowWrapper {
               className="favorite-btn"
             >
               <i
-                class="fas fa-heart"
+                className="fas fa-heart"
               />
             </button>
           </div>,
@@ -451,9 +393,7 @@ ShallowWrapper {
               Rochester, NY 14620
             </p>
           </div>,
-          <p
-            className="course-info"
-          >
+          <p>
             <span
               className="course-info-header"
             >
@@ -462,9 +402,7 @@ ShallowWrapper {
              
             18
           </p>,
-          <p
-            className="course-info"
-          >
+          <p>
             <span
               className="course-info-header"
             >
@@ -473,9 +411,7 @@ ShallowWrapper {
              
             3.29
           </p>,
-          <p
-            className="course-info"
-          >
+          <p>
             <span
               className="course-info-header"
             >
@@ -483,26 +419,13 @@ ShallowWrapper {
             </span>
              
           </p>,
-          <p
-            className="course-info"
-          >
+          <p>
             <span
               className="course-info-header"
             >
               Pay to play:
             </span>
              
-          </p>,
-          <p
-            className="course-info"
-          >
-            <span
-              className="course-info-header"
-            >
-              Reviews:
-            </span>
-             
-            7
           </p>,
           <button
             className="course-weather-btn"
@@ -529,7 +452,7 @@ ShallowWrapper {
                 className="favorite-btn"
               >
                 <i
-                  class="fas fa-heart"
+                  className="fas fa-heart"
                 />
               </button>,
             ],
@@ -555,7 +478,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": <i
-                  class="fas fa-heart"
+                  className="fas fa-heart"
                 />,
                 "className": "favorite-btn",
               },
@@ -565,7 +488,7 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "class": "fas fa-heart",
+                  "className": "fas fa-heart",
                 },
                 "ref": null,
                 "rendered": null,
@@ -632,7 +555,6 @@ ShallowWrapper {
               " ",
               "18",
             ],
-            "className": "course-info",
           },
           "ref": null,
           "rendered": Array [
@@ -667,7 +589,6 @@ ShallowWrapper {
               " ",
               "3.29",
             ],
-            "className": "course-info",
           },
           "ref": null,
           "rendered": Array [
@@ -702,7 +623,6 @@ ShallowWrapper {
               " ",
               undefined,
             ],
-            "className": "course-info",
           },
           "ref": null,
           "rendered": Array [
@@ -737,7 +657,6 @@ ShallowWrapper {
               " ",
               undefined,
             ],
-            "className": "course-info",
           },
           "ref": null,
           "rendered": Array [
@@ -755,41 +674,6 @@ ShallowWrapper {
             },
             " ",
             undefined,
-          ],
-          "type": "p",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              <span
-                className="course-info-header"
-              >
-                Reviews:
-              </span>,
-              " ",
-              "7",
-            ],
-            "className": "course-info",
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Reviews:",
-                "className": "course-info-header",
-              },
-              "ref": null,
-              "rendered": "Reviews:",
-              "type": "span",
-            },
-            " ",
-            "7",
           ],
           "type": "p",
         },
