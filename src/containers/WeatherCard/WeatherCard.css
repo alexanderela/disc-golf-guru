@@ -1,0 +1,13 @@
+.WeatherCard {
+  align-items: center;
+  background-color: #FFF;
+  border: 3px solid #febb00;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 21rem;
+  justify-content: center;
+  margin: 1rem auto;
+  padding: 0 0 1rem 0;
+  width: 47rem;
+}

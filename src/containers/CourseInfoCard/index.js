@@ -10,8 +10,9 @@ class CourseInfoCard extends Component {
 	}
 
 	render() {
-		const { course } = this.props;
-		const { 
+		const { course, displayWeather } = this.props;
+		const {
+			id, 
 			name, 
 			address, 
 			city, state, 
@@ -59,7 +60,9 @@ class CourseInfoCard extends Component {
 					</span> {isPayToPlay}
 				</p>
 
-				<button className='course-weather-btn'>
+				<button 
+					className='course-weather-btn'
+					onClick={() => displayWeather(id)}>
 					Course Weather Forecast</button>
 			</div>
 		)

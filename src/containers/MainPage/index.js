@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SearchResultsCard from '../../containers/SearchResultsCard';
 import CourseInfoCard from '../../containers/CourseInfoCard';
+import WeatherCard from '../../containers/WeatherCard';
 import './MainPage.css';
 import * as DataCleaner from '../../utilities/DataCleaner';
 import { connect } from 'react-redux';
@@ -13,7 +14,8 @@ export class MainPage extends Component {
 		this.state = {
 			searchTerms: '',
 			showSearchResults: false,
-			showCourseDetails: false
+			showCourseDetails: false,
+			showWeather: false
 		}
 	}
 
@@ -52,16 +54,26 @@ export class MainPage extends Component {
 		}
 	}
 
+	displayWeather = (id) => {
+		console.log(id)
+			this.setState({ 
+				showWeather: true,
+				showCourseDetails: false, 
+				showSearchResults: false 
+			})
+	}
+
 	clearDisplay = () => {
 		this.setState({ 
 			showCourseDetails: false, 
-			showSearchResults: false 
+			showSearchResults: false,
+			showWeather: false 
 		})
 	}
 
 	render() {
 		const { pageName, golfCourses } = this.props;
-		const { searchTerms, showSearchResults, showCourseDetails } = this.state;
+		const { searchTerms, showSearchResults, showCourseDetails, showWeather } = this.state;
 
 		return(
 			<form className='MainPage' onSubmit={this.handleSubmit}>
@@ -74,15 +86,18 @@ export class MainPage extends Component {
 					onChange={this.handleInputChange}
 				/>
 	
-
 				{showSearchResults &&
 					<SearchResultsCard 
 						courses={golfCourses}
 						displayCourseDetails={this.displayCourseDetails}/>
 				}
+
 				{showCourseDetails && 
-					<CourseInfoCard course={golfCourses[0]} />
+					<CourseInfoCard course={golfCourses[0]} displayWeather={this.displayWeather}/>
 				}
+
+				{showWeather &&
+					<WeatherCard />}
 			</form>
 		)
 	}
