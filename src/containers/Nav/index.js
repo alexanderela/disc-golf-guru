@@ -6,26 +6,52 @@ class Nav extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-
+			home: false,
+			findCourse: false,
+			favorites: false
 		}
 	}
 
+	handleActiveClass = (e) => {
+		const { name } = e.target;
+		const stateKeys = Object.keys(this.state)
+
+		stateKeys.forEach(key => {
+			if (name === key) {
+				this.setState({ [key]: true })
+			} else {
+				this.setState({ [key]: false })
+			}
+		})
+	}
+
 	render() {
+		const { home, findCourse, favorites } = this.state
+
 		return(
 			<div className='Nav'>		
-				<NavLink 
+				<NavLink
 					to='/'>
-					<button className='nav-button'>Home
+					<button 
+						className={`nav-btn ${home ? 'nav-btn-active' : 'nav-btn-inactive'}`} 
+						name='home'
+						onClick={this.handleActiveClass}>Home
 					</button>				
 				</NavLink>
 				<NavLink 
 					to='/findcourses'>
-					<button className='nav-button'>Find A Course
+					<button 
+						className={`nav-btn ${findCourse ? 'nav-btn-active' : 'nav-btn-inactive'}`}  
+						name='findCourse'
+						onClick={this.handleActiveClass}>Find A Course
 					</button>
 				</NavLink>
 				<NavLink 
 					to='/favorites'>
-					<button className='nav-button'>Favorite Courses
+					<button 
+						className={`nav-btn ${favorites ? 'nav-btn-active' : 'nav-btn-inactive'}`}  
+						name='favorites'
+						onClick={this.handleActiveClass}>Favorite Courses
 					</button>
 				</NavLink>
 			</div>

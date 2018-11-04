@@ -39,9 +39,9 @@ export class MainPage extends Component {
 
 	displayCourseDetails = (id) => {
 		const { golfCourses, setSelectedCourse } = this.props
+		const { showSearchResults } = this.state
 		clearCourses();
 		this.clearDisplay();
-		const { showSearchResults } = this.state
 		if(showSearchResults) {
 			const selectedCourse = golfCourses.find(course => {
 				return course.id === id
@@ -56,7 +56,6 @@ export class MainPage extends Component {
 	}
 
 	displayWeather = (id) => {
-		console.log(id)
 			this.setState({ 
 				showWeather: true,
 				showCourseDetails: false, 
@@ -88,7 +87,7 @@ export class MainPage extends Component {
 									onChange={this.handleInputChange}
 								/>
 					: <NavLink to='/findcourses'>Back to Search</NavLink>
-							}
+				}
 	
 				{showSearchResults &&
 					<SearchResultsCard 
