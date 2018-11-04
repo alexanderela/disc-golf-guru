@@ -36,7 +36,7 @@ export class MainPage extends Component {
 	showCourseDetails = (id) => {
 		const { golfCourses, setSelectedCourse } = this.props
 			const selectedCourse = golfCourses.find(course => {
-				return course
+				return course.id === id
 			})
 			setSelectedCourse(selectedCourse)
 			this.setState({ 
