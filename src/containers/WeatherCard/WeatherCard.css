@@ -16,9 +16,29 @@
 }
 
 .course-weather-container {
-    width: 50%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
 
+.current-weather-icon {
+  width: 6rem;
+}
+
+.weather-card-header {
+  font-size: 1.25rem;
+  color: #2c9a2c;
+  font-weight: 600;
+  overflow-wrap: break-word;
+  margin: 2rem 0;
+}
+
+.weather-info-header {
+  font-weight: 700;
+  /*margin: 0 0 0 0.25rem;*/
+}
+
+.weather-info {
+  margin: 0.75rem 0;
+}

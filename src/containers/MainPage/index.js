@@ -82,9 +82,9 @@ export class MainPage extends Component {
 
 		return(
 			<div className='MainPage'>
-				<p className='page-name'>{pageName}</p>
 				{ (!searchResultsSelected && !courseDetailsSelected && !showWeather) 
 					?	<div>
+							<p className='page-name'>{pageName}</p>
 							<input
 								type='search' 
 								placeholder='Search for a zip code or city' 

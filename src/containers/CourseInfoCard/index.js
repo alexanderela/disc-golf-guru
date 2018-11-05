@@ -36,25 +36,25 @@ class CourseInfoCard extends Component {
 					<p>{`${city}, ${state} ${zip}`}</p>
 				</div>
 
-				<p>
+				<p className='course-info'>
 					<span className='course-info-header'>
 						Number of holes:
 					</span> {holes}
 				</p>
 
-				<p>
+				<p className='course-info'>
 					<span className='course-info-header'>
 						Rating: 
 					</span> {rating}
 				</p>
 
-				<p>
+				<p className='course-info'>
 					<span className='course-info-header'>
 						Private: 
 					</span> {isPrivate}
 					</p>
 
-				<p>
+				<p className='course-info'>
 					<span className='course-info-header'>
 						Pay to play: 
 					</span> {isPayToPlay}

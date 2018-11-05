@@ -44,6 +44,7 @@ export const returnCurrentWeatherData = async (currentWeather) => {
 			id: id,
 			temp: main.temp,
 			description: capitalizeString(weather[0].description),
+			icon: weather[0].icon,
 			wind: wind.speed,
 			humidity: main.humidity
 		}
