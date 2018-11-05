@@ -62,13 +62,10 @@ export class MainPage extends Component {
 		// }
 	}
 
-	// displayWeather = (id) => {
-	// 		this.setState({ 
-	// 			showWeather: true,
-	// 			showCourseDetails: false, 
-	// 			showSearchResults: false 
-	// 		})
-	// }
+	displayWeather = (id) => {
+		this.setState({ showWeather: true })
+		this.props.toggleCourseDetails()
+	}
 
 	// clearDisplay = () => {
 	// 	this.setState({ 
@@ -113,8 +110,26 @@ export class MainPage extends Component {
 								return null
 						}
 					}}/>
+					
+					{searchResultsSelected &&
+						<SearchResultsCard 
+											courses={golfCourses}
+											displayCourseDetails={this.displayCourseDetails}
+										/>
+					}
 
-					<Route exact path='/findcourses/searchresults' render={() => {
+					{courseDetailsSelected &&
+						<CourseInfoCard 
+											course={golfCourses[0]} 
+											displayWeather={this.displayWeather}
+										/>
+					}
+
+					{showWeather &&
+						<WeatherCard />
+					}										
+
+					{/*<Route exact path='/findcourses/searchresults' render={() => {
 						return <SearchResultsCard 
 											courses={golfCourses}
 											displayCourseDetails={this.displayCourseDetails}
@@ -130,7 +145,7 @@ export class MainPage extends Component {
 
 					<Route exact path='/findcourses/searchresults/courseinfo/weather' render={() => {
 						return <WeatherCard />
-					}}/>
+					}}/>*/}
 			</div>
 		)
 	}
