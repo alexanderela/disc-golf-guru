@@ -32,8 +32,8 @@ class CourseInfoCard extends Component {
 					</button>
 				</div>
 				<div className='course-address'>
-					<p>{address}</p>
-					<p>{`${city}, ${state} ${zip}`}</p>
+					<p className='address-fields'>{address}</p>
+					<p className='address-fields'>{`${city}, ${state} ${zip}`}</p>
 				</div>
 
 				<p className='course-info'>
@@ -59,11 +59,6 @@ class CourseInfoCard extends Component {
 						Pay to play: 
 					</span> {isPayToPlay}
 				</p>
-
-				<button 
-					className='course-weather-btn'
-					onClick={() => displayWeather(id)}>
-					Course Weather Forecast</button>
 			</div>
 		)
 	}

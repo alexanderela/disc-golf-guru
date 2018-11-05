@@ -3,7 +3,7 @@
   color: #524949;
   width: 20rem;
   text-align: center;
-  margin: 1rem auto;
+  margin: 1.25rem auto;
   height: 24rem;
   background-color: #FFF;
   border-radius: 20px;
@@ -36,9 +36,8 @@
 
 .weather-info-header {
   font-weight: 700;
-  /*margin: 0 0 0 0.25rem;*/
 }
 
 .weather-info {
-  margin: 0.75rem 0;
+  margin: 0.6rem 0;
 }

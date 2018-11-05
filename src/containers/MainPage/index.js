@@ -96,19 +96,13 @@ export class MainPage extends Component {
 								</button>
 							</div>
 
-					: <NavLink 
-							to='/findcourses' 
-							className='back-to-search-link'>
-								<i className='fas fa-caret-left'></i>
-							Back to {match.path}</NavLink>
+					: <div></div>
 				}
 					<Route exact path='/findcourses' render={() => {
 						if (searchResultsSelected) {
 							return <Redirect to='/findcourses/searchresults' />
 						} else if (courseDetailsSelected) {
 								return <Redirect to='/findcourses/searchresults/courseinfo'/>
-						}	else if (!searchResultsSelected && !courseDetailsSelected && showWeather) {
-								return <Redirect to='/findcourses/searchresults/courseinfo/weather'/>
 						} else {
 								return null
 						}
@@ -131,8 +125,7 @@ export class MainPage extends Component {
 						</div>
 					}
 
-					{/*{showWeather &&
-					}										
+					{/*{				
 
 					<Route exact path='/findcourses/searchresults' render={() => {
 						return <SearchResultsCard 
