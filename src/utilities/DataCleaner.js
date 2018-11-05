@@ -1,14 +1,22 @@
 import * as API from './API.js'
 import * as APIKey from '../apiKeys'
 
-export const fetchGolfCoursesByZip = async (zipCode) => {
-	const url = `https://www.dgcoursereview.com/api_test/?key=${APIKey.discGolfKey}&mode=findzip&zip=${zipCode}&rad=10&sig=${APIKey.discGolfSig}`
+
+export const fetchGolfCoursesByZip = async (input) => {
+	let url;
+	const checkedInput = isValidZip(input);
+	if (checkedInput) {
+		url = `https://www.dgcoursereview.com/api_test/?key=${APIKey.discGolfKey}&mode=findzip&zip=${input}&rad=10&sig=${APIKey.discGolfSig}`
+	} else {
+		url = `https://www.dgcoursereview.com/api_test/?key=${APIKey.discGolfKey}&mode=findloc&city=${input}&rad=10&state=NY&country=US&sig=${APIKey.discGolfSig}`
+	}
+	
 	const golfCourseData = await API.fetchData(url)
 	const golfCourseResults = await returnGolfCourseData(golfCourseData, zipCode)
 	return golfCourseResults
 }
 
-export const returnGolfCourseData = async (golfCourses, zipCode) => {
+export const returnGolfCourseData = async (golfCourses) => {
 	const golfCoursePromises = golfCourses.map( async course => {
 		return {
 			id: course.course_id,
@@ -22,18 +30,22 @@ export const returnGolfCourseData = async (golfCourses, zipCode) => {
 			holes: course.holes,
 			rating: course.rating,
 			isPrivate: convertNumToBool(course.private),
-			isPayToPlay: convertNumToBool(course.paytoplay),
-			weather: await fetchCurrentWeatherByZip(zipCode),
+			isPayToPlay: convertNumToBool(course.paytoplay)
 		}
 	})
 	return Promise.all(golfCoursePromises)
 }
 
-export const fetchCurrentWeatherByZip = async (zipCode) => {
-	const url = `api.openweathermap.org/data/2.5/weather?zip=${zipCode}&units=imperial&APPID=${APIKey.weatherKey}`
+export const fetchCurrentWeather = async (input) => {
+	let url;
+	const checkedInput = isValidZip(input);
+	if (checkedInput) {
+		url = `api.openweathermap.org/data/2.5/weather?zip=${input}&units=imperial&APPID=${APIKey.weatherKey}`
+	} else {
+		url = `api.openweathermap.org/data/2.5/weather?q=${input}&units=imperial&APPID=${APIKey.weatherKey}`
+	}
 	const currentWeatherData = await API.fetchData(url)
 	const currentWeatherResults = await returnCurrentWeatherData(currentWeatherData)
-	console.log(currentWeatherResults)
 	return currentWeatherResults
 }
 
@@ -59,15 +71,10 @@ const convertNumToBool = (number) => {
 	}
 };
 
+const isValidZip = (input) => {
+   return /^\d{5}(-\d{4})?$/.test(input);
+}
 
 const capitalizeString = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
-}
-
-export const fetchWeather = async () => {
-
-}
-
-export const returnWeatherData = async () => {
-
 }
