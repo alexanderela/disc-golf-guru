@@ -1,4 +1,4 @@
-[
+const mockCoursesCleaned = [
   {
     "id": "4712",
     "name": "Genesee Valley Park",
@@ -9,9 +9,9 @@
     "country": "United States",
     "zip": "14620",
     "address": "99 Elmwood Ave.",
-    "reviews": "7",
     "rating": "3.29",
-    "payToPlay": "0"
+    "payToPlay": "No",
+    "private": "No"
   },
   {
     "id": "7628",
@@ -23,9 +23,9 @@
     "country": "United States",
     "zip": "14467",
     "address": "3850 East Henrietta Rd.",
-    "reviews": "4",
     "rating": "3.13",
-    "payToPlay": "0"
+    "payToPlay": "No",
+    "private": "No"
   },
   {
     "id": "4937",
@@ -37,9 +37,9 @@
     "country": "United States",
     "zip": "14623",
     "address": "",
-    "reviews": "16",
     "rating": "2.94",
-    "payToPlay": "0"
+    "payToPlay": "No",
+    "private": "No"
   },
   {
     "id": "6795",
@@ -51,9 +51,9 @@
     "country": "United States",
     "zip": "14610",
     "address": "",
-    "reviews": "12",
     "rating": "3.54",
-    "payToPlay": "0"
+    "payToPlay": "No",
+    "private": "No"
   },
   {
     "id": "6443",
@@ -65,8 +65,10 @@
     "country": "United States",
     "zip": "14580",
     "address": "750 Holt Rd.",
-    "reviews": "2",
     "rating": "1.75",
-    "payToPlay": "0"
+    "payToPlay": "No",
+    "private": "No"
   }
 ]
+
+export default mockCoursesCleaned

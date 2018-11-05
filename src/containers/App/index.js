@@ -19,7 +19,7 @@ class App extends Component {
       	<Nav />
 	      <Switch>
 	      	<Route exact path='/' render={() => <Home /> }/>
-	    		<Route path='/findcourses/' render={() => <MainPage pageName={'Find A Disc Golf Course'}/> }/>
+	    		<Route path='/findcourses' render={() => <MainPage pageName={'Find A Disc Golf Course'}/> }/>
           <Route path='/favorites' />
 	      </Switch>
       </div>
