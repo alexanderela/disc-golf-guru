@@ -6,9 +6,8 @@ import './MainPage.css';
 import * as DataCleaner from '../../utilities/DataCleaner';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import { NavLink } from 'react-router-dom';
-import { Route, Redirect, Switch } from 'react-router-dom';
-import { setCourses, setSelectedCourse } from '../../actions/courseActions';
+import { Route, Redirect } from 'react-router-dom';
+import { setCourses } from '../../actions/courseActions';
 import { toggleSearchResults } from '../../actions/searchResultsActions';
 import { toggleCourseDetails } from '../../actions/courseDetailsActions';
 import mockCoursesCleaned from '../../mockData/mockCoursesCleaned.js';
@@ -28,32 +27,24 @@ export class MainPage extends Component {
 
 	handleSubmit = (e) => {
 		e.preventDefault();
-		const { golfCourses } = this.props
 		this.getGolfCourses(this.state.searchTerms)
 		this.setState({ searchTerms: '' })
 	}
 
 	getGolfCourses = async (searchTerms) => {
-		const { setCourses, history, toggleSearchResults } = this.props
+		const { setCourses, toggleSearchResults } = this.props
 		// const fetchedGolfCourses = await DataCleaner.fetchGolfCoursesByZip(searchTerms)
 		// setCourses(fetchedGolfCourses)
 		setCourses(mockCoursesCleaned)
 		toggleSearchResults()
 	}
 
-	displayWeather = (id) => {
-		this.setState({ showWeather: true })
-		this.props.toggleCourseDetails()
-	}
-
 	render() {
-		const { pageName, golfCourses, match, searchResultsSelected, courseDetailsSelected } = this.props;
+		const { pageName, golfCourses, searchResultsSelected, courseDetailsSelected } = this.props;
 		const { searchTerms, showWeather } = this.state;
 
 		return(
-			<div className='MainPage'>
-				{ (!searchResultsSelected && !courseDetailsSelected && !showWeather) 
-					?	<div>
+			<form className='MainPage' onSubmit={this.handleSubmit}>
 							<p className='page-name'>{pageName}</p>
 							<input
 								type='search' 
@@ -62,8 +53,12 @@ export class MainPage extends Component {
 								value={searchTerms}
 								onChange={this.handleInputChange}
 							/>
-								<button className='submit-btn' onClick={this.handleSubmit}>Submit
+								<button 
+									type='submit' 
+									className='submit-btn'>Submit
 								</button>
+				{ (!searchResultsSelected && !courseDetailsSelected && !showWeather) 
+					?	<div>
 							</div>
 
 					: <div></div>
@@ -88,14 +83,11 @@ export class MainPage extends Component {
 							return course.id === match.params.id
 						})
 						return <div className='course-weather-container'>
-						<CourseInfoCard 
-											course={selectedCourse} 
-											displayWeather={this.displayWeather}
-										/>
-						<WeatherCard currentWeather={mockCurrentWeather}/>
-						</div>
+										<CourseInfoCard course={selectedCourse} />
+										<WeatherCard currentWeather={mockCurrentWeather}/>
+									</div>
 					}}/>
-			</div>
+			</form>
 		)
 	}
 }
@@ -103,8 +95,7 @@ export class MainPage extends Component {
 export const mapStateToProps = ({ golfCourses, searchResultsSelected, courseDetailsSelected }) => ({ golfCourses, searchResultsSelected, courseDetailsSelected });
 
 export const mapDispatchToProps = (dispatch) => ({
-	setCourses: (courses) => dispatch(setCourses(courses)),
-	setSelectedCourse: (course) => dispatch(setSelectedCourse(course)),
+	setCourses: (courses) => dispatch(setCourses(courses)),	
 	toggleSearchResults: () => dispatch(toggleSearchResults()),
 	toggleCourseDetails: () => dispatch(toggleCourseDetails())
 });

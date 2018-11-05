@@ -5,6 +5,7 @@ import Nav from '../Nav';
 import MainPage from '../MainPage';
 import { Route, Switch } from 'react-router-dom';
 import Home from '../../components/Home';
+import Error from '../../components/Error';
 import { withRouter } from 'react-router';
 import * as DataCleaner from '../../utilities/DataCleaner.js';
 
@@ -32,7 +33,8 @@ class App extends Component {
 	      	<Route exact path='/' render={() => <Home /> }/>
 	    		<Route path='/findcourses' render={() => <MainPage pageName={'Find A Disc Golf Course'}/> }/>
           <Route path='/favorites' />
-	      </Switch>
+          <Route path='*' exact={true} component={Error}/>
+        </Switch>
       </div>
     );
   }

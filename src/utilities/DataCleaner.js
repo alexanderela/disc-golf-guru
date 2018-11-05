@@ -41,8 +41,6 @@ export const fetchCurrentWeather = async (input) => {
 	const checkedInput = isValidZip(input);
 	if (checkedInput) {
 		url = `https://cors-anywhere.herokuapp.com/api.openweathermap.org/data/2.5/weather?zip=${input}&units=imperial&APPID=${APIKey.weatherKey}`
-		// `http://www.api.openweathermap.org/data/2.5/weather?zip=${input}&units=imperial&APPID=a1b5ca4a4ec033f354008b4971f71994`
-		
 	} else {
 		url = `https://cors-anywhere.herokuapp.com/api.openweathermap.org/data/2.5/weather?q=${input}&units=imperial&APPID=${APIKey.weatherKey}`
 	}
