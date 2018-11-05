@@ -6,10 +6,21 @@ import MainPage from '../MainPage';
 import { Route, Switch } from 'react-router-dom';
 import Home from '../../components/Home';
 import { withRouter } from 'react-router';
+import * as DataCleaner from '../../utilities/DataCleaner.js';
 
 class App extends Component {
   constructor() {
     super();
+    this.state = {
+      weather: []
+    }
+  }
+
+  async componentDidMount() {
+    // const zip = 14526
+    // const weather = await DataCleaner.fetchCurrentWeatherByZip(zip)
+    // console.log(weather)
+    // this.setState({ weather })
   }
 
   render() {

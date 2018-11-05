@@ -12,6 +12,7 @@ import { setCourses, setSelectedCourse } from '../../actions/courseActions';
 import { toggleSearchResults } from '../../actions/searchResultsActions';
 import { toggleCourseDetails } from '../../actions/courseDetailsActions';
 import mockCoursesCleaned from '../../mockData/mockCoursesCleaned.js';
+import mockCurrentWeather from '../../mockData/mockCurrentWeather.js'
 
 export class MainPage extends Component {
 	constructor(props) {
@@ -121,17 +122,19 @@ export class MainPage extends Component {
 					}
 
 					{courseDetailsSelected &&
+						<div className='course-weather-container'>
 						<CourseInfoCard 
 											course={golfCourses[0]} 
 											displayWeather={this.displayWeather}
 										/>
+						<WeatherCard currentWeather={mockCurrentWeather}/>
+						</div>
 					}
 
-					{showWeather &&
-						<WeatherCard />
+					{/*{showWeather &&
 					}										
 
-					{/*<Route exact path='/findcourses/searchresults' render={() => {
+					<Route exact path='/findcourses/searchresults' render={() => {
 						return <SearchResultsCard 
 											courses={golfCourses}
 											displayCourseDetails={this.displayCourseDetails}
