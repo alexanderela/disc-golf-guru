@@ -1,8 +1,16 @@
 import * as API from './API.js'
 import * as APIKey from '../apiKeys'
 
-export const fetchGolfCoursesByZip = async (enteredZipCode) => {
-	const url = `https://www.dgcoursereview.com/api_test/?key=${APIKey.discGolfKey}&mode=findzip&zip=${enteredZipCode}&rad=10&sig=${APIKey.discGolfSig}`
+
+export const fetchGolfCoursesByZip = async (input) => {
+	let url;
+	const checkedInput = isValidZip(input);
+	if (checkedInput) {
+		url = `https://www.dgcoursereview.com/api_test/?key=${APIKey.discGolfKey}&mode=findzip&zip=${input}&rad=10&sig=${APIKey.discGolfSig}`
+	} else {
+		url = `https://www.dgcoursereview.com/api_test/?key=${APIKey.discGolfKey}&mode=findloc&city=${input}&rad=10&state=NY&country=US&sig=${APIKey.discGolfSig}`
+	}
+	
 	const golfCourseData = await API.fetchData(url)
 	const golfCourseResults = await returnGolfCourseData(golfCourseData)
 	return golfCourseResults
@@ -28,6 +36,33 @@ export const returnGolfCourseData = async (golfCourses) => {
 	return Promise.all(golfCoursePromises)
 }
 
+export const fetchCurrentWeather = async (input) => {
+	let url;
+	const checkedInput = isValidZip(input);
+	if (checkedInput) {
+		url = `api.openweathermap.org/data/2.5/weather?zip=${input}&units=imperial&APPID=${APIKey.weatherKey}`
+	} else {
+		url = `api.openweathermap.org/data/2.5/weather?q=${input}&units=imperial&APPID=${APIKey.weatherKey}`
+	}
+	const currentWeatherData = await API.fetchData(url)
+	const currentWeatherResults = await returnCurrentWeatherData(currentWeatherData)
+	return currentWeatherResults
+}
+
+export const returnCurrentWeatherData = async (currentWeather) => {
+	const { id, main, weather, wind } = currentWeather
+	const currentWeatherPromise = 
+		{
+			id: id,
+			temp: main.temp,
+			description: capitalizeString(weather[0].description),
+			icon: weather[0].icon,
+			wind: wind.speed,
+			humidity: main.humidity
+		}
+	return Promise.resolve(currentWeatherPromise)
+}
+
 const convertNumToBool = (number) => {
 	if (number === '0') {
 		return 'No'
@@ -36,13 +71,10 @@ const convertNumToBool = (number) => {
 	}
 };
 
-export const fetchWeather = async () => {
-
+const isValidZip = (input) => {
+   return /^\d{5}(-\d{4})?$/.test(input);
 }
 
-export const returnWeatherData = async () => {
-
+const capitalizeString = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }
-
-
-

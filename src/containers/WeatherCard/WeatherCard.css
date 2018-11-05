@@ -1,0 +1,43 @@
+.WeatherCard {
+  border: 3px solid #febb00;
+  color: #524949;
+  width: 20rem;
+  text-align: center;
+  margin: 1.25rem auto;
+  height: 24rem;
+  background-color: #FFF;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 0 1rem 0;
+  box-shadow: 0px 0px 1px 2px #Feeb00;
+}
+
+.course-weather-container {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.current-weather-icon {
+  width: 6rem;
+}
+
+.weather-card-header {
+  font-size: 1.25rem;
+  color: #2c9a2c;
+  font-weight: 600;
+  overflow-wrap: break-word;
+  margin: 2rem 0;
+}
+
+.weather-info-header {
+  font-weight: 700;
+}
+
+.weather-info {
+  margin: 0.6rem 0;
+}

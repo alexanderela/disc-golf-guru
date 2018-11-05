@@ -10,8 +10,9 @@ class CourseInfoCard extends Component {
 	}
 
 	render() {
-		const { course } = this.props;
-		const { 
+		const { course, displayWeather } = this.props;
+		const {
+			id, 
 			name, 
 			address, 
 			city, state, 
@@ -31,36 +32,33 @@ class CourseInfoCard extends Component {
 					</button>
 				</div>
 				<div className='course-address'>
-					<p>{address}</p>
-					<p>{`${city}, ${state} ${zip}`}</p>
+					<p className='address-fields'>{address}</p>
+					<p className='address-fields'>{`${city}, ${state} ${zip}`}</p>
 				</div>
 
-				<p>
+				<p className='course-info'>
 					<span className='course-info-header'>
 						Number of holes:
 					</span> {holes}
 				</p>
 
-				<p>
+				<p className='course-info'>
 					<span className='course-info-header'>
 						Rating: 
 					</span> {rating}
 				</p>
 
-				<p>
+				<p className='course-info'>
 					<span className='course-info-header'>
 						Private: 
 					</span> {isPrivate}
 					</p>
 
-				<p>
+				<p className='course-info'>
 					<span className='course-info-header'>
 						Pay to play: 
 					</span> {isPayToPlay}
 				</p>
-
-				<button className='course-weather-btn'>
-					Course Weather Forecast</button>
 			</div>
 		)
 	}

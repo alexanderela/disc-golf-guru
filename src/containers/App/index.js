@@ -6,13 +6,21 @@ import MainPage from '../MainPage';
 import { Route, Switch } from 'react-router-dom';
 import Home from '../../components/Home';
 import { withRouter } from 'react-router';
+import * as DataCleaner from '../../utilities/DataCleaner.js';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      golfCourses: []
+      weather: []
     }
+  }
+
+  async componentDidMount() {
+    // const zip = 14526
+    // const weather = await DataCleaner.fetchCurrentWeatherByZip(zip)
+    // console.log(weather)
+    // this.setState({ weather })
   }
 
   render() {
@@ -21,11 +29,9 @@ class App extends Component {
       	<Header />
       	<Nav />
 	      <Switch>
-	      	<Route exact path='/' component={Home}/>
+	      	<Route exact path='/' render={() => <Home /> }/>
 	    		<Route path='/findcourses' render={() => <MainPage pageName={'Find A Disc Golf Course'}/> }/>
-	    		<Route path='/favorites' />
-          <Route path='/searchresults' />
-          <Route path='/courseinfo' />
+          <Route path='/favorites' />
 	      </Switch>
       </div>
     );
