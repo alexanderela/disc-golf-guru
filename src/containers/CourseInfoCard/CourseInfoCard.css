@@ -20,7 +20,7 @@
 	align-items: center;
 	justify-content: space-between;
 	width: 85%;
-	margin: 1rem 0 0;
+	margin: 1.25rem 0 0;
 }
 
 .favorite-btn {
@@ -61,12 +61,13 @@
 }
 
 .course-address {
-  font-size: 1.25rem;
-  line-height: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 0.75rem;
+	margin: 1.25rem 0 0;
 }
 
 .address-fields {
-	margin: 1rem 0 0.5rem;
+	margin: 1rem 0;
 }
 
 .course-info-header {

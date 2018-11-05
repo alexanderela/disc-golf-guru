@@ -12,7 +12,7 @@ export const fetchGolfCoursesByZip = async (input) => {
 	}
 	
 	const golfCourseData = await API.fetchData(url)
-	const golfCourseResults = await returnGolfCourseData(golfCourseData, zipCode)
+	const golfCourseResults = await returnGolfCourseData(golfCourseData)
 	return golfCourseResults
 }
 
