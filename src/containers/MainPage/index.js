@@ -43,25 +43,24 @@ export class MainPage extends Component {
 		// history.push({ pathname: '/searchresults'})
 	}
 
-	displayCourseDetails = (id) => {
-		const { golfCourses, setSelectedCourse, history, toggleSearchResults, toggleCourseDetails } = this.props
-		// const { showSearchResults } = this.state
+	// displayCourseDetails = (id) => {
+	// 	const { golfCourses, setSelectedCourse, history, toggleSearchResults, toggleCourseDetails } = this.props
+	// 	// const { showSearchResults } = this.state
 
-		toggleCourseDetails()
-		toggleSearchResults()
-		// if(toggleSearchResults) {
-			const selectedCourse = golfCourses.find(course => {
-				return course.id === id
-			})
-			setSelectedCourse(selectedCourse)
-			// this.setState({ 
-			// 	showCourseDetails: true, 
-			// 	showSearchResults: false 
-			// })
-			// history.push({ pathname: '/searchresults/courseinfo'})
-		return selectedCourse
-		// }
-	}
+	// 	toggleCourseDetails()
+	// 	toggleSearchResults()
+	// 	// if(toggleSearchResults) {
+	// 		const selectedCourse = golfCourses.find(course => {
+	// 			return course.id === id
+	// 		})
+	// 		// this.setState({ 
+	// 		// 	showCourseDetails: true, 
+	// 		// 	showSearchResults: false 
+	// 		// })
+	// 		// history.push({ pathname: '/searchresults/courseinfo'})
+	// 	return selectedCourse
+	// 	// }
+	// }
 
 	displayWeather = (id) => {
 		this.setState({ showWeather: true })
@@ -100,15 +99,13 @@ export class MainPage extends Component {
 				}
 					<Route exact path='/findcourses' render={() => {
 						if (searchResultsSelected) {
-							return <Redirect to='/findcourses/searchresults' />
-						} else if (courseDetailsSelected) {
-								return <Redirect to='/findcourses/searchresults/courseinfo'/>
+							return <Redirect to='/findcourses/searchresults' />							
 						} else {
 								return null
 						}
 					}}/>
 					
-					{searchResultsSelected &&
+					{/*{searchResultsSelected &&
 						<SearchResultsCard 
 											courses={golfCourses}
 											displayCourseDetails={this.displayCourseDetails}
@@ -125,7 +122,7 @@ export class MainPage extends Component {
 						</div>
 					}
 
-					{/*{				
+					{		*/}		
 
 					<Route exact path='/findcourses/searchresults' render={() => {
 						return <SearchResultsCard 
@@ -134,16 +131,18 @@ export class MainPage extends Component {
 										/>
 					}} />
 					
-					<Route exact path='/findcourses/searchresults/courseinfo' render={() => {
-						return <CourseInfoCard 
-											course={golfCourses[0]} 
+					<Route exact path='/findcourses/searchresults/courseinfo/:id' render={({match}) => {
+						const selectedCourse = golfCourses.find(course => {
+							return course.id === match.params.id
+						})
+						return <div className='course-weather-container'>
+						<CourseInfoCard 
+											course={selectedCourse} 
 											displayWeather={this.displayWeather}
 										/>
+						<WeatherCard currentWeather={mockCurrentWeather}/>
+						</div>
 					}}/>
-
-					<Route exact path='/findcourses/searchresults/courseinfo/weather' render={() => {
-						return <WeatherCard />
-					}}/>*/}
 			</div>
 		)
 	}
