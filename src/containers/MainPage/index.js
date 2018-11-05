@@ -83,14 +83,16 @@ export class MainPage extends Component {
 			<div className='MainPage'>
 				<p className='page-name'>{pageName}</p>
 				{ (!searchResultsSelected && !courseDetailsSelected && !showWeather) 
-					?	<div><input
-									type='search' 
-									placeholder='Search for a zip code or city' 
-									className='search-input'
-									value={searchTerms}
-									onChange={this.handleInputChange}
-								/>
-								<button onClick={this.handleSubmit}>Submit</button>
+					?	<div>
+							<input
+								type='search' 
+								placeholder='Search for a zip code or city' 
+								className='search-input'
+								value={searchTerms}
+								onChange={this.handleInputChange}
+							/>
+								<button className='submit-btn' onClick={this.handleSubmit}>Submit
+								</button>
 							</div>
 
 					: <NavLink 

@@ -10,8 +10,8 @@ const mockCoursesCleaned = [
     "zip": "14620",
     "address": "99 Elmwood Ave.",
     "rating": "3.29",
-    "payToPlay": "No",
-    "private": "No"
+    "isPayToPlay": "No",
+    "isPrivate": "No"
   },
   {
     "id": "7628",
@@ -24,8 +24,8 @@ const mockCoursesCleaned = [
     "zip": "14467",
     "address": "3850 East Henrietta Rd.",
     "rating": "3.13",
-    "payToPlay": "No",
-    "private": "No"
+    "isPayToPlay": "No",
+    "isPrivate": "No"
   },
   {
     "id": "4937",
@@ -38,8 +38,8 @@ const mockCoursesCleaned = [
     "zip": "14623",
     "address": "",
     "rating": "2.94",
-    "payToPlay": "No",
-    "private": "No"
+    "isPayToPlay": "No",
+    "isPrivate": "No"
   },
   {
     "id": "6795",
@@ -52,8 +52,8 @@ const mockCoursesCleaned = [
     "zip": "14610",
     "address": "",
     "rating": "3.54",
-    "payToPlay": "No",
-    "private": "No"
+    "isPayToPlay": "No",
+    "isPrivate": "No"
   },
   {
     "id": "6443",
@@ -66,8 +66,8 @@ const mockCoursesCleaned = [
     "zip": "14580",
     "address": "750 Holt Rd.",
     "rating": "1.75",
-    "payToPlay": "No",
-    "private": "No"
+    "isPayToPlay": "No",
+    "isPrivate": "No"
   }
 ]
 
