@@ -40,9 +40,11 @@ export const fetchCurrentWeather = async (input) => {
 	let url;
 	const checkedInput = isValidZip(input);
 	if (checkedInput) {
-		url = `api.openweathermap.org/data/2.5/weather?zip=${input}&units=imperial&APPID=${APIKey.weatherKey}`
+		url = `https://cors-anywhere.herokuapp.com/api.openweathermap.org/data/2.5/weather?zip=${input}&units=imperial&APPID=${APIKey.weatherKey}`
+		// `http://www.api.openweathermap.org/data/2.5/weather?zip=${input}&units=imperial&APPID=a1b5ca4a4ec033f354008b4971f71994`
+		
 	} else {
-		url = `api.openweathermap.org/data/2.5/weather?q=${input}&units=imperial&APPID=${APIKey.weatherKey}`
+		url = `https://cors-anywhere.herokuapp.com/api.openweathermap.org/data/2.5/weather?q=${input}&units=imperial&APPID=${APIKey.weatherKey}`
 	}
 	const currentWeatherData = await API.fetchData(url)
 	const currentWeatherResults = await returnCurrentWeatherData(currentWeatherData)
