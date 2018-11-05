@@ -10,6 +10,11 @@ describe('weatherReducer', () => {
 	})
 
 	it('should set current weather as new state', () => {
-		
+			const mockAction =  {
+				type: 'SET_WEATHER',
+				weather: mockWeather  	
+			}
+			const expected = weatherReducer([], mockAction);
+			expect(expected).toEqual(mockWeather);
 	})
 })
