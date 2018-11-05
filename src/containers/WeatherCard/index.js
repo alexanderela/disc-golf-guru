@@ -12,15 +12,15 @@ class WeatherCard extends Component {
 
 	render() {
 		const { id, temp, description, wind, humidity, icon } = this.props.currentWeather
-		console.log(this.props)
+
 		return(
 			<div className='WeatherCard'>
 				<h2 className='weather-card-header'>Current Weather</h2>	
 				<img
-              src={Icons[icon]} 
-              alt="Icon representing current weather conditions"
-              className="current-weather-icon"
-            />		
+          src={Icons[icon]} 
+          alt="Icon representing current weather conditions"
+          className="current-weather-icon"
+        />		
         <p className='weather-info'>
 					<span className='weather-info-header'>
 						Temperature:
@@ -47,12 +47,3 @@ class WeatherCard extends Component {
 }
 
 export default WeatherCard
-
-
-// const mockCurrentWeather =  {
-//     id: 420026615,
-//     temp: 43.77,
-//     description: 'broken clouds',
-//     wind: 8.05,
-//     humidity: 76
-// }

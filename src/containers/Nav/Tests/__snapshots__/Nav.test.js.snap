@@ -3,7 +3,7 @@
 exports[`Nav should render like snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Nav />,
+  Symbol(enzyme.__unrendered__): <withRouter(Nav) />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -15,271 +15,25 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "class",
     "props": Object {
-      "children": Array [
-        <NavLink
-          activeClassName="active"
-          aria-current="page"
-          to="/"
-        >
-          <button
-            className="nav-button"
-          >
-            Home
-          </button>
-        </NavLink>,
-        <NavLink
-          activeClassName="active"
-          aria-current="page"
-          to="/findcourses"
-        >
-          <button
-            className="nav-button"
-          >
-            Find A Course
-          </button>
-        </NavLink>,
-        <NavLink
-          activeClassName="active"
-          aria-current="page"
-          to="/favorites"
-        >
-          <button
-            className="nav-button"
-          >
-            Favorite Courses
-          </button>
-        </NavLink>,
-      ],
-      "className": "Nav",
+      "children": [Function],
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "activeClassName": "active",
-          "aria-current": "page",
-          "children": <button
-            className="nav-button"
-          >
-            Home
-          </button>,
-          "to": "/",
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Home",
-            "className": "nav-button",
-          },
-          "ref": null,
-          "rendered": "Home",
-          "type": "button",
-        },
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "activeClassName": "active",
-          "aria-current": "page",
-          "children": <button
-            className="nav-button"
-          >
-            Find A Course
-          </button>,
-          "to": "/findcourses",
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Find A Course",
-            "className": "nav-button",
-          },
-          "ref": null,
-          "rendered": "Find A Course",
-          "type": "button",
-        },
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "activeClassName": "active",
-          "aria-current": "page",
-          "children": <button
-            className="nav-button"
-          >
-            Favorite Courses
-          </button>,
-          "to": "/favorites",
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Favorite Courses",
-            "className": "nav-button",
-          },
-          "ref": null,
-          "rendered": "Favorite Courses",
-          "type": "button",
-        },
-        "type": [Function],
-      },
-    ],
-    "type": "div",
+    "rendered": [Function],
+    "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "host",
+      "nodeType": "class",
       "props": Object {
-        "children": Array [
-          <NavLink
-            activeClassName="active"
-            aria-current="page"
-            to="/"
-          >
-            <button
-              className="nav-button"
-            >
-              Home
-            </button>
-          </NavLink>,
-          <NavLink
-            activeClassName="active"
-            aria-current="page"
-            to="/findcourses"
-          >
-            <button
-              className="nav-button"
-            >
-              Find A Course
-            </button>
-          </NavLink>,
-          <NavLink
-            activeClassName="active"
-            aria-current="page"
-            to="/favorites"
-          >
-            <button
-              className="nav-button"
-            >
-              Favorite Courses
-            </button>
-          </NavLink>,
-        ],
-        "className": "Nav",
+        "children": [Function],
       },
       "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "activeClassName": "active",
-            "aria-current": "page",
-            "children": <button
-              className="nav-button"
-            >
-              Home
-            </button>,
-            "to": "/",
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Home",
-              "className": "nav-button",
-            },
-            "ref": null,
-            "rendered": "Home",
-            "type": "button",
-          },
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "activeClassName": "active",
-            "aria-current": "page",
-            "children": <button
-              className="nav-button"
-            >
-              Find A Course
-            </button>,
-            "to": "/findcourses",
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Find A Course",
-              "className": "nav-button",
-            },
-            "ref": null,
-            "rendered": "Find A Course",
-            "type": "button",
-          },
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "activeClassName": "active",
-            "aria-current": "page",
-            "children": <button
-              className="nav-button"
-            >
-              Favorite Courses
-            </button>,
-            "to": "/favorites",
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Favorite Courses",
-              "className": "nav-button",
-            },
-            "ref": null,
-            "rendered": "Favorite Courses",
-            "type": "button",
-          },
-          "type": [Function],
-        },
-      ],
-      "type": "div",
+      "rendered": [Function],
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {

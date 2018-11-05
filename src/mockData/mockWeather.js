@@ -1,5 +1,5 @@
 
-const mockCurrentWeather =  {
+const mockWeather =  {
     id: 420026615,
     temp: 43.77,
     description: 'broken clouds',
@@ -8,7 +8,7 @@ const mockCurrentWeather =  {
     icon: '01d'
 }
 
-export default mockCurrentWeather
+export default mockWeather
 
 
 

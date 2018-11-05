@@ -11,7 +11,7 @@ import { setCourses } from '../../actions/courseActions';
 import { toggleSearchResults } from '../../actions/searchResultsActions';
 import { toggleCourseDetails } from '../../actions/courseDetailsActions';
 import mockCoursesCleaned from '../../mockData/mockCoursesCleaned.js';
-import mockCurrentWeather from '../../mockData/mockCurrentWeather.js'
+import mockWeather from '../../mockData/mockWeather.js'
 
 export class MainPage extends Component {
 	constructor(props) {
@@ -57,12 +57,7 @@ export class MainPage extends Component {
 									type='submit' 
 									className='submit-btn'>Submit
 								</button>
-				{ (!searchResultsSelected && !courseDetailsSelected && !showWeather) 
-					?	<div>
-							</div>
 
-					: <div></div>
-				}
 					<Route exact path='/findcourses' render={() => {
 						if (searchResultsSelected) {
 							return <Redirect to='/findcourses/searchresults' />							
@@ -84,7 +79,7 @@ export class MainPage extends Component {
 						})
 						return <div className='course-weather-container'>
 										<CourseInfoCard course={selectedCourse} />
-										<WeatherCard currentWeather={mockCurrentWeather}/>
+										<WeatherCard currentWeather={mockWeather}/>
 									</div>
 					}}/>
 			</form>

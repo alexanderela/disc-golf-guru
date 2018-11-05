@@ -4,7 +4,80 @@ exports[`MainPage should render like snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <MainPage
-    golfCourses={Object {}}
+    golfCourses={
+      Array [
+        Object {
+          "address": "99 Elmwood Ave.",
+          "city": "Rochester",
+          "country": "United States",
+          "holes": "18",
+          "id": "4712",
+          "isFavorite": false,
+          "isPayToPlay": "No",
+          "isPrivate": "No",
+          "name": "Genesee Valley Park",
+          "rating": "3.29",
+          "state": "NY",
+          "zip": "14620",
+        },
+        Object {
+          "address": "3850 East Henrietta Rd.",
+          "city": "Henrietta",
+          "country": "United States",
+          "holes": "9",
+          "id": "7628",
+          "isFavorite": false,
+          "isPayToPlay": "No",
+          "isPrivate": "No",
+          "name": "Lookup Park",
+          "rating": "3.13",
+          "state": "NY",
+          "zip": "14467",
+        },
+        Object {
+          "address": "",
+          "city": "Henrietta",
+          "country": "United States",
+          "holes": "18",
+          "id": "4937",
+          "isFavorite": false,
+          "isPayToPlay": "No",
+          "isPrivate": "No",
+          "name": "Monroe Community College DGC",
+          "rating": "2.94",
+          "state": "NY",
+          "zip": "14623",
+        },
+        Object {
+          "address": "",
+          "city": "Rochester",
+          "country": "United States",
+          "holes": "18",
+          "id": "6795",
+          "isFavorite": false,
+          "isPayToPlay": "No",
+          "isPrivate": "No",
+          "name": "Ellison Park",
+          "rating": "3.54",
+          "state": "NY",
+          "zip": "14610",
+        },
+        Object {
+          "address": "750 Holt Rd.",
+          "city": "Webster",
+          "country": "United States",
+          "holes": "9",
+          "id": "6443",
+          "isFavorite": false,
+          "isPayToPlay": "No",
+          "isPrivate": "No",
+          "name": "North Ponds DGC",
+          "rating": "1.75",
+          "state": "NY",
+          "zip": "14580",
+        },
+      ]
+    }
     setCourses={[MockFunction]}
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -31,8 +104,27 @@ ShallowWrapper {
           type="search"
           value=""
         />,
-        false,
-        false,
+        <button
+          className="submit-btn"
+          type="submit"
+        >
+          Submit
+        </button>,
+        <Route
+          exact={true}
+          path="/findcourses"
+          render={[Function]}
+        />,
+        <Route
+          exact={true}
+          path="/findcourses/searchresults"
+          render={[Function]}
+        />,
+        <Route
+          exact={true}
+          path="/findcourses/searchresults/courseinfo/:id"
+          render={[Function]}
+        />,
       ],
       "className": "MainPage",
       "onSubmit": [Function],
@@ -66,8 +158,58 @@ ShallowWrapper {
         "rendered": null,
         "type": "input",
       },
-      false,
-      false,
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Submit",
+          "className": "submit-btn",
+          "type": "submit",
+        },
+        "ref": null,
+        "rendered": "Submit",
+        "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "exact": true,
+          "path": "/findcourses",
+          "render": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "exact": true,
+          "path": "/findcourses/searchresults",
+          "render": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "exact": true,
+          "path": "/findcourses/searchresults/courseinfo/:id",
+          "render": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
     ],
     "type": "form",
   },
@@ -88,8 +230,27 @@ ShallowWrapper {
             type="search"
             value=""
           />,
-          false,
-          false,
+          <button
+            className="submit-btn"
+            type="submit"
+          >
+            Submit
+          </button>,
+          <Route
+            exact={true}
+            path="/findcourses"
+            render={[Function]}
+          />,
+          <Route
+            exact={true}
+            path="/findcourses/searchresults"
+            render={[Function]}
+          />,
+          <Route
+            exact={true}
+            path="/findcourses/searchresults/courseinfo/:id"
+            render={[Function]}
+          />,
         ],
         "className": "MainPage",
         "onSubmit": [Function],
@@ -123,8 +284,58 @@ ShallowWrapper {
           "rendered": null,
           "type": "input",
         },
-        false,
-        false,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Submit",
+            "className": "submit-btn",
+            "type": "submit",
+          },
+          "ref": null,
+          "rendered": "Submit",
+          "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "exact": true,
+            "path": "/findcourses",
+            "render": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "exact": true,
+            "path": "/findcourses/searchresults",
+            "render": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "exact": true,
+            "path": "/findcourses/searchresults/courseinfo/:id",
+            "render": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
       ],
       "type": "form",
     },
