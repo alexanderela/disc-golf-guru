@@ -39,41 +39,12 @@ export class MainPage extends Component {
 		// setCourses(fetchedGolfCourses)
 		setCourses(mockCoursesCleaned)
 		toggleSearchResults()
-		// this.setState({ showSearchResults: true, showCourseDetails: false })
-		// history.push({ pathname: '/searchresults'})
 	}
-
-	// displayCourseDetails = (id) => {
-	// 	const { golfCourses, setSelectedCourse, history, toggleSearchResults, toggleCourseDetails } = this.props
-	// 	// const { showSearchResults } = this.state
-
-	// 	toggleCourseDetails()
-	// 	toggleSearchResults()
-	// 	// if(toggleSearchResults) {
-	// 		const selectedCourse = golfCourses.find(course => {
-	// 			return course.id === id
-	// 		})
-	// 		// this.setState({ 
-	// 		// 	showCourseDetails: true, 
-	// 		// 	showSearchResults: false 
-	// 		// })
-	// 		// history.push({ pathname: '/searchresults/courseinfo'})
-	// 	return selectedCourse
-	// 	// }
-	// }
 
 	displayWeather = (id) => {
 		this.setState({ showWeather: true })
 		this.props.toggleCourseDetails()
 	}
-
-	// clearDisplay = () => {
-	// 	this.setState({ 
-	// 		showCourseDetails: false, 
-	// 		showSearchResults: false,
-	// 		showWeather: false 
-	// 	})
-	// }
 
 	render() {
 		const { pageName, golfCourses, match, searchResultsSelected, courseDetailsSelected } = this.props;
@@ -104,25 +75,6 @@ export class MainPage extends Component {
 								return null
 						}
 					}}/>
-					
-					{/*{searchResultsSelected &&
-						<SearchResultsCard 
-											courses={golfCourses}
-											displayCourseDetails={this.displayCourseDetails}
-										/>
-					}
-
-					{courseDetailsSelected &&
-						<div className='course-weather-container'>
-						<CourseInfoCard 
-											course={golfCourses[0]} 
-											displayWeather={this.displayWeather}
-										/>
-						<WeatherCard currentWeather={mockCurrentWeather}/>
-						</div>
-					}
-
-					{		*/}		
 
 					<Route exact path='/findcourses/searchresults' render={() => {
 						return <SearchResultsCard 
