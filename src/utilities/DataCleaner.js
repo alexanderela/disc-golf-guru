@@ -4,7 +4,9 @@ import * as APIKey from '../apiKeys'
 
 export const fetchGolfCourseData = async (input) => {
 	let url;
-	const checkedInput = isValidZip(input);
+	const checkedInput = validateZip(input);
+		console.log(checkedInput)
+
 	if (checkedInput) {
 		url = `https://www.dgcoursereview.com/api_test/?key=${APIKey.discGolfKey}&mode=findzip&zip=${input}&rad=10&sig=${APIKey.discGolfSig}`
 	} else {
@@ -29,8 +31,8 @@ export const formatGolfCourseData = async (golfCourses) => {
 			country: course.country,
 			holes: course.holes,
 			rating: course.rating,
-			isPrivate: convertNumToBool(course.private),
-			isPayToPlay: convertNumToBool(course.paytoplay)
+			isPrivate: convertNumberToBoolean(course.private),
+			isPayToPlay: convertNumberToBoolean(course.paytoplay)
 		}
 	})
 	return Promise.all(golfCoursePromises)
@@ -38,7 +40,7 @@ export const formatGolfCourseData = async (golfCourses) => {
 
 export const fetchWeatherData = async (input) => {
 	let url;
-	const checkedInput = isValidZip(input);
+	const checkedInput = validateZip(input);
 	if (checkedInput) {
 		url = `https://cors-anywhere.herokuapp.com/api.openweathermap.org/data/2.5/weather?zip=${input}&units=imperial&APPID=${APIKey.weatherKey}`
 	} else {
@@ -63,7 +65,7 @@ export const formatWeatherData = async (weatherData) => {
 	return Promise.resolve(weatherPromise)
 }
 
-const convertNumToBool = (number) => {
+export const convertNumberToBoolean = (number) => {
 	if (number === '0') {
 		return 'No'
 	} else {
@@ -71,10 +73,10 @@ const convertNumToBool = (number) => {
 	}
 };
 
-const isValidZip = (input) => {
+export const validateZip = (input) => {
    return /^\d{5}(-\d{4})?$/.test(input);
 }
 
-const capitalizeString = (string) => {
+export const capitalizeString = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }

@@ -10,18 +10,13 @@
 	border-radius: 20px;
 	border-style: solid;
   box-shadow: 0px 0px 1px 2px #Feeb00;
-	/*font-family: 'Open Sans', sans-serif;*/
-font-family: 'Poppins', sans-serif;
-/*font-family: 'Varela Round', sans-serif;*/
-/*font-family: 'Hammersmith One', sans-serif;*/
-/*font-family: 'IBM Plex Sans', sans-serif;*/
-/*font-family: 'Allerta', sans-serif;*/
+	font-family: 'Poppins', sans-serif;
 	font-size: 1rem;
 	font-weight: 600;
 	height: 3rem;
   outline-width: 0;
 	padding: 0 1rem 0 1rem;
-	width: 60%;
+	width: 40%;
 }
 
 .search-input::-webkit-search-cancel-button{
@@ -61,34 +56,3 @@ font-family: 'Poppins', sans-serif;
 .fa-caret-left {
 	margin: 0 0.25rem 0 0;
 }
-
-/*Home CSS*/
-
-/*.Home {
-	align-items: center;
-	background-color: #FFF;
-	border-radius: 10px;
-	display: flex;
-	flex-direction: column;
-	height: 15rem;
-	justify-content: space-around;
-	margin: 1.1rem 14rem;
-	padding: 0 2rem;
-}
-
-.home-intro {
-	font-size: 1.5rem;
-	line-height: 2rem;
-}
-
-.home-search {
-	border: 3px solid #febb00;
-	border-radius: 20px;
-	border-style: solid;
-	font-family: 'Open Sans', sans-serif;
-	font-size: 1rem;
-	height: 3rem;
-  outline-width: 0;
-	padding: 0 0 0 1rem;
-	width: 66%;
-}*/

@@ -2,29 +2,19 @@
   align-items: center;
   background-color: #febb00;
   background-color: #FFF;
-  width: 100%;
   display: flex;
   justify-content: center;
   padding: 0.7rem 0 1rem 0;
-  /*border: 3px solid #febb00;*/
+  width: 100%;
 }
-
-/*.button-container {
-  padding: 0.1rem 2.25rem 0.4rem;
-  margin: 0.25rem 0 0.25rem;
-	border-radius: 10px;
-	background-color: #FFF;
-}*/
-
 .nav-btn {
-  /*border: 3px solid #febb00;*/
   border-radius: 10px;
   cursor: pointer;
   font-family: poppins;
   font-size: 1.25rem;
   font-weight: 600;
   height: 3rem;
-  margin: 0.5rem 0.5rem 0.25rem;
+  margin: 0.5rem 1rem 0.25rem;
   outline-width: 0;
   width: 13rem;
 }
@@ -32,9 +22,6 @@
 .nav-btn:hover {
   background-color: #76ce76;
   color: #382626;
-  /*border: 3px solid #2c9a2c;*/
-  /*box-shadow: #000 5px 5px 5px;*/
-  /*text-shadow: #000 5px 5px 5px;*/
 }
 
 .nav-btn-active {

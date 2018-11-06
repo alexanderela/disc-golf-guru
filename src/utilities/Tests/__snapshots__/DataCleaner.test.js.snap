@@ -1,3 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`DataCleaner formatGolfCourseData should format golf course objects 1`] = `Promise {}`;
+
 exports[`DataCleaner returnGolfCourseData should format golf course objects 1`] = `Promise {}`;
