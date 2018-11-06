@@ -5,14 +5,14 @@ import { shallow } from 'enzyme';
 import mockCoursesCleaned from '../../../mockData/mockCoursesCleaned.js';
 
 describe('SearchResultsCard', () => {
-	let wrapper;
-	let mockCourses;
+  let wrapper;
+  let mockCourses;
 
-	beforeEach(() => {
-		wrapper = shallow(<SearchResultsCard courses={mockCoursesCleaned} />);
-	})
+  beforeEach(() => {
+    wrapper = shallow(<SearchResultsCard courses={mockCoursesCleaned} />);
+  });
 
-	it('should render like snapshot', () => {
-		expect(wrapper).toMatchSnapshot();
-	})	
-})
+  it('should render like snapshot', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+});

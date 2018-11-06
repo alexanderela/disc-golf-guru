@@ -11,55 +11,62 @@ import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 
 class App extends Component {
-
   filterFavorites = () => {
-    const { golfCourses } = this.props
-    const filteredFavorites = golfCourses.filter((course) => course.isFavorite)
-    this.setLocalStorage('favorites', filteredFavorites)
-    return filteredFavorites
-  }
+    const { golfCourses } = this.props;
+    const filteredFavorites = golfCourses.filter(course => course.isFavorite);
+    this.setLocalStorage('favorites', filteredFavorites);
+    return filteredFavorites;
+  };
 
   setLocalStorage = (key, category) => {
-    localStorage.setItem(key, JSON.stringify(category))
-  }
+    localStorage.setItem(key, JSON.stringify(category));
+  };
 
-  getLocalStorage = (categoryName) => {
-    if(localStorage.length) {
-      return JSON.parse(localStorage.getItem(categoryName))
+  getLocalStorage = categoryName => {
+    if (localStorage.length) {
+      return JSON.parse(localStorage.getItem(categoryName));
     }
-  }
+  };
 
-  checkLocalStorage = (course) => {
+  checkLocalStorage = course => {
     if (localStorage.favorites.length) {
-      const retrievedFavorites = this.getLocalStorage('favorites')
-      return retrievedFavorites
+      const retrievedFavorites = this.getLocalStorage('favorites');
+      return retrievedFavorites;
     } else {
-      this.filterFavorites()
+      this.filterFavorites();
     }
-  }
+  };
 
   render() {
-    const filteredFavorites = this.checkLocalStorage()
+    const filteredFavorites = this.checkLocalStorage();
 
     return (
       <div className="App">
-      	<Header />
-      	 <Nav />
-	      <Switch>
-	      	<Route exact path='/' render={() => <Home /> }/>
-	    		<Route 
-            path='/findcourses' 
-            render={() => <MainPage 
-            pageName={'Find A Disc Golf Course'}/> }/>
-          <Route 
-            path='/favorites' 
-            render={() => filteredFavorites.length 
-              ? <CardContainer favorites={filteredFavorites} />
-              : <Error message={'You currently have no favorites selected'}/> }/>
-          <Route 
-            path='*' 
-            exact={true} 
-            render={() => <Error message='The page you are looking for does not exist.'/>}/>
+        <Header />
+        <Nav />
+        <Switch>
+          <Route exact path="/" render={() => <Home />} />
+          <Route
+            path="/findcourses"
+            render={() => <MainPage pageName={'Find A Disc Golf Course'} />}
+          />
+          <Route
+            path="/favorites"
+            render={() =>
+              filteredFavorites.length ? (
+                <CardContainer favorites={filteredFavorites} />
+              ) : (
+                <Error message={'You currently have no favorites selected'} />
+              )
+            }
+          />
+          <Route
+            path="*"
+            exact={true}
+            render={() => (
+              <Error message="The page you are looking for does not exist." />
+            )}
+          />
         </Switch>
       </div>
     );
@@ -68,6 +75,11 @@ class App extends Component {
 
 export const mapStateToProps = ({ golfCourses }) => ({ golfCourses });
 
-export const mapDispatchToProps = (dispatch) => ({})
+export const mapDispatchToProps = dispatch => ({});
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(App)
+);

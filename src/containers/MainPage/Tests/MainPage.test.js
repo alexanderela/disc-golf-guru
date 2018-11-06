@@ -8,146 +8,150 @@ import mockCoursesCleaned from '../../../mockData/mockCoursesCleaned.js';
 jest.mock('../../../utilities/API');
 
 describe('MainPage', () => {
-	let mockFunc;
-	let wrapper;
-	let mockFetchGolfCourses;
-	let mockFetchWeather;
-	let mockToggleSearch;
-	let mockToggleCourse;
+  let mockFunc;
+  let wrapper;
+  let mockFetchGolfCourses;
+  let mockFetchWeather;
+  let mockToggleSearch;
+  let mockToggleCourse;
 
-	beforeEach(() => {
-		mockFunc = jest.fn();
-		mockFetchGolfCourses = jest.fn();
-		mockFetchWeather = jest.fn();
-		mockToggleSearch = jest.fn();
-		mockToggleCourse = jest.fn();
-		wrapper = shallow(
-									<MainPage 
-										fetchGolfCourses={mockFetchGolfCourses} 
-										fetchWeather={mockFetchWeather} 
-										golfCourses={mockCoursesCleaned}
-										toggleSearchResults={mockToggleSearch}
-										toggleCourseDetails={mockToggleCourse}/>);
-	})
+  beforeEach(() => {
+    mockFunc = jest.fn();
+    mockFetchGolfCourses = jest.fn();
+    mockFetchWeather = jest.fn();
+    mockToggleSearch = jest.fn();
+    mockToggleCourse = jest.fn();
+    wrapper = shallow(
+      <MainPage
+        fetchGolfCourses={mockFetchGolfCourses}
+        fetchWeather={mockFetchWeather}
+        golfCourses={mockCoursesCleaned}
+        toggleSearchResults={mockToggleSearch}
+        toggleCourseDetails={mockToggleCourse}
+      />
+    );
+  });
 
-	it('should render like snapshot', () => {
-		expect(wrapper).toMatchSnapshot()
-	})
-	
-	describe('handleInputChange', () => {
-		let mockEvent;
+  it('should render like snapshot', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
 
-		beforeEach(() => {
-			mockEvent = { target: { value: 'white plains'} }
-		})
+  describe('handleInputChange', () => {
+    let mockEvent;
 
-		it('should call handleInputChange when searchTerms are changed', () => {
-			const spy = spyOn(wrapper.instance(), 'handleInputChange');
-			wrapper.instance().forceUpdate();
-			wrapper.find('.search-input').simulate('change', mockEvent)
-			expect(spy).toHaveBeenCalled()
-		})
+    beforeEach(() => {
+      mockEvent = { target: { value: 'white plains' } };
+    });
 
-		it('should update state', () => {
-			wrapper.instance().handleInputChange(mockEvent);
-			expect(wrapper.state('searchTerms')).toBe('white plains')
-		})
-	})
+    it('should call handleInputChange when searchTerms are changed', () => {
+      const spy = spyOn(wrapper.instance(), 'handleInputChange');
+      wrapper.instance().forceUpdate();
+      wrapper.find('.search-input').simulate('change', mockEvent);
+      expect(spy).toHaveBeenCalled();
+    });
 
-	describe('handleSubmit', () => {
-		let mockEvent;
+    it('should update state', () => {
+      wrapper.instance().handleInputChange(mockEvent);
+      expect(wrapper.state('searchTerms')).toBe('white plains');
+    });
+  });
 
-		beforeEach(() => {
-			mockEvent = { preventDefault: jest.fn() }
-		})
-		
-		it('should call handleSubmit upon submission of form', () => {
-			const spy = spyOn(wrapper.instance(), 'handleSubmit');
-			wrapper.instance().forceUpdate();
-			wrapper.find('form').simulate('submit', mockEvent)
-			expect(spy).toHaveBeenCalled();
-		})
+  describe('handleSubmit', () => {
+    let mockEvent;
 
-		it('should call getGolfCourses when handleSubmit is called', () => {
-			wrapper.instance().getGolfCourses = jest.fn();
-			wrapper.instance().handleSubmit(mockEvent);
-			expect(wrapper.instance().getGolfCourses).toHaveBeenCalled();
-		})
+    beforeEach(() => {
+      mockEvent = { preventDefault: jest.fn() };
+    });
 
-		it('should update state', () => {
-			wrapper.setState({ searchTerms: 'white plains' })
-			wrapper.instance().handleSubmit(mockEvent);
-			expect(wrapper.state('searchTerms')).toBe('');
-		})
-	})
+    it('should call handleSubmit upon submission of form', () => {
+      const spy = spyOn(wrapper.instance(), 'handleSubmit');
+      wrapper.instance().forceUpdate();
+      wrapper.find('form').simulate('submit', mockEvent);
+      expect(spy).toHaveBeenCalled();
+    });
 
-	describe('getGolfCourses', () => {
-		let mockZip;
+    it('should call getGolfCourses when handleSubmit is called', () => {
+      wrapper.instance().getGolfCourses = jest.fn();
+      wrapper.instance().handleSubmit(mockEvent);
+      expect(wrapper.instance().getGolfCourses).toHaveBeenCalled();
+    });
 
-		beforeEach(() => {
-			mockZip = 14526;
-		})
+    it('should update state', () => {
+      wrapper.setState({ searchTerms: 'white plains' });
+      wrapper.instance().handleSubmit(mockEvent);
+      expect(wrapper.state('searchTerms')).toBe('');
+    });
+  });
 
-		it('should call fetchGolfCourses when getGolfCourses is called', async () => {
-			await wrapper.instance().getGolfCourses(mockZip);
-			expect(mockFetchGolfCourses).toHaveBeenCalled();
-		})
+  describe('getGolfCourses', () => {
+    let mockZip;
 
-		it('should call toggleSearchResults when getGolfCourses is called', async () => {
-			await wrapper.instance().getGolfCourses(mockZip);
-			expect(mockToggleSearch).toHaveBeenCalled();
-		})
-	})
+    beforeEach(() => {
+      mockZip = 14526;
+    });
 
-	describe('mapStateToProps', () => {
-		it('should create the correct props object', () => {
-			const expected = {
-				golfCourses: [{ id: 1234, name: 'mockCourse1'}, { id: 4321, name: 'mockCourse2'}]
-			}
-			const result = mapStateToProps(expected);
-			expect(result).toEqual(expected);
-		})
-	})
+    it('should call fetchGolfCourses when getGolfCourses is called', async () => {
+      await wrapper.instance().getGolfCourses(mockZip);
+      expect(mockFetchGolfCourses).toHaveBeenCalled();
+    });
 
-	describe('mapDispatchToProps', () => {
-		let dispatch;
+    it('should call toggleSearchResults when getGolfCourses is called', async () => {
+      await wrapper.instance().getGolfCourses(mockZip);
+      expect(mockToggleSearch).toHaveBeenCalled();
+    });
+  });
 
-		beforeEach(() => {
-			dispatch = jest.fn();
-		})
+  describe('mapStateToProps', () => {
+    it('should create the correct props object', () => {
+      const expected = {
+        golfCourses: [
+          { id: 1234, name: 'mockCourse1' },
+          { id: 4321, name: 'mockCourse2' },
+        ],
+      };
+      const result = mapStateToProps(expected);
+      expect(result).toEqual(expected);
+    });
+  });
 
-		it('should map a key of fetchGolfCourses', () => {
-			const dispatchedProps = mapDispatchToProps(dispatch);
-			expect(dispatchedProps.fetchGolfCourses).toBeDefined()
-		})
+  describe('mapDispatchToProps', () => {
+    let dispatch;
 
-		it('should map a key of toggleSearchResults', () => {
-			const dispatchedProps = mapDispatchToProps(dispatch);
-			expect(dispatchedProps.toggleSearchResults).toBeDefined()
-		})
+    beforeEach(() => {
+      dispatch = jest.fn();
+    });
 
-		it('should map a key of toggleCourseDetails', () => {
-			const dispatchedProps = mapDispatchToProps(dispatch);
-			expect(dispatchedProps.toggleCourseDetails).toBeDefined()
-		})
+    it('should map a key of fetchGolfCourses', () => {
+      const dispatchedProps = mapDispatchToProps(dispatch);
+      expect(dispatchedProps.fetchGolfCourses).toBeDefined();
+    });
 
-		it('should have fetchGolfCourses call dispatch', () => {
-			const dispatchedProps = mapDispatchToProps(dispatch);
-			dispatchedProps.fetchGolfCourses(mockCoursesCleaned);
-			expect(dispatch).toHaveBeenCalled();
-		})
+    it('should map a key of toggleSearchResults', () => {
+      const dispatchedProps = mapDispatchToProps(dispatch);
+      expect(dispatchedProps.toggleSearchResults).toBeDefined();
+    });
 
-		it('toggleSearchResults should call dispatch', () => {
+    it('should map a key of toggleCourseDetails', () => {
+      const dispatchedProps = mapDispatchToProps(dispatch);
+      expect(dispatchedProps.toggleCourseDetails).toBeDefined();
+    });
+
+    it('should have fetchGolfCourses call dispatch', () => {
+      const dispatchedProps = mapDispatchToProps(dispatch);
+      dispatchedProps.fetchGolfCourses(mockCoursesCleaned);
+      expect(dispatch).toHaveBeenCalled();
+    });
+
+    it('toggleSearchResults should call dispatch', () => {
       const dispatchProps = mapDispatchToProps(dispatch);
       dispatchProps.toggleSearchResults();
       expect(dispatch).toHaveBeenCalled();
     });
 
-  	it('toggleCourseDetails should call dispatch', () => {
+    it('toggleCourseDetails should call dispatch', () => {
       const dispatchProps = mapDispatchToProps(dispatch);
       dispatchProps.toggleCourseDetails();
       expect(dispatch).toHaveBeenCalled();
     });
-	})
-
-})
+  });
+});

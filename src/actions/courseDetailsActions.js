@@ -1,3 +1,3 @@
 export const toggleCourseDetails = () => ({
-	type: 'TOGGLE_COURSE_DETAILS',
-})
+  type: 'TOGGLE_COURSE_DETAILS',
+});

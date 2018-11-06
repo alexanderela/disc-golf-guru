@@ -6,9 +6,9 @@ import { searchResultsReducer } from './searchResultsReducer';
 import { courseDetailsReducer } from './courseDetailsReducer';
 
 export const rootReducer = combineReducers({
-	golfCourses: courseReducer,
-	weather: weatherReducer,
-	searchResultsSelected: searchResultsReducer,
-	courseDetailsSelected: courseDetailsReducer,
-	hasErrored: hasErroredReducer
+  golfCourses: courseReducer,
+  weather: weatherReducer,
+  searchResultsSelected: searchResultsReducer,
+  courseDetailsSelected: courseDetailsReducer,
+  hasErrored: hasErroredReducer,
 });

@@ -4,13 +4,13 @@ import Error from '../';
 import { shallow } from 'enzyme';
 
 describe('Error', () => {
-	let wrapper;
+  let wrapper;
 
-	beforeEach(() => {
-		wrapper = shallow(<Error />);
-	})
+  beforeEach(() => {
+    wrapper = shallow(<Error />);
+  });
 
-	it('should render like snapshot', () => {
-		expect(wrapper).toMatchSnapshot();
-	})
-})
+  it('should render like snapshot', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+});

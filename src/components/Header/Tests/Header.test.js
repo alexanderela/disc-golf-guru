@@ -4,13 +4,12 @@ import Header from '../';
 import { shallow } from 'enzyme';
 
 describe('Header', () => {
-	let wrapper;
+  let wrapper;
 
-	beforeEach(() => {
-		wrapper = shallow(<Header />)
-	})
-	it('should render like snapshot', () => {
-		expect(wrapper).toMatchSnapshot()
-	})
-	
-})
+  beforeEach(() => {
+    wrapper = shallow(<Header />);
+  });
+  it('should render like snapshot', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+});
