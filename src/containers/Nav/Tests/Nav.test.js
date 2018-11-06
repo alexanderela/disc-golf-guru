@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Nav from '../';
+import { Nav } from '../';
 import { shallow, mount } from 'enzyme';
 import { MemoryRouter } from 'react-router';
 
@@ -9,8 +9,8 @@ describe('Nav', () => {
 	let mockEvent;
 
 	beforeEach(() => {
-		wrapper = shallow(<Nav />)
-		mockEvent = { name: 'home' }
+		wrapper = shallow(<Nav location={'/findcourses'}/>)
+		mockEvent = { target: {name: 'home'} }
 	})
 
 	it('should render like snapshot', () => {
