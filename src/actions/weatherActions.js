@@ -1,4 +1,4 @@
-export const setWeather = (weather) => ({
-	type: 'SET_WEATHER',
-	weather
-})
+export const setWeather = weather => ({
+  type: 'SET_WEATHER',
+  weather,
+});

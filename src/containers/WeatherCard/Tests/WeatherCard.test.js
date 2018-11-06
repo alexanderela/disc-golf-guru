@@ -5,13 +5,13 @@ import { shallow } from 'enzyme';
 import mockWeather from '../../../mockData/mockWeather.js';
 
 describe('WeatherCard', () => {
-	let wrapper;
+  let wrapper;
 
-	beforeEach(() => {
-		wrapper = shallow(<WeatherCard weather={mockWeather} />);
-	})
+  beforeEach(() => {
+    wrapper = shallow(<WeatherCard weather={mockWeather} />);
+  });
 
-	it('should render like snapshot', () => {
-		expect(wrapper).toMatchSnapshot();
-	})
-})
+  it('should render like snapshot', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+});

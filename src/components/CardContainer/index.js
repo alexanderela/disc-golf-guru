@@ -4,15 +4,18 @@ import CourseInfoCard from '../../containers/CourseInfoCard';
 import Error from '../Error';
 
 const CardContainer = ({ favorites }) => {
-	const favoriteCards = favorites.map(course => {
-		return <CourseInfoCard course={course} key={course.name}/>
-	})
-	return(
-		<div className='CardContainer'>
-			{favorites.length ? favoriteCards : <Error message={'You currently have no favorites selected'}/>}
-		</div>
-	)
-}
+  const favoriteCards = favorites.map(course => {
+    return <CourseInfoCard course={course} key={course.name} />;
+  });
+  return (
+    <div className="CardContainer">
+      {favorites.length ? (
+        favoriteCards
+      ) : (
+        <Error message={'You currently have no favorites selected'} />
+      )}
+    </div>
+  );
+};
 
-
-export default CardContainer
+export default CardContainer;
