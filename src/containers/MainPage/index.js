@@ -35,9 +35,6 @@ export class MainPage extends Component {
 	getGolfCourses = async (searchTerms) => {
 		const { setCourses, toggleSearchResults, fetchGolfCourses } = this.props
 		fetchGolfCourses(searchTerms);
-		// const fetchedGolfCourses = await DataCleaner.fetchGolfCoursesByZip(searchTerms)
-		// setCourses(fetchedGolfCourses)
-		// setCourses(mockCoursesCleaned)
 		toggleSearchResults()
 	}
 

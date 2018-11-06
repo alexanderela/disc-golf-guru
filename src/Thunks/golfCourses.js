@@ -1,4 +1,5 @@
 import { setCourses } from '../actions/courseActions';
+import { hasErrored } from '../actions/hasErroredAction';
 import * as DataCleaner from '../utilities/DataCleaner';
 
 export const fetchGolfCourses = (searchTerms) => {
@@ -8,8 +9,7 @@ export const fetchGolfCourses = (searchTerms) => {
 			const fetchedGolfCourses = await DataCleaner.fetchGolfCoursesByZip(searchTerms);
 			dispatch(setCourses(fetchedGolfCourses))
 		} catch(error) {
-			console.log(error.message)
-			throw new Error('Fetch has failed')
+			dispatch(hasErrored(true))
 		}
 	}
 }

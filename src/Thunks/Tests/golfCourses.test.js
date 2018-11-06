@@ -1,6 +1,7 @@
 import { setCourses } from '../../actions/courseActions';
 import * as DataCleaner from '../../utilities/DataCleaner';
 import { fetchGolfCourses } from '../golfCourses.js';
+import { hasErrored } from '../../actions/hasErroredAction';
 
 describe('fetchGolfCourses', () => {
 	let mockDispatch;
@@ -31,15 +32,15 @@ describe('fetchGolfCourses', () => {
       const expected = Error({
         	error: { message: '404'}
         })
-      DataCleaner.fetchGolfCoursesByZip = jest.fn().mockImplementation(() => Promise.resolve({
+      DataCleaner.fetchGolfCoursesByZip = jest.fn().mockImplementation(() => Promise.reject({
         status: 404,
-        json: () => Promise.resolve({
+        json: () => Promise.reject({
         	error: { message: '404'}
         })
       }))
 
 			const thunk = await fetchGolfCourses(14526)
 			await thunk(mockDispatch)
-			expect(window.fetch).toThrow(expected)	
+			expect(mockDispatch).toHaveBeenCalledWith(hasErrored(true))	
     })
 })
