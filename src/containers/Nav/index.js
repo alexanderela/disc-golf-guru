@@ -35,7 +35,7 @@ class Nav extends Component {
 				<NavLink
 					to='/'>
 					<button 
-						className={`nav-btn ${home || location.pathname === '/' ? 'nav-btn-active' : 'nav-btn-inactive'}`} 
+						className={`nav-btn home-btn ${home || location.pathname === '/' ? 'nav-btn-active' : 'nav-btn-inactive'}`} 
 						name='home'
 						onClick={this.handleActiveClass}>Home
 					</button>				
@@ -43,7 +43,7 @@ class Nav extends Component {
 				<NavLink 
 					to='/findcourses'>
 					<button 
-						className={`nav-btn ${findCourse ? 'nav-btn-active' : 'nav-btn-inactive'}`}  
+						className={`nav-btn find-course-btn ${findCourse ? 'nav-btn-active' : 'nav-btn-inactive'}`}  
 						name='findCourse'
 						onClick={this.handleActiveClass}>Find A Course
 					</button>
@@ -51,7 +51,7 @@ class Nav extends Component {
 				<NavLink 
 					to='/favorites'>
 					<button 
-						className={`nav-btn ${favorites ? 'nav-btn-active' : 'nav-btn-inactive'}`}  
+						className={`nav-btn favorites-btn ${favorites ? 'nav-btn-active' : 'nav-btn-inactive'}`}  
 						name='favorites'
 						onClick={this.handleActiveClass}>Favorite Courses
 					</button>

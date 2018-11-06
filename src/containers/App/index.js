@@ -7,6 +7,7 @@ import { Route, Switch } from 'react-router-dom';
 import Home from '../../components/Home';
 import Error from '../../components/Error';
 import { withRouter } from 'react-router';
+import { MemoryRouter } from 'react-router';
 import * as DataCleaner from '../../utilities/DataCleaner.js';
 
 class App extends Component {
@@ -27,7 +28,9 @@ class App extends Component {
     return (
       <div className="App">
       	<Header />
-      	<Nav />
+        <MemoryRouter>
+      	 <Nav />
+        </MemoryRouter>
 	      <Switch>
 	      	<Route exact path='/' render={() => <Home /> }/>
 	    		<Route path='/findcourses' render={() => <MainPage pageName={'Find A Disc Golf Course'}/> }/>
