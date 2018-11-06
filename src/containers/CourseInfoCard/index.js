@@ -35,7 +35,6 @@ export class CourseInfoCard extends Component {
 
   getLocalStorage = categoryName => {
     if (localStorage) {
-      console.log(JSON.parse(localStorage.getItem(categoryName)))
       return JSON.parse(localStorage.getItem(categoryName));
     } else {
       return
@@ -54,6 +53,7 @@ export class CourseInfoCard extends Component {
       rating,
       isPrivate,
       isPayToPlay,
+      reviews
     } = course;
 
     return (
@@ -73,23 +73,25 @@ export class CourseInfoCard extends Component {
         </div>
 
         <p className="course-info">
-          <span className="course-info-header">Number of holes:</span> {holes}
+          <span className="course-info-header">{holes.header}</span> {holes.text}
         </p>
 
         <p className="course-info">
-          <span className="course-info-header">Rating:</span> {rating}/5
+          <span className="course-info-header">{rating.header}</span> {rating.text}/5
         </p>
 
         <p className="course-info">
-          <span className="course-info-header">Private:</span> {isPrivate}
+          <span className="course-info-header">{isPrivate.header}</span> {isPrivate.text}
         </p>
 
         <p className="course-info">
-          <span className="course-info-header">Pay to play:</span> {isPayToPlay}
+          <span className="course-info-header">{isPayToPlay.header}</span> {isPayToPlay.text}
         </p>
 
         <p className="course-info">
-          <span className="course-info-header">Reviews:</span> {isPayToPlay}
+          <span className="course-info-header">{reviews.header}</span> 
+          <a href={reviews.text} 
+          target='_blank' rel='noopener noreferrer'>Disc Golf Course Review</a>
         </p>
       </div>
     );

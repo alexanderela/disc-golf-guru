@@ -13,6 +13,7 @@ import PropTypes from 'prop-types';
 
 
 class App extends Component {
+  
   getLocalStorage = categoryName => {
     if (localStorage) {
       return JSON.parse(localStorage.getItem(categoryName));

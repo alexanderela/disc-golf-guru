@@ -2,8 +2,10 @@ import React from 'react';
 import './SearchResultsCard.css';
 import { withRouter, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { toggleSearchResults } from '../../actions/searchResultsActions';
 
-const SearchResultsCard = ({ courses }) => {
+const SearchResultsCard = ({ courses, toggleSearchResults }) => {
   const courseResults = courses.map(course => {
     const { name, address, city, state, zip, id } = course;
 
@@ -11,7 +13,9 @@ const SearchResultsCard = ({ courses }) => {
       <div className="course-search-result" key={name}>
         <p className="search-results-entry">{`${name} ${address}, ${city}, ${state} ${zip}`}</p>
         <Link to={`/findcourses/searchresults/courseinfo/${id}`}>
-          <button className="search-result-btn">Select</button>
+          <button 
+          className="search-result-btn"
+          onClick={toggleSearchResults}>Select</button>
         </Link>
       </div>
     );
@@ -32,4 +36,7 @@ SearchResultsCard.propTypes = {
   courses: PropTypes.array.isRequired
 }
 
-export default withRouter(SearchResultsCard);
+export const mapDispatchToProps = dispatch => ({
+  toggleSearchResults: () => dispatch(toggleSearchResults())
+});
+export default withRouter(connect(null, mapDispatchToProps)(SearchResultsCard));
