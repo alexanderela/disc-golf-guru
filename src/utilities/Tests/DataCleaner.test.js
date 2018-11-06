@@ -24,7 +24,7 @@ describe('DataCleaner', () => {
 
 		it('should call fetchData with the correct parameters if passed an invalid zip', async () => {
 			input = 'rochester'
-			url = `https://www.dgcoursereview.com/api_test/?key=${APIKey.discGolfKey}&mode=findloc&city=${input}&rad=10&state=NY&country=US&sig=${APIKey.discGolfSig}`;
+			url = `https://www.dgcoursereview.com/api_test/?key=${APIKey.discGolfKey}&mode=findloc&city=${input}&state=NY&country=US&rad=10&sig=${APIKey.discGolfLocationSig}`;
 			DataCleaner.fetchGolfCourseData(input);
 			expect(API.fetchData).toHaveBeenCalledWith(url)
 		})

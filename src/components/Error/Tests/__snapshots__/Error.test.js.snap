@@ -25,9 +25,7 @@ ShallowWrapper {
         </p>,
         <p
           className="home-intro"
-        >
-          The page you're looking for doesn't exist.
-        </p>,
+        />,
       ],
       "className": "Error",
     },
@@ -50,11 +48,11 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "The page you're looking for doesn't exist.",
+          "children": undefined,
           "className": "home-intro",
         },
         "ref": null,
-        "rendered": "The page you're looking for doesn't exist.",
+        "rendered": null,
         "type": "p",
       },
     ],
@@ -74,9 +72,7 @@ ShallowWrapper {
           </p>,
           <p
             className="home-intro"
-          >
-            The page you're looking for doesn't exist.
-          </p>,
+          />,
         ],
         "className": "Error",
       },
@@ -99,11 +95,11 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "The page you're looking for doesn't exist.",
+            "children": undefined,
             "className": "home-intro",
           },
           "ref": null,
-          "rendered": "The page you're looking for doesn't exist.",
+          "rendered": null,
           "type": "p",
         },
       ],
