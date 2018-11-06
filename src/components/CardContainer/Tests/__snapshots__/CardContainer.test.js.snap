@@ -290,7 +290,7 @@ ShallowWrapper {
     "rendered": Array [
       Object {
         "instance": null,
-        "key": undefined,
+        "key": "Genesee Valley Park",
         "nodeType": "class",
         "props": Object {
           "course": Object {
@@ -324,7 +324,7 @@ ShallowWrapper {
       },
       Object {
         "instance": null,
-        "key": undefined,
+        "key": "Lookup Park",
         "nodeType": "class",
         "props": Object {
           "course": Object {
@@ -358,7 +358,7 @@ ShallowWrapper {
       },
       Object {
         "instance": null,
-        "key": undefined,
+        "key": "Monroe Community College DGC",
         "nodeType": "class",
         "props": Object {
           "course": Object {
@@ -392,7 +392,7 @@ ShallowWrapper {
       },
       Object {
         "instance": null,
-        "key": undefined,
+        "key": "Ellison Park",
         "nodeType": "class",
         "props": Object {
           "course": Object {
@@ -426,7 +426,7 @@ ShallowWrapper {
       },
       Object {
         "instance": null,
-        "key": undefined,
+        "key": "North Ponds DGC",
         "nodeType": "class",
         "props": Object {
           "course": Object {
@@ -615,7 +615,7 @@ ShallowWrapper {
       "rendered": Array [
         Object {
           "instance": null,
-          "key": undefined,
+          "key": "Genesee Valley Park",
           "nodeType": "class",
           "props": Object {
             "course": Object {
@@ -649,7 +649,7 @@ ShallowWrapper {
         },
         Object {
           "instance": null,
-          "key": undefined,
+          "key": "Lookup Park",
           "nodeType": "class",
           "props": Object {
             "course": Object {
@@ -683,7 +683,7 @@ ShallowWrapper {
         },
         Object {
           "instance": null,
-          "key": undefined,
+          "key": "Monroe Community College DGC",
           "nodeType": "class",
           "props": Object {
             "course": Object {
@@ -717,7 +717,7 @@ ShallowWrapper {
         },
         Object {
           "instance": null,
-          "key": undefined,
+          "key": "Ellison Park",
           "nodeType": "class",
           "props": Object {
             "course": Object {
@@ -751,7 +751,7 @@ ShallowWrapper {
         },
         Object {
           "instance": null,
-          "key": undefined,
+          "key": "North Ponds DGC",
           "nodeType": "class",
           "props": Object {
             "course": Object {

@@ -3,7 +3,7 @@ import './CourseInfoCard.css';
 import { connect } from 'react-redux';
 import { toggleFavorite } from '../../actions/courseActions';
 
-class CourseInfoCard extends Component {
+export class CourseInfoCard extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {

@@ -5,7 +5,7 @@ import Error from '../Error';
 
 const CardContainer = ({ favorites }) => {
 	const favoriteCards = favorites.map(course => {
-		return <CourseInfoCard course={course} key={course.id}/>
+		return <CourseInfoCard course={course} key={course.name}/>
 	})
 	return(
 		<div className='CardContainer'>
