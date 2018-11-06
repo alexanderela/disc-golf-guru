@@ -10,15 +10,15 @@ describe('fetchGolfCourses', () => {
 		mockDispatch = jest.fn();
 	})
 
-	it('should call fetchGolfCoursesByZip with correct parameters', () => {
-		DataCleaner.fetchGolfCoursesByZip = jest.fn()
+	it('should call fetchGolfCourses with correct parameters', () => {
+		DataCleaner.fetchGolfCourseData = jest.fn()
 		const thunk = fetchGolfCourses(14526)
 		thunk(mockDispatch)
-		expect(DataCleaner.fetchGolfCoursesByZip).toHaveBeenCalledWith(14526)
+		expect(DataCleaner.fetchGolfCourseData).toHaveBeenCalledWith(14526)
 	})
 
 	it('should call dispatch with setCourses', async () => {
-		DataCleaner.fetchGolfCoursesByZip = jest.fn(() => Promise.resolve({
+		DataCleaner.fetchGolfCourseData = jest.fn(() => Promise.resolve({
 			name: 'Rochester'
 		}))
 		const mockAction = setCourses({name: 'Rochester'})
@@ -28,11 +28,11 @@ describe('fetchGolfCourses', () => {
 		expect(mockDispatch).toHaveBeenCalledWith(mockAction)		
 	})
 
-	it('should console.log and error if thunk has failed', async () => {
+	it('should show error if thunk has failed', async () => {
       const expected = Error({
         	error: { message: '404'}
         })
-      DataCleaner.fetchGolfCoursesByZip = jest.fn().mockImplementation(() => Promise.reject({
+      DataCleaner.fetchGolfCourseData = jest.fn().mockImplementation(() => Promise.reject({
         status: 404,
         json: () => Promise.reject({
         	error: { message: '404'}
