@@ -16,9 +16,8 @@ export class CourseInfoCard extends Component {
 	}
 
 	render() {
-		const { course, displayWeather } = this.props;
+		const { course } = this.props;
 		const {
-			id, 
 			name, 
 			address, 
 			city, state, 

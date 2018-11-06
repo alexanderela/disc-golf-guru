@@ -1,6 +1,5 @@
 import React from 'react';
 import './Error.css'
-import { NavLink } from 'react-router-dom';
 
 const Error = ({ message }) => (
 	<div className='Error'>

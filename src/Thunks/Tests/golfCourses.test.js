@@ -29,18 +29,15 @@ describe('fetchGolfCourses', () => {
 	})
 
 	it('should show error if thunk has failed', async () => {
-      const expected = Error({
-        	error: { message: '404'}
-        })
-      DataCleaner.fetchGolfCourseData = jest.fn().mockImplementation(() => Promise.reject({
-        status: 404,
-        json: () => Promise.reject({
-        	error: { message: '404'}
-        })
-      }))
+    DataCleaner.fetchGolfCourseData = jest.fn().mockImplementation(() => Promise.reject({
+      status: 404,
+      json: () => Promise.reject({
+      	error: { message: '404'}
+      })
+    }))
 
-			const thunk = await fetchGolfCourses(14526)
-			await thunk(mockDispatch)
-			expect(mockDispatch).toHaveBeenCalledWith(hasErrored(true))	
-    })
+		const thunk = await fetchGolfCourses(14526)
+		await thunk(mockDispatch)
+		expect(mockDispatch).toHaveBeenCalledWith(hasErrored(true))	
+  })
 })
