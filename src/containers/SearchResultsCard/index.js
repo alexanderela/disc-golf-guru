@@ -3,10 +3,11 @@ import './SearchResultsCard.css'
 import { withRouter, Link } from 'react-router-dom';
 
 const SearchResultsCard = (props) => {
+	console.log(props)
 	const courseResults = props.courses.map(course => {
 		const { name, address, city, state, zip, id } = course
 		return <div className='course-search-result' key={name}>
-							<p>{`${name} ${address}, ${city}, ${state} ${zip}`}</p>
+							<p className='search-results-entry'>{`${name} ${address}, ${city}, ${state} ${zip}`}</p>
 							<Link to={`/findcourses/searchresults/courseinfo/${id}`}>
 								<button 
 									className='search-result-btn'>Select

@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Error from '../';
+import WeatherCard from '../';
 import { shallow } from 'enzyme';
+import mockWeather from '../../../mockData/mockWeather.js';
 
-describe('Error', () => {
+describe('WeatherCard', () => {
 	let wrapper;
 
 	beforeEach(() => {
-		wrapper = shallow(<Error />);
+		wrapper = shallow(<WeatherCard weather={mockWeather} />);
 	})
 
 	it('should render like snapshot', () => {

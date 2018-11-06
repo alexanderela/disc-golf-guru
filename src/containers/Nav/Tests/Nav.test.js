@@ -13,4 +13,15 @@ describe('Nav', () => {
 		expect(wrapper).toMatchSnapshot()
 	})
 	
+	it('', () => {
+
+	})
+
+	it('', () => {
+		
+	})
+
+	it('', () => {
+		
+	})
 })

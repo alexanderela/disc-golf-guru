@@ -12,6 +12,7 @@ import { toggleSearchResults } from '../../actions/searchResultsActions';
 import { toggleCourseDetails } from '../../actions/courseDetailsActions';
 import mockCoursesCleaned from '../../mockData/mockCoursesCleaned.js';
 import mockWeather from '../../mockData/mockWeather.js'
+import { fetchGolfCourses } from '../../Thunks/golfCourses.js'
 
 export class MainPage extends Component {
 	constructor(props) {
@@ -32,10 +33,11 @@ export class MainPage extends Component {
 	}
 
 	getGolfCourses = async (searchTerms) => {
-		const { setCourses, toggleSearchResults } = this.props
+		const { setCourses, toggleSearchResults, fetchGolfCourses } = this.props
+		fetchGolfCourses(searchTerms);
 		// const fetchedGolfCourses = await DataCleaner.fetchGolfCoursesByZip(searchTerms)
 		// setCourses(fetchedGolfCourses)
-		setCourses(mockCoursesCleaned)
+		// setCourses(mockCoursesCleaned)
 		toggleSearchResults()
 	}
 
@@ -67,10 +69,7 @@ export class MainPage extends Component {
 					}}/>
 
 					<Route exact path='/findcourses/searchresults' render={() => {
-						return <SearchResultsCard 
-											courses={golfCourses}
-											displayCourseDetails={this.displayCourseDetails}
-										/>
+						return <SearchResultsCard courses={golfCourses} />
 					}} />
 					
 					<Route exact path='/findcourses/searchresults/courseinfo/:id' render={({match}) => {
@@ -79,7 +78,7 @@ export class MainPage extends Component {
 						})
 						return <div className='course-weather-container'>
 										<CourseInfoCard course={selectedCourse} />
-										<WeatherCard currentWeather={mockWeather}/>
+										<WeatherCard weather={mockWeather}/>
 									</div>
 					}}/>
 			</form>
@@ -90,7 +89,7 @@ export class MainPage extends Component {
 export const mapStateToProps = ({ golfCourses, searchResultsSelected, courseDetailsSelected }) => ({ golfCourses, searchResultsSelected, courseDetailsSelected });
 
 export const mapDispatchToProps = (dispatch) => ({
-	setCourses: (courses) => dispatch(setCourses(courses)),	
+	fetchGolfCourses: (courses) => dispatch(fetchGolfCourses(courses)),	
 	toggleSearchResults: () => dispatch(toggleSearchResults()),
 	toggleCourseDetails: () => dispatch(toggleCourseDetails())
 });

@@ -16,7 +16,9 @@ describe('MainPage', () => {
 		wrapper = shallow(
 									<MainPage 
 										setCourses={mockFunc} 
-										golfCourses={mockCoursesCleaned}/>);
+										golfCourses={mockCoursesCleaned}
+										toggleSearchResults={mockFunc}
+										toggleCourseDetails={mockFunc}/>);
 	})
 
 	it('should render like snapshot', () => {
@@ -81,30 +83,16 @@ describe('MainPage', () => {
 			await wrapper.instance().getGolfCourses(mockZip);
 			expect(mockFunc).toHaveBeenCalled();
 		})
-
-		it('should update state', async () => {
-			wrapper.setState({ showSearchResults: false });
-			await wrapper.instance().getGolfCourses(mockZip);
-			expect(wrapper.state('showSearchResults')).toBe(true);
-		})
-	})
-
-	describe('displayCourseDetails', () => {
-
 	})
 	
-	describe('clearDisplay', () => {
-		it('should set showCourseDetails and showSearchResults to false in state', () => {
-			wrapper.setState({  showCourseDetails: true, showSearchResults: true })
-			wrapper.instance().clearDisplay()
-			expect(wrapper.state('showCourseDetails')).toBe(false)
-			expect(wrapper.state('showSearchResults')).toBe(false)
+	describe('', () => {
+		it('', () => {
+
 		})
 	})
 
 
 	describe('mapStateToProps', () => {
-
 		it('should create the correct props object', () => {
 			const expected = {
 				golfCourses: [{ id: 1234, name: 'mockCourse1'}, { id: 4321, name: 'mockCourse2'}]

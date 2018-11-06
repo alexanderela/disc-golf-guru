@@ -79,6 +79,8 @@ ShallowWrapper {
       ]
     }
     setCourses={[MockFunction]}
+    toggleCourseDetails={[MockFunction]}
+    toggleSearchResults={[MockFunction]}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],

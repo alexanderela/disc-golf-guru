@@ -11,7 +11,7 @@ class WeatherCard extends Component {
 	}
 
 	render() {
-		const { id, temp, description, wind, humidity, icon } = this.props.currentWeather
+		const { id, temp, description, wind, humidity, icon } = this.props.weather
 
 		return(
 			<div className='WeatherCard'>

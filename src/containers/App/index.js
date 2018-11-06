@@ -20,7 +20,6 @@ class App extends Component {
   async componentDidMount() {
     const zip = 14526
     const weather = await DataCleaner.fetchCurrentWeather(zip)
-    console.log(weather)
     this.setState({ weather })
   }
 
