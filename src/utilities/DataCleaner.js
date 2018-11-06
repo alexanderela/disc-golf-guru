@@ -19,6 +19,7 @@ export const fetchGolfCourseData = async input => {
 
   const golfCourseData = await API.fetchData(url);
   const golfCourseResults = await formatGolfCourseData(golfCourseData);
+  console.log(golfCourseResults)
   return golfCourseResults;
 };
 
@@ -33,10 +34,11 @@ export const formatGolfCourseData = async golfCourses => {
       state: course.state,
       zip: course.zipcode,
       country: course.country,
-      holes: course.holes,
-      rating: course.rating,
-      isPrivate: convertNumberToBoolean(course.private),
-      isPayToPlay: convertNumberToBoolean(course.paytoplay),
+      // holes: { header: 'Number of holes: ', text: course.holes },
+      // rating: { header: 'Rating: ', text: course.rating },
+      // isPrivate: { header: 'Private: ', text: convertNumberToBoolean(course.private) },
+      // isPayToPlay: { header: 'Pay to play: ', text: convertNumberToBoolean(course.paytoplay) },
+      // reviews: { header: 'Reviews: ', text: course.dgcr_url }
     };
   });
   return Promise.all(golfCoursePromises);

@@ -11,30 +11,22 @@ import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
+
 class App extends Component {
-  filterFavorites = () => {
-    const { golfCourses } = this.props;
-    const filteredFavorites = golfCourses.filter(course => course.isFavorite);
-    this.setLocalStorage('favorites', filteredFavorites);
-    return filteredFavorites;
-  };
-
-  setLocalStorage = (key, category) => {
-    localStorage.setItem(key, JSON.stringify(category));
-  };
-
   getLocalStorage = categoryName => {
-    if (localStorage.length) {
+    if (localStorage) {
       return JSON.parse(localStorage.getItem(categoryName));
+    } else {
+      return
     }
   };
 
   checkLocalStorage = course => {
-    if (localStorage.favorites.length) {
+    if (localStorage.favorites) {
       const retrievedFavorites = this.getLocalStorage('favorites');
       return retrievedFavorites;
     } else {
-      this.filterFavorites();
+      return;
     }
   };
 

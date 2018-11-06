@@ -11,7 +11,35 @@ export class CourseInfoCard extends Component {
   }
 
   handleFavorite = async course => {
-    this.props.toggleFavorite(course.id);
+    await this.props.toggleFavorite(course.id);
+    this.filterFavorites()
+  };
+
+  filterFavorites = () => {
+    const { golfCourses } = this.props;
+    let retrievedStorage = []
+
+    if(localStorage) {
+      const gottenStorage = this.getLocalStorage('favorites')
+      const filteredFavorites = golfCourses.filter(course => course.isFavorite);
+      retrievedStorage = [...gottenStorage, ...filteredFavorites]
+    } else {
+      retrievedStorage = golfCourses.filter(course => course.isFavorite);
+    }
+    this.setLocalStorage('favorites', retrievedStorage);
+  };
+
+  setLocalStorage = (key, category) => {
+    localStorage.setItem(key, JSON.stringify(category));
+  };
+
+  getLocalStorage = categoryName => {
+    if (localStorage) {
+      console.log(JSON.parse(localStorage.getItem(categoryName)))
+      return JSON.parse(localStorage.getItem(categoryName));
+    } else {
+      return
+    }
   };
 
   render() {
@@ -58,6 +86,10 @@ export class CourseInfoCard extends Component {
 
         <p className="course-info">
           <span className="course-info-header">Pay to play:</span> {isPayToPlay}
+        </p>
+
+        <p className="course-info">
+          <span className="course-info-header">Reviews:</span> {isPayToPlay}
         </p>
       </div>
     );

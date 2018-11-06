@@ -118,7 +118,7 @@ MainPage.propTypes = {
   golfCourses: PropTypes.array.isRequired,
   searchResultsSelected: PropTypes.bool.isRequired,
   courseDetailsSelected: PropTypes.bool.isRequired,
-  weather: PropTypes.object.isRequired,
+  weather: PropTypes.array.isRequired,
   fetchGolfCourses: PropTypes.func.isRequired,
   fetchWeather: PropTypes.func.isRequired,
   toggleSearchResults: PropTypes.func.isRequired,
