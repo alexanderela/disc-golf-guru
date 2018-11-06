@@ -13,6 +13,7 @@ import { toggleCourseDetails } from '../../actions/courseDetailsActions';
 import mockCoursesCleaned from '../../mockData/mockCoursesCleaned.js';
 import mockWeather from '../../mockData/mockWeather.js'
 import { fetchGolfCourses } from '../../Thunks/golfCourses.js'
+import { fetchWeather } from '../../Thunks/weather.js'
 
 export class MainPage extends Component {
 	constructor(props) {
@@ -33,13 +34,14 @@ export class MainPage extends Component {
 	}
 
 	getGolfCourses = async (searchTerms) => {
-		const { setCourses, toggleSearchResults, fetchGolfCourses } = this.props
+		const { setCourses, toggleSearchResults, fetchGolfCourses, fetchWeather } = this.props
 		fetchGolfCourses(searchTerms);
+		fetchWeather(searchTerms)
 		toggleSearchResults()
 	}
 
 	render() {
-		const { pageName, golfCourses, searchResultsSelected, courseDetailsSelected } = this.props;
+		const { pageName, golfCourses, searchResultsSelected, courseDetailsSelected, weather } = this.props;
 		const { searchTerms, showWeather } = this.state;
 
 		return(
@@ -75,7 +77,7 @@ export class MainPage extends Component {
 						})
 						return <div className='course-weather-container'>
 										<CourseInfoCard course={selectedCourse} />
-										<WeatherCard weather={mockWeather}/>
+										<WeatherCard weather={weather}/>
 									</div>
 					}}/>
 			</form>
@@ -83,10 +85,11 @@ export class MainPage extends Component {
 	}
 }
 
-export const mapStateToProps = ({ golfCourses, searchResultsSelected, courseDetailsSelected }) => ({ golfCourses, searchResultsSelected, courseDetailsSelected });
+export const mapStateToProps = ({ golfCourses, searchResultsSelected, courseDetailsSelected, weather }) => ({ golfCourses, searchResultsSelected, courseDetailsSelected, weather });
 
 export const mapDispatchToProps = (dispatch) => ({
 	fetchGolfCourses: (courses) => dispatch(fetchGolfCourses(courses)),	
+	fetchWeather: (weather) => dispatch(fetchWeather(weather)),	
 	toggleSearchResults: () => dispatch(toggleSearchResults()),
 	toggleCourseDetails: () => dispatch(toggleCourseDetails())
 });

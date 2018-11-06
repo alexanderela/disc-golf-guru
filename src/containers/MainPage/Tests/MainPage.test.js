@@ -11,17 +11,20 @@ describe('MainPage', () => {
 	let mockFunc;
 	let wrapper;
 	let mockFetchGolfCourses;
+	let mockFetchWeather;
 	let mockToggleSearch;
 	let mockToggleCourse;
 
 	beforeEach(() => {
 		mockFunc = jest.fn();
 		mockFetchGolfCourses = jest.fn();
+		mockFetchWeather = jest.fn();
 		mockToggleSearch = jest.fn();
 		mockToggleCourse = jest.fn();
 		wrapper = shallow(
 									<MainPage 
 										fetchGolfCourses={mockFetchGolfCourses} 
+										fetchWeather={mockFetchWeather} 
 										golfCourses={mockCoursesCleaned}
 										toggleSearchResults={mockToggleSearch}
 										toggleCourseDetails={mockToggleCourse}/>);

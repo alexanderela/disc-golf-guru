@@ -6,7 +6,7 @@ export const fetchGolfCourses = (searchTerms) => {
 
 	return async (dispatch) => {
 		try {
-			const fetchedGolfCourses = await DataCleaner.fetchGolfCoursesByZip(searchTerms);
+			const fetchedGolfCourses = await DataCleaner.fetchGolfCourseData(searchTerms);
 			dispatch(setCourses(fetchedGolfCourses))
 		} catch(error) {
 			dispatch(hasErrored(true))

@@ -7,30 +7,15 @@ import { Route, Switch } from 'react-router-dom';
 import Home from '../../components/Home';
 import Error from '../../components/Error';
 import { withRouter } from 'react-router';
-import { MemoryRouter } from 'react-router';
 import * as DataCleaner from '../../utilities/DataCleaner.js';
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      weather: []
-    }
-  }
-
-  async componentDidMount() {
-    const zip = 14526
-    const weather = await DataCleaner.fetchCurrentWeather(zip)
-    this.setState({ weather })
-  }
 
   render() {
     return (
       <div className="App">
       	<Header />
-        <MemoryRouter>
       	 <Nav />
-        </MemoryRouter>
 	      <Switch>
 	      	<Route exact path='/' render={() => <Home /> }/>
 	    		<Route path='/findcourses' render={() => <MainPage pageName={'Find A Disc Golf Course'}/> }/>

@@ -2,7 +2,7 @@ import * as API from './API.js'
 import * as APIKey from '../apiKeys'
 
 
-export const fetchGolfCoursesByZip = async (input) => {
+export const fetchGolfCourseData = async (input) => {
 	let url;
 	const checkedInput = isValidZip(input);
 	if (checkedInput) {
@@ -12,11 +12,11 @@ export const fetchGolfCoursesByZip = async (input) => {
 	}
 	
 	const golfCourseData = await API.fetchData(url)
-	const golfCourseResults = await returnGolfCourseData(golfCourseData)
+	const golfCourseResults = await formatGolfCourseData(golfCourseData)
 	return golfCourseResults
 }
 
-export const returnGolfCourseData = async (golfCourses) => {
+export const formatGolfCourseData = async (golfCourses) => {
 	const golfCoursePromises = golfCourses.map( async course => {
 		return {
 			id: course.course_id,
@@ -36,7 +36,7 @@ export const returnGolfCourseData = async (golfCourses) => {
 	return Promise.all(golfCoursePromises)
 }
 
-export const fetchCurrentWeather = async (input) => {
+export const fetchWeatherData = async (input) => {
 	let url;
 	const checkedInput = isValidZip(input);
 	if (checkedInput) {
@@ -44,14 +44,14 @@ export const fetchCurrentWeather = async (input) => {
 	} else {
 		url = `https://cors-anywhere.herokuapp.com/api.openweathermap.org/data/2.5/weather?q=${input}&units=imperial&APPID=${APIKey.weatherKey}`
 	}
-	const currentWeatherData = await API.fetchData(url)
-	const currentWeatherResults = await returnCurrentWeatherData(currentWeatherData)
-	return currentWeatherResults
+	const weatherData = await API.fetchData(url)
+	const weatherResults = await formatWeatherData(weatherData)
+	return weatherResults
 }
 
-export const returnCurrentWeatherData = async (currentWeather) => {
-	const { id, main, weather, wind } = currentWeather
-	const currentWeatherPromise = 
+export const formatWeatherData = async (weatherData) => {
+	const { id, main, weather, wind } = weatherData
+	const weatherPromise = 
 		{
 			id: id,
 			temp: main.temp,
@@ -60,7 +60,7 @@ export const returnCurrentWeatherData = async (currentWeather) => {
 			wind: wind.speed,
 			humidity: main.humidity
 		}
-	return Promise.resolve(currentWeatherPromise)
+	return Promise.resolve(weatherPromise)
 }
 
 const convertNumToBool = (number) => {
