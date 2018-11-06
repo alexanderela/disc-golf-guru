@@ -2,6 +2,7 @@ import * as DataCleaner from '../DataCleaner';
 import * as API from '../API';
 import * as APIKey from '../../apiKeys'
 import mockCourses from '../../mockData/mockCourses.js';
+import mockWeatherRaw from '../../mockData/mockWeatherRaw.js';
 jest.mock('../API');
 
 describe('DataCleaner', () => {
@@ -60,14 +61,24 @@ describe('DataCleaner', () => {
 			expect(API.fetchData).toHaveBeenCalledWith(url)
 		})
 
-		xit('should return a resolved object', async () => {
-			
+		it('should return a resolved object', async () => {
+			expected = {
+				"description": "Clear sky", 
+				"humidity": 76, 
+				"icon": "01n", 
+				"id": 420026615, 
+				"temp": 42.08, 
+				"wind": 6.93
+			}
+			result = await DataCleaner.formatWeatherData(mockWeatherRaw);
+			expect(result).toEqual(expected);
 		})
 	})
 
 	describe('formatWeatherData', () => {
-		xit('should format weather data', async () => {
-			
+		it('should format weather data', async () => {
+			result = DataCleaner.formatWeatherData(mockWeatherRaw);
+			expect(result).toMatchSnapshot()
 		})
 	})
 

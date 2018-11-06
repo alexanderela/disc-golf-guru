@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`DataCleaner fetchWeatherData should return a resolved object 1`] = `Promise {}`;
+
 exports[`DataCleaner formatGolfCourseData should format golf course objects 1`] = `Promise {}`;
 
-exports[`DataCleaner returnGolfCourseData should format golf course objects 1`] = `Promise {}`;
+exports[`DataCleaner formatWeatherData should format weather data 1`] = `Promise {}`;

@@ -5,7 +5,6 @@ import * as APIKey from '../apiKeys'
 export const fetchGolfCourseData = async (input) => {
 	let url;
 	const checkedInput = validateZip(input);
-		console.log(checkedInput)
 
 	if (checkedInput) {
 		url = `https://www.dgcoursereview.com/api_test/?key=${APIKey.discGolfKey}&mode=findzip&zip=${input}&rad=10&sig=${APIKey.discGolfSig}`
