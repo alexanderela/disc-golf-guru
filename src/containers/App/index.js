@@ -14,12 +14,34 @@ import * as DataCleaner from '../../utilities/DataCleaner.js';
 class App extends Component {
 
   filterFavorites = () => {
-    return this.props.golfCourses.filter((course) => course.isFavorite)
+    const { golfCourses } = this.props
+    const filteredFavorites = golfCourses.filter((course) => course.isFavorite)
+    this.setLocalStorage('favorites', filteredFavorites)
+    return filteredFavorites
+  }
+
+  setLocalStorage = (key, category) => {
+    localStorage.setItem(key, JSON.stringify(category))
+  }
+
+  getLocalStorage = (categoryName) => {
+    if(localStorage.length) {
+      return JSON.parse(localStorage.getItem(categoryName))
+    }
+  }
+
+  checkLocalStorage = (course) => {
+    if (localStorage.favorites.length) {
+      const retrievedFavorites = this.getLocalStorage('favorites')
+      return retrievedFavorites
+    } else {
+      this.filterFavorites()
+    }
   }
 
   render() {
     const { golfCourses } = this.props
-    const filteredFavorites = this.filterFavorites()
+    const filteredFavorites = this.checkLocalStorage()
 
     return (
       <div className="App">
