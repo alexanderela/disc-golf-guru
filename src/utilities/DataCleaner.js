@@ -9,7 +9,7 @@ export const fetchGolfCourseData = async (input) => {
 	if (checkedInput) {
 		url = `https://www.dgcoursereview.com/api_test/?key=${APIKey.discGolfKey}&mode=findzip&zip=${input}&rad=10&sig=${APIKey.discGolfSig}`
 	} else {
-		url = `https://www.dgcoursereview.com/api_test/?key=${APIKey.discGolfKey}&mode=findloc&city=${input}&rad=10&state=NY&country=US&sig=${APIKey.discGolfSig}`
+		url = `https://www.dgcoursereview.com/api_test/?key=${APIKey.discGolfKey}&mode=findloc&city=${input}&state=NY&country=US&rad=10&sig=${APIKey.discGolfLocationSig}`
 	}
 	
 	const golfCourseData = await API.fetchData(url)

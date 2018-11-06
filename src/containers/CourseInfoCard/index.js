@@ -3,7 +3,7 @@ import './CourseInfoCard.css';
 import { connect } from 'react-redux';
 import { toggleFavorite } from '../../actions/courseActions';
 
-class CourseInfoCard extends Component {
+export class CourseInfoCard extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -16,9 +16,8 @@ class CourseInfoCard extends Component {
 	}
 
 	render() {
-		const { course, displayWeather } = this.props;
+		const { course } = this.props;
 		const {
-			id, 
 			name, 
 			address, 
 			city, state, 

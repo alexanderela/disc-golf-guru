@@ -9,7 +9,6 @@ import Home from '../../components/Home';
 import Error from '../../components/Error';
 import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
-import * as DataCleaner from '../../utilities/DataCleaner.js';
 
 class App extends Component {
 
@@ -40,7 +39,6 @@ class App extends Component {
   }
 
   render() {
-    const { golfCourses } = this.props
     const filteredFavorites = this.checkLocalStorage()
 
     return (

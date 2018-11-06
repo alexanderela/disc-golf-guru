@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import CourseInfoCard from '../';
+import {CourseInfoCard} from '../';
 import { shallow } from 'enzyme';
 import mockCoursesCleaned from '../../../mockData/mockCoursesCleaned.js';
 
 describe('CourseInfoCard', () => {
 	let wrapper;
+	let toggleFavorite;
 
 	beforeEach(() => {
+		toggleFavorite = jest.fn()
 		const mockCourse =  {
 											    "id": "4712",
 											    "name": "Genesee Valley Park",
@@ -23,7 +25,12 @@ describe('CourseInfoCard', () => {
 											    "payToPlay": "0"
 											  }
 											  
-		wrapper = shallow(<CourseInfoCard course={mockCourse}/>)
+		wrapper = shallow(<CourseInfoCard 
+												course={mockCourse} 
+												key={mockCourse.id}
+												toggleFavorite={toggleFavorite}
+												golfCourses={mockCoursesCleaned}
+												/>)
 	})
 	it('should render like snapshot', () => {
 		expect(wrapper).toMatchSnapshot()

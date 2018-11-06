@@ -20,6 +20,81 @@ ShallowWrapper {
         "zip": "14620",
       }
     }
+    golfCourses={
+      Array [
+        Object {
+          "address": "99 Elmwood Ave.",
+          "city": "Rochester",
+          "country": "United States",
+          "holes": "18",
+          "id": "4712",
+          "isFavorite": false,
+          "isPayToPlay": "No",
+          "isPrivate": "No",
+          "name": "Genesee Valley Park",
+          "rating": "3.29",
+          "state": "NY",
+          "zip": "14620",
+        },
+        Object {
+          "address": "3850 East Henrietta Rd.",
+          "city": "Henrietta",
+          "country": "United States",
+          "holes": "9",
+          "id": "7628",
+          "isFavorite": false,
+          "isPayToPlay": "No",
+          "isPrivate": "No",
+          "name": "Lookup Park",
+          "rating": "3.13",
+          "state": "NY",
+          "zip": "14467",
+        },
+        Object {
+          "address": "",
+          "city": "Henrietta",
+          "country": "United States",
+          "holes": "18",
+          "id": "4937",
+          "isFavorite": false,
+          "isPayToPlay": "No",
+          "isPrivate": "No",
+          "name": "Monroe Community College DGC",
+          "rating": "2.94",
+          "state": "NY",
+          "zip": "14623",
+        },
+        Object {
+          "address": "",
+          "city": "Rochester",
+          "country": "United States",
+          "holes": "18",
+          "id": "6795",
+          "isFavorite": false,
+          "isPayToPlay": "No",
+          "isPrivate": "No",
+          "name": "Ellison Park",
+          "rating": "3.54",
+          "state": "NY",
+          "zip": "14610",
+        },
+        Object {
+          "address": "750 Holt Rd.",
+          "city": "Webster",
+          "country": "United States",
+          "holes": "9",
+          "id": "6443",
+          "isFavorite": false,
+          "isPayToPlay": "No",
+          "isPrivate": "No",
+          "name": "North Ponds DGC",
+          "rating": "1.75",
+          "state": "NY",
+          "zip": "14580",
+        },
+      ]
+    }
+    toggleFavorite={[MockFunction]}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -45,6 +120,7 @@ ShallowWrapper {
           </h2>
           <button
             className="favorite-btn"
+            onClick={[Function]}
           >
             <i
               className="fas fa-heart"
@@ -125,6 +201,7 @@ ShallowWrapper {
             </h2>,
             <button
               className="favorite-btn"
+              onClick={[Function]}
             >
               <i
                 className="fas fa-heart"
@@ -156,6 +233,7 @@ ShallowWrapper {
                 className="fas fa-heart"
               />,
               "className": "favorite-btn",
+              "onClick": [Function],
             },
             "ref": null,
             "rendered": Object {
@@ -382,6 +460,7 @@ ShallowWrapper {
             </h2>
             <button
               className="favorite-btn"
+              onClick={[Function]}
             >
               <i
                 className="fas fa-heart"
@@ -462,6 +541,7 @@ ShallowWrapper {
               </h2>,
               <button
                 className="favorite-btn"
+                onClick={[Function]}
               >
                 <i
                   className="fas fa-heart"
@@ -493,6 +573,7 @@ ShallowWrapper {
                   className="fas fa-heart"
                 />,
                 "className": "favorite-btn",
+                "onClick": [Function],
               },
               "ref": null,
               "rendered": Object {

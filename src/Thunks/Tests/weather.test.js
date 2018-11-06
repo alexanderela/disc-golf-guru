@@ -28,9 +28,6 @@ describe('fetchWeather', () => {
 	})
 
 	it('should show error if thunk has failed', async () => {
-		const expected = Error({
-			error: {message: '404'}
-		})
 		DataCleaner.fetchWeatherData = jest.fn().mockImplementation(() => Promise.reject({
 			status: 404,
 			json: () => Promise.reject({

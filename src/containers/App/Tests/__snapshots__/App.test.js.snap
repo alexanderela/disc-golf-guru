@@ -3,7 +3,7 @@
 exports[`App should render like snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <withRouter(App) />,
+  Symbol(enzyme.__unrendered__): <withRouter(Connect(App)) />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],

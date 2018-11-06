@@ -3,15 +3,11 @@ import SearchResultsCard from '../../containers/SearchResultsCard';
 import CourseInfoCard from '../../containers/CourseInfoCard';
 import WeatherCard from '../../containers/WeatherCard';
 import './MainPage.css';
-import * as DataCleaner from '../../utilities/DataCleaner';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { Route, Redirect } from 'react-router-dom';
-import { setCourses } from '../../actions/courseActions';
 import { toggleSearchResults } from '../../actions/searchResultsActions';
 import { toggleCourseDetails } from '../../actions/courseDetailsActions';
-import mockCoursesCleaned from '../../mockData/mockCoursesCleaned.js';
-import mockWeather from '../../mockData/mockWeather.js'
 import { fetchGolfCourses } from '../../Thunks/golfCourses.js'
 import { fetchWeather } from '../../Thunks/weather.js'
 
@@ -34,15 +30,15 @@ export class MainPage extends Component {
 	}
 
 	getGolfCourses = async (searchTerms) => {
-		const { setCourses, toggleSearchResults, fetchGolfCourses, fetchWeather } = this.props
+		const { toggleSearchResults, fetchGolfCourses, fetchWeather } = this.props
 		fetchGolfCourses(searchTerms);
 		fetchWeather(searchTerms)
 		toggleSearchResults()
 	}
 
 	render() {
-		const { pageName, golfCourses, searchResultsSelected, courseDetailsSelected, weather } = this.props;
-		const { searchTerms, showWeather } = this.state;
+		const { pageName, golfCourses, searchResultsSelected, weather } = this.props;
+		const { searchTerms } = this.state;
 
 		return(
 			<form className='MainPage' onSubmit={this.handleSubmit}>
