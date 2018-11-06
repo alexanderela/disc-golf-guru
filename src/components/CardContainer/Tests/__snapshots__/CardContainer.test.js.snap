@@ -17,7 +17,7 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <SearchResultsCard />,
+      "children": <withRouter(SearchResultsCard) />,
       "className": "CardContainer",
     },
     "ref": null,
@@ -40,7 +40,7 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": <SearchResultsCard />,
+        "children": <withRouter(SearchResultsCard) />,
         "className": "CardContainer",
       },
       "ref": null,

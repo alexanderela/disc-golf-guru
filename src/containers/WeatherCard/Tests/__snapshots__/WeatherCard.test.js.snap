@@ -1,0 +1,524 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WeatherCard should render like snapshot 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <WeatherCard
+    weather={
+      Object {
+        "description": "broken clouds",
+        "humidity": 76,
+        "icon": "01d",
+        "id": 420026615,
+        "temp": 43.77,
+        "wind": 8.05,
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h2
+          className="weather-card-header"
+        >
+          Current Weather
+        </h2>,
+        <img
+          alt="Icon representing current weather conditions"
+          className="current-weather-icon"
+          src="01d.png"
+        />,
+        <p
+          className="weather-info"
+        >
+          <span
+            className="weather-info-header"
+          >
+            Temperature:
+          </span>
+           
+          43.77
+        </p>,
+        <p
+          className="weather-info"
+        >
+          <span
+            className="weather-info-header"
+          >
+            Summary:
+          </span>
+           
+          broken clouds
+        </p>,
+        <p
+          className="weather-info"
+        >
+          <span
+            className="weather-info-header"
+          >
+            Wind:
+          </span>
+           
+          8.05
+           mph
+        </p>,
+        <p
+          className="weather-info"
+        >
+          <span
+            className="weather-info-header"
+          >
+            Humidity:
+          </span>
+           
+          76
+          %
+        </p>,
+      ],
+      "className": "WeatherCard",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Current Weather",
+          "className": "weather-card-header",
+        },
+        "ref": null,
+        "rendered": "Current Weather",
+        "type": "h2",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "alt": "Icon representing current weather conditions",
+          "className": "current-weather-icon",
+          "src": "01d.png",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "img",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <span
+              className="weather-info-header"
+            >
+              Temperature:
+            </span>,
+            " ",
+            43.77,
+          ],
+          "className": "weather-info",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Temperature:",
+              "className": "weather-info-header",
+            },
+            "ref": null,
+            "rendered": "Temperature:",
+            "type": "span",
+          },
+          " ",
+          43.77,
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <span
+              className="weather-info-header"
+            >
+              Summary:
+            </span>,
+            " ",
+            "broken clouds",
+          ],
+          "className": "weather-info",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Summary:",
+              "className": "weather-info-header",
+            },
+            "ref": null,
+            "rendered": "Summary:",
+            "type": "span",
+          },
+          " ",
+          "broken clouds",
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <span
+              className="weather-info-header"
+            >
+              Wind:
+            </span>,
+            " ",
+            8.05,
+            " mph",
+          ],
+          "className": "weather-info",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Wind:",
+              "className": "weather-info-header",
+            },
+            "ref": null,
+            "rendered": "Wind:",
+            "type": "span",
+          },
+          " ",
+          8.05,
+          " mph",
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <span
+              className="weather-info-header"
+            >
+              Humidity:
+            </span>,
+            " ",
+            76,
+            "%",
+          ],
+          "className": "weather-info",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Humidity:",
+              "className": "weather-info-header",
+            },
+            "ref": null,
+            "rendered": "Humidity:",
+            "type": "span",
+          },
+          " ",
+          76,
+          "%",
+        ],
+        "type": "p",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h2
+            className="weather-card-header"
+          >
+            Current Weather
+          </h2>,
+          <img
+            alt="Icon representing current weather conditions"
+            className="current-weather-icon"
+            src="01d.png"
+          />,
+          <p
+            className="weather-info"
+          >
+            <span
+              className="weather-info-header"
+            >
+              Temperature:
+            </span>
+             
+            43.77
+          </p>,
+          <p
+            className="weather-info"
+          >
+            <span
+              className="weather-info-header"
+            >
+              Summary:
+            </span>
+             
+            broken clouds
+          </p>,
+          <p
+            className="weather-info"
+          >
+            <span
+              className="weather-info-header"
+            >
+              Wind:
+            </span>
+             
+            8.05
+             mph
+          </p>,
+          <p
+            className="weather-info"
+          >
+            <span
+              className="weather-info-header"
+            >
+              Humidity:
+            </span>
+             
+            76
+            %
+          </p>,
+        ],
+        "className": "WeatherCard",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Current Weather",
+            "className": "weather-card-header",
+          },
+          "ref": null,
+          "rendered": "Current Weather",
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "alt": "Icon representing current weather conditions",
+            "className": "current-weather-icon",
+            "src": "01d.png",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "img",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <span
+                className="weather-info-header"
+              >
+                Temperature:
+              </span>,
+              " ",
+              43.77,
+            ],
+            "className": "weather-info",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Temperature:",
+                "className": "weather-info-header",
+              },
+              "ref": null,
+              "rendered": "Temperature:",
+              "type": "span",
+            },
+            " ",
+            43.77,
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <span
+                className="weather-info-header"
+              >
+                Summary:
+              </span>,
+              " ",
+              "broken clouds",
+            ],
+            "className": "weather-info",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Summary:",
+                "className": "weather-info-header",
+              },
+              "ref": null,
+              "rendered": "Summary:",
+              "type": "span",
+            },
+            " ",
+            "broken clouds",
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <span
+                className="weather-info-header"
+              >
+                Wind:
+              </span>,
+              " ",
+              8.05,
+              " mph",
+            ],
+            "className": "weather-info",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Wind:",
+                "className": "weather-info-header",
+              },
+              "ref": null,
+              "rendered": "Wind:",
+              "type": "span",
+            },
+            " ",
+            8.05,
+            " mph",
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <span
+                className="weather-info-header"
+              >
+                Humidity:
+              </span>,
+              " ",
+              76,
+              "%",
+            ],
+            "className": "weather-info",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Humidity:",
+                "className": "weather-info-header",
+              },
+              "ref": null,
+              "rendered": "Humidity:",
+              "type": "span",
+            },
+            " ",
+            76,
+            "%",
+          ],
+          "type": "p",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

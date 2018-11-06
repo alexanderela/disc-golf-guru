@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './CourseInfoCard.css';
+import { connect } from 'react-redux';
+import { toggleFavorite } from '../../actions/courseActions';
 
 class CourseInfoCard extends Component {
 	constructor(props) {
@@ -7,6 +9,10 @@ class CourseInfoCard extends Component {
 		this.state = {
 
 		}
+	}
+
+	handleFavorite = async (course) => {
+		this.props.toggleFavorite(course.id);
 	}
 
 	render() {
@@ -27,7 +33,9 @@ class CourseInfoCard extends Component {
 			<div className='CourseInfoCard'>
 				<div className='header-container'>
 					<h2 className='course-name'>{name}</h2>
-					<button className='favorite-btn'>
+					<button 
+						className='favorite-btn'
+						onClick={() => this.handleFavorite(course)}>
 						<i className="fas fa-heart"></i>
 					</button>
 				</div>
@@ -64,4 +72,11 @@ class CourseInfoCard extends Component {
 	}
 };
 
-export default CourseInfoCard;
+export const mapStateToProps = ({ golfCourses }) => ({ golfCourses });
+
+export const mapDispatchToProps = (dispatch) => ({
+	toggleFavorite: (courseId) => dispatch(toggleFavorite(courseId))
+});
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(CourseInfoCard);

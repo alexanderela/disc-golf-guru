@@ -10,13 +10,24 @@ jest.mock('../../../utilities/API');
 describe('MainPage', () => {
 	let mockFunc;
 	let wrapper;
+	let mockFetchGolfCourses;
+	let mockFetchWeather;
+	let mockToggleSearch;
+	let mockToggleCourse;
 
 	beforeEach(() => {
 		mockFunc = jest.fn();
+		mockFetchGolfCourses = jest.fn();
+		mockFetchWeather = jest.fn();
+		mockToggleSearch = jest.fn();
+		mockToggleCourse = jest.fn();
 		wrapper = shallow(
 									<MainPage 
-										setCourses={mockFunc} 
-										golfCourses={mockCoursesCleaned}/>);
+										fetchGolfCourses={mockFetchGolfCourses} 
+										fetchWeather={mockFetchWeather} 
+										golfCourses={mockCoursesCleaned}
+										toggleSearchResults={mockToggleSearch}
+										toggleCourseDetails={mockToggleCourse}/>);
 	})
 
 	it('should render like snapshot', () => {
@@ -77,34 +88,18 @@ describe('MainPage', () => {
 			mockZip = 14526;
 		})
 
-		it('should call setCourses when getGolfCourses is called', async () => {
+		it('should call fetchGolfCourses when getGolfCourses is called', async () => {
 			await wrapper.instance().getGolfCourses(mockZip);
-			expect(mockFunc).toHaveBeenCalled();
+			expect(mockFetchGolfCourses).toHaveBeenCalled();
 		})
 
-		it('should update state', async () => {
-			wrapper.setState({ showSearchResults: false });
+		it('should call toggleSearchResults when getGolfCourses is called', async () => {
 			await wrapper.instance().getGolfCourses(mockZip);
-			expect(wrapper.state('showSearchResults')).toBe(true);
+			expect(mockToggleSearch).toHaveBeenCalled();
 		})
 	})
-
-	describe('displayCourseDetails', () => {
-
-	})
-	
-	describe('clearDisplay', () => {
-		it('should set showCourseDetails and showSearchResults to false in state', () => {
-			wrapper.setState({  showCourseDetails: true, showSearchResults: true })
-			wrapper.instance().clearDisplay()
-			expect(wrapper.state('showCourseDetails')).toBe(false)
-			expect(wrapper.state('showSearchResults')).toBe(false)
-		})
-	})
-
 
 	describe('mapStateToProps', () => {
-
 		it('should create the correct props object', () => {
 			const expected = {
 				golfCourses: [{ id: 1234, name: 'mockCourse1'}, { id: 4321, name: 'mockCourse2'}]
@@ -121,20 +116,38 @@ describe('MainPage', () => {
 			dispatch = jest.fn();
 		})
 
-		it('should map a key of setCourses', () => {
+		it('should map a key of fetchGolfCourses', () => {
 			const dispatchedProps = mapDispatchToProps(dispatch);
-			expect(dispatchedProps.setCourses).toBeDefined()
+			expect(dispatchedProps.fetchGolfCourses).toBeDefined()
 		})
 
-		it('setCourses should call dispatch', () => {
+		it('should map a key of toggleSearchResults', () => {
 			const dispatchedProps = mapDispatchToProps(dispatch);
-			const expected = {
-				type: 'SET_COURSES',
-				courses: mockCoursesCleaned
-			}
-			dispatchedProps.setCourses(mockCoursesCleaned);
-			expect(dispatch).toHaveBeenCalledWith(expected);
+			expect(dispatchedProps.toggleSearchResults).toBeDefined()
 		})
+
+		it('should map a key of toggleCourseDetails', () => {
+			const dispatchedProps = mapDispatchToProps(dispatch);
+			expect(dispatchedProps.toggleCourseDetails).toBeDefined()
+		})
+
+		it('should have fetchGolfCourses call dispatch', () => {
+			const dispatchedProps = mapDispatchToProps(dispatch);
+			dispatchedProps.fetchGolfCourses(mockCoursesCleaned);
+			expect(dispatch).toHaveBeenCalled();
+		})
+
+		it('toggleSearchResults should call dispatch', () => {
+      const dispatchProps = mapDispatchToProps(dispatch);
+      dispatchProps.toggleSearchResults();
+      expect(dispatch).toHaveBeenCalled();
+    });
+
+  	it('toggleCourseDetails should call dispatch', () => {
+      const dispatchProps = mapDispatchToProps(dispatch);
+      dispatchProps.toggleCourseDetails();
+      expect(dispatch).toHaveBeenCalled();
+    });
 	})
 
 })

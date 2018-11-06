@@ -6,13 +6,14 @@ import './MainPage.css';
 import * as DataCleaner from '../../utilities/DataCleaner';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import { NavLink } from 'react-router-dom';
-import { Route, Redirect, Switch } from 'react-router-dom';
-import { setCourses, setSelectedCourse } from '../../actions/courseActions';
+import { Route, Redirect } from 'react-router-dom';
+import { setCourses } from '../../actions/courseActions';
 import { toggleSearchResults } from '../../actions/searchResultsActions';
 import { toggleCourseDetails } from '../../actions/courseDetailsActions';
 import mockCoursesCleaned from '../../mockData/mockCoursesCleaned.js';
-import mockCurrentWeather from '../../mockData/mockCurrentWeather.js'
+import mockWeather from '../../mockData/mockWeather.js'
+import { fetchGolfCourses } from '../../Thunks/golfCourses.js'
+import { fetchWeather } from '../../Thunks/weather.js'
 
 export class MainPage extends Component {
 	constructor(props) {
@@ -28,62 +29,23 @@ export class MainPage extends Component {
 
 	handleSubmit = (e) => {
 		e.preventDefault();
-		const { golfCourses } = this.props
 		this.getGolfCourses(this.state.searchTerms)
 		this.setState({ searchTerms: '' })
 	}
 
 	getGolfCourses = async (searchTerms) => {
-		const { setCourses, history, toggleSearchResults } = this.props
-		// const fetchedGolfCourses = await DataCleaner.fetchGolfCoursesByZip(searchTerms)
-		// setCourses(fetchedGolfCourses)
-		setCourses(mockCoursesCleaned)
+		const { setCourses, toggleSearchResults, fetchGolfCourses, fetchWeather } = this.props
+		fetchGolfCourses(searchTerms);
+		fetchWeather(searchTerms)
 		toggleSearchResults()
-		// this.setState({ showSearchResults: true, showCourseDetails: false })
-		// history.push({ pathname: '/searchresults'})
 	}
-
-	displayCourseDetails = (id) => {
-		const { golfCourses, setSelectedCourse, history, toggleSearchResults, toggleCourseDetails } = this.props
-		// const { showSearchResults } = this.state
-
-		toggleCourseDetails()
-		toggleSearchResults()
-		// if(toggleSearchResults) {
-			const selectedCourse = golfCourses.find(course => {
-				return course.id === id
-			})
-			setSelectedCourse(selectedCourse)
-			// this.setState({ 
-			// 	showCourseDetails: true, 
-			// 	showSearchResults: false 
-			// })
-			// history.push({ pathname: '/searchresults/courseinfo'})
-		return selectedCourse
-		// }
-	}
-
-	displayWeather = (id) => {
-		this.setState({ showWeather: true })
-		this.props.toggleCourseDetails()
-	}
-
-	// clearDisplay = () => {
-	// 	this.setState({ 
-	// 		showCourseDetails: false, 
-	// 		showSearchResults: false,
-	// 		showWeather: false 
-	// 	})
-	// }
 
 	render() {
-		const { pageName, golfCourses, match, searchResultsSelected, courseDetailsSelected } = this.props;
+		const { pageName, golfCourses, searchResultsSelected, courseDetailsSelected, weather } = this.props;
 		const { searchTerms, showWeather } = this.state;
 
 		return(
-			<div className='MainPage'>
-				{ (!searchResultsSelected && !courseDetailsSelected && !showWeather) 
-					?	<div>
+			<form className='MainPage' onSubmit={this.handleSubmit}>
 							<p className='page-name'>{pageName}</p>
 							<input
 								type='search' 
@@ -92,68 +54,42 @@ export class MainPage extends Component {
 								value={searchTerms}
 								onChange={this.handleInputChange}
 							/>
-								<button className='submit-btn' onClick={this.handleSubmit}>Submit
+								<button 
+									type='submit' 
+									className='submit-btn'>Submit
 								</button>
-							</div>
 
-					: <div></div>
-				}
 					<Route exact path='/findcourses' render={() => {
 						if (searchResultsSelected) {
-							return <Redirect to='/findcourses/searchresults' />
-						} else if (courseDetailsSelected) {
-								return <Redirect to='/findcourses/searchresults/courseinfo'/>
+							return <Redirect to='/findcourses/searchresults' />							
 						} else {
 								return null
 						}
 					}}/>
-					
-					{searchResultsSelected &&
-						<SearchResultsCard 
-											courses={golfCourses}
-											displayCourseDetails={this.displayCourseDetails}
-										/>
-					}
-
-					{courseDetailsSelected &&
-						<div className='course-weather-container'>
-						<CourseInfoCard 
-											course={golfCourses[0]} 
-											displayWeather={this.displayWeather}
-										/>
-						<WeatherCard currentWeather={mockCurrentWeather}/>
-						</div>
-					}
-
-					{/*{				
 
 					<Route exact path='/findcourses/searchresults' render={() => {
-						return <SearchResultsCard 
-											courses={golfCourses}
-											displayCourseDetails={this.displayCourseDetails}
-										/>
+						return <SearchResultsCard courses={golfCourses} />
 					}} />
 					
-					<Route exact path='/findcourses/searchresults/courseinfo' render={() => {
-						return <CourseInfoCard 
-											course={golfCourses[0]} 
-											displayWeather={this.displayWeather}
-										/>
+					<Route exact path='/findcourses/searchresults/courseinfo/:id' render={({match}) => {
+						const selectedCourse = golfCourses.find(course => {
+							return course.id === match.params.id
+						})
+						return <div className='course-weather-container'>
+										<CourseInfoCard course={selectedCourse} />
+										<WeatherCard weather={weather}/>
+									</div>
 					}}/>
-
-					<Route exact path='/findcourses/searchresults/courseinfo/weather' render={() => {
-						return <WeatherCard />
-					}}/>*/}
-			</div>
+			</form>
 		)
 	}
 }
 
-export const mapStateToProps = ({ golfCourses, searchResultsSelected, courseDetailsSelected }) => ({ golfCourses, searchResultsSelected, courseDetailsSelected });
+export const mapStateToProps = ({ golfCourses, searchResultsSelected, courseDetailsSelected, weather }) => ({ golfCourses, searchResultsSelected, courseDetailsSelected, weather });
 
 export const mapDispatchToProps = (dispatch) => ({
-	setCourses: (courses) => dispatch(setCourses(courses)),
-	setSelectedCourse: (course) => dispatch(setSelectedCourse(course)),
+	fetchGolfCourses: (courses) => dispatch(fetchGolfCourses(courses)),	
+	fetchWeather: (weather) => dispatch(fetchWeather(weather)),	
 	toggleSearchResults: () => dispatch(toggleSearchResults()),
 	toggleCourseDetails: () => dispatch(toggleCourseDetails())
 });

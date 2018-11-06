@@ -1,41 +1,75 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from '../../components/Header';
+import CardContainer from '../../components/CardContainer';
 import Nav from '../Nav';
 import MainPage from '../MainPage';
 import { Route, Switch } from 'react-router-dom';
 import Home from '../../components/Home';
+import Error from '../../components/Error';
 import { withRouter } from 'react-router';
+import { connect } from 'react-redux';
 import * as DataCleaner from '../../utilities/DataCleaner.js';
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      weather: []
+
+  filterFavorites = () => {
+    const { golfCourses } = this.props
+    const filteredFavorites = golfCourses.filter((course) => course.isFavorite)
+    this.setLocalStorage('favorites', filteredFavorites)
+    return filteredFavorites
+  }
+
+  setLocalStorage = (key, category) => {
+    localStorage.setItem(key, JSON.stringify(category))
+  }
+
+  getLocalStorage = (categoryName) => {
+    if(localStorage.length) {
+      return JSON.parse(localStorage.getItem(categoryName))
     }
   }
 
-  async componentDidMount() {
-    // const zip = 14526
-    // const weather = await DataCleaner.fetchCurrentWeatherByZip(zip)
-    // console.log(weather)
-    // this.setState({ weather })
+  checkLocalStorage = (course) => {
+    if (localStorage.favorites.length) {
+      const retrievedFavorites = this.getLocalStorage('favorites')
+      return retrievedFavorites
+    } else {
+      this.filterFavorites()
+    }
   }
 
   render() {
+    const { golfCourses } = this.props
+    const filteredFavorites = this.checkLocalStorage()
+
     return (
       <div className="App">
       	<Header />
-      	<Nav />
+      	 <Nav />
 	      <Switch>
 	      	<Route exact path='/' render={() => <Home /> }/>
-	    		<Route path='/findcourses' render={() => <MainPage pageName={'Find A Disc Golf Course'}/> }/>
-          <Route path='/favorites' />
-	      </Switch>
+	    		<Route 
+            path='/findcourses' 
+            render={() => <MainPage 
+            pageName={'Find A Disc Golf Course'}/> }/>
+          <Route 
+            path='/favorites' 
+            render={() => filteredFavorites.length 
+              ? <CardContainer favorites={filteredFavorites} />
+              : <Error message={'You currently have no favorites selected'}/> }/>
+          <Route 
+            path='*' 
+            exact={true} 
+            render={() => <Error message='The page you are looking for does not exist.'/>}/>
+        </Switch>
       </div>
     );
   }
 }
 
-export default withRouter(App);
+export const mapStateToProps = ({ golfCourses }) => ({ golfCourses });
+
+export const mapDispatchToProps = (dispatch) => ({})
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

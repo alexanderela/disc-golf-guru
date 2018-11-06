@@ -3,128 +3,78 @@
 exports[`SearchResultsCard should render like snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <SearchResultsCard
+  Symbol(enzyme.__unrendered__): <withRouter(SearchResultsCard)
     courses={
       Array [
         Object {
+          "address": "99 Elmwood Ave.",
           "city": "Rochester",
           "country": "United States",
-          "course_id": "4712",
-          "dgcr_mobile_url": "http://www.dgcoursereview.com/mobile/course.php?id=4712",
-          "dgcr_url": "http://www.dgcoursereview.com/course.php?id=4712",
           "holes": "18",
-          "latitude": "43.119428",
-          "longitude": "-77.636679",
+          "id": "4712",
+          "isFavorite": false,
+          "isPayToPlay": "No",
+          "isPrivate": "No",
           "name": "Genesee Valley Park",
-          "paytoplay": "0",
-          "private": "0",
           "rating": "3.29",
-          "rating_img": "http://www.dgcoursereview.com/images/rating/discs_3.5.png",
-          "rating_img_small": "http://www.dgcoursereview.com/images/rating/discs_sm_3.5.png",
-          "reviews": "7",
           "state": "NY",
-          "street_addr": "99 Elmwood Ave.",
-          "tee_1_clr": "FF0000",
-          "tee_2_clr": "",
-          "tee_3_clr": "",
-          "tee_4_clr": "",
-          "zipcode": "14620",
+          "zip": "14620",
         },
         Object {
+          "address": "3850 East Henrietta Rd.",
           "city": "Henrietta",
           "country": "United States",
-          "course_id": "7628",
-          "dgcr_mobile_url": "http://www.dgcoursereview.com/mobile/course.php?id=7628",
-          "dgcr_url": "http://www.dgcoursereview.com/course.php?id=7628",
           "holes": "9",
-          "latitude": "43.045582",
-          "longitude": "-77.617742",
+          "id": "7628",
+          "isFavorite": false,
+          "isPayToPlay": "No",
+          "isPrivate": "No",
           "name": "Lookup Park",
-          "paytoplay": "0",
-          "private": "0",
           "rating": "3.13",
-          "rating_img": "http://www.dgcoursereview.com/images/rating/discs_3.png",
-          "rating_img_small": "http://www.dgcoursereview.com/images/rating/discs_sm_3.png",
-          "reviews": "4",
           "state": "NY",
-          "street_addr": "3850 East Henrietta Rd.",
-          "tee_1_clr": "FF0000",
-          "tee_2_clr": "",
-          "tee_3_clr": "",
-          "tee_4_clr": "",
-          "zipcode": "14467",
+          "zip": "14467",
         },
         Object {
+          "address": "",
           "city": "Henrietta",
           "country": "United States",
-          "course_id": "4937",
-          "dgcr_mobile_url": "http://www.dgcoursereview.com/mobile/course.php?id=4937",
-          "dgcr_url": "http://www.dgcoursereview.com/course.php?id=4937",
           "holes": "18",
-          "latitude": "43.103033",
-          "longitude": "-77.605526",
+          "id": "4937",
+          "isFavorite": false,
+          "isPayToPlay": "No",
+          "isPrivate": "No",
           "name": "Monroe Community College DGC",
-          "paytoplay": "0",
-          "private": "0",
           "rating": "2.94",
-          "rating_img": "http://www.dgcoursereview.com/images/rating/discs_3.png",
-          "rating_img_small": "http://www.dgcoursereview.com/images/rating/discs_sm_3.png",
-          "reviews": "16",
           "state": "NY",
-          "street_addr": "",
-          "tee_1_clr": "FFFF00",
-          "tee_2_clr": "000000",
-          "tee_3_clr": "",
-          "tee_4_clr": "",
-          "zipcode": "14623",
+          "zip": "14623",
         },
         Object {
+          "address": "",
           "city": "Rochester",
           "country": "United States",
-          "course_id": "6795",
-          "dgcr_mobile_url": "http://www.dgcoursereview.com/mobile/course.php?id=6795",
-          "dgcr_url": "http://www.dgcoursereview.com/course.php?id=6795",
           "holes": "18",
-          "latitude": "43.153154",
-          "longitude": "-77.527428",
+          "id": "6795",
+          "isFavorite": false,
+          "isPayToPlay": "No",
+          "isPrivate": "No",
           "name": "Ellison Park",
-          "paytoplay": "0",
-          "private": "0",
           "rating": "3.54",
-          "rating_img": "http://www.dgcoursereview.com/images/rating/discs_3.5.png",
-          "rating_img_small": "http://www.dgcoursereview.com/images/rating/discs_sm_3.5.png",
-          "reviews": "12",
           "state": "NY",
-          "street_addr": "",
-          "tee_1_clr": "",
-          "tee_2_clr": "",
-          "tee_3_clr": "0000CC",
-          "tee_4_clr": "",
-          "zipcode": "14610",
+          "zip": "14610",
         },
         Object {
+          "address": "750 Holt Rd.",
           "city": "Webster",
           "country": "United States",
-          "course_id": "6443",
-          "dgcr_mobile_url": "http://www.dgcoursereview.com/mobile/course.php?id=6443",
-          "dgcr_url": "http://www.dgcoursereview.com/course.php?id=6443",
           "holes": "9",
-          "latitude": "43.216217",
-          "longitude": "-77.439955",
+          "id": "6443",
+          "isFavorite": false,
+          "isPayToPlay": "No",
+          "isPrivate": "No",
           "name": "North Ponds DGC",
-          "paytoplay": "0",
-          "private": "0",
           "rating": "1.75",
-          "rating_img": "http://www.dgcoursereview.com/images/rating/discs_2.png",
-          "rating_img_small": "http://www.dgcoursereview.com/images/rating/discs_sm_2.png",
-          "reviews": "2",
           "state": "NY",
-          "street_addr": "750 Holt Rd.",
-          "tee_1_clr": "",
-          "tee_2_clr": "FF9900",
-          "tee_3_clr": "",
-          "tee_4_clr": "",
-          "zipcode": "14580",
+          "zip": "14580",
         },
       ]
     }
@@ -140,703 +90,25 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "class",
     "props": Object {
-      "children": Array [
-        <h2
-          className="search-result-header"
-        >
-          Search Results
-        </h2>,
-        <h4
-          className="nearby-courses"
-        >
-          Nearby Courses
-        </h4>,
-        Array [
-          <div
-            className="course-search-result"
-          >
-            <p>
-              Genesee Valley Park undefined, Rochester, NY undefined
-            </p>
-            <button
-              className="search-result-btn"
-              onClick={[Function]}
-            >
-              Select
-            </button>
-          </div>,
-          <div
-            className="course-search-result"
-          >
-            <p>
-              Lookup Park undefined, Henrietta, NY undefined
-            </p>
-            <button
-              className="search-result-btn"
-              onClick={[Function]}
-            >
-              Select
-            </button>
-          </div>,
-          <div
-            className="course-search-result"
-          >
-            <p>
-              Monroe Community College DGC undefined, Henrietta, NY undefined
-            </p>
-            <button
-              className="search-result-btn"
-              onClick={[Function]}
-            >
-              Select
-            </button>
-          </div>,
-          <div
-            className="course-search-result"
-          >
-            <p>
-              Ellison Park undefined, Rochester, NY undefined
-            </p>
-            <button
-              className="search-result-btn"
-              onClick={[Function]}
-            >
-              Select
-            </button>
-          </div>,
-          <div
-            className="course-search-result"
-          >
-            <p>
-              North Ponds DGC undefined, Webster, NY undefined
-            </p>
-            <button
-              className="search-result-btn"
-              onClick={[Function]}
-            >
-              Select
-            </button>
-          </div>,
-        ],
-      ],
-      "className": "SearchResultsCard",
+      "children": [Function],
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Search Results",
-          "className": "search-result-header",
-        },
-        "ref": null,
-        "rendered": "Search Results",
-        "type": "h2",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Nearby Courses",
-          "className": "nearby-courses",
-        },
-        "ref": null,
-        "rendered": "Nearby Courses",
-        "type": "h4",
-      },
-      Object {
-        "instance": null,
-        "key": "Genesee Valley Park",
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <p>
-              Genesee Valley Park undefined, Rochester, NY undefined
-            </p>,
-            <button
-              className="search-result-btn"
-              onClick={[Function]}
-            >
-              Select
-            </button>,
-          ],
-          "className": "course-search-result",
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Genesee Valley Park undefined, Rochester, NY undefined",
-            },
-            "ref": null,
-            "rendered": "Genesee Valley Park undefined, Rochester, NY undefined",
-            "type": "p",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Select",
-              "className": "search-result-btn",
-              "onClick": [Function],
-            },
-            "ref": null,
-            "rendered": "Select",
-            "type": "button",
-          },
-        ],
-        "type": "div",
-      },
-      Object {
-        "instance": null,
-        "key": "Lookup Park",
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <p>
-              Lookup Park undefined, Henrietta, NY undefined
-            </p>,
-            <button
-              className="search-result-btn"
-              onClick={[Function]}
-            >
-              Select
-            </button>,
-          ],
-          "className": "course-search-result",
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Lookup Park undefined, Henrietta, NY undefined",
-            },
-            "ref": null,
-            "rendered": "Lookup Park undefined, Henrietta, NY undefined",
-            "type": "p",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Select",
-              "className": "search-result-btn",
-              "onClick": [Function],
-            },
-            "ref": null,
-            "rendered": "Select",
-            "type": "button",
-          },
-        ],
-        "type": "div",
-      },
-      Object {
-        "instance": null,
-        "key": "Monroe Community College DGC",
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <p>
-              Monroe Community College DGC undefined, Henrietta, NY undefined
-            </p>,
-            <button
-              className="search-result-btn"
-              onClick={[Function]}
-            >
-              Select
-            </button>,
-          ],
-          "className": "course-search-result",
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Monroe Community College DGC undefined, Henrietta, NY undefined",
-            },
-            "ref": null,
-            "rendered": "Monroe Community College DGC undefined, Henrietta, NY undefined",
-            "type": "p",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Select",
-              "className": "search-result-btn",
-              "onClick": [Function],
-            },
-            "ref": null,
-            "rendered": "Select",
-            "type": "button",
-          },
-        ],
-        "type": "div",
-      },
-      Object {
-        "instance": null,
-        "key": "Ellison Park",
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <p>
-              Ellison Park undefined, Rochester, NY undefined
-            </p>,
-            <button
-              className="search-result-btn"
-              onClick={[Function]}
-            >
-              Select
-            </button>,
-          ],
-          "className": "course-search-result",
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Ellison Park undefined, Rochester, NY undefined",
-            },
-            "ref": null,
-            "rendered": "Ellison Park undefined, Rochester, NY undefined",
-            "type": "p",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Select",
-              "className": "search-result-btn",
-              "onClick": [Function],
-            },
-            "ref": null,
-            "rendered": "Select",
-            "type": "button",
-          },
-        ],
-        "type": "div",
-      },
-      Object {
-        "instance": null,
-        "key": "North Ponds DGC",
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <p>
-              North Ponds DGC undefined, Webster, NY undefined
-            </p>,
-            <button
-              className="search-result-btn"
-              onClick={[Function]}
-            >
-              Select
-            </button>,
-          ],
-          "className": "course-search-result",
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "North Ponds DGC undefined, Webster, NY undefined",
-            },
-            "ref": null,
-            "rendered": "North Ponds DGC undefined, Webster, NY undefined",
-            "type": "p",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Select",
-              "className": "search-result-btn",
-              "onClick": [Function],
-            },
-            "ref": null,
-            "rendered": "Select",
-            "type": "button",
-          },
-        ],
-        "type": "div",
-      },
-    ],
-    "type": "div",
+    "rendered": [Function],
+    "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "host",
+      "nodeType": "class",
       "props": Object {
-        "children": Array [
-          <h2
-            className="search-result-header"
-          >
-            Search Results
-          </h2>,
-          <h4
-            className="nearby-courses"
-          >
-            Nearby Courses
-          </h4>,
-          Array [
-            <div
-              className="course-search-result"
-            >
-              <p>
-                Genesee Valley Park undefined, Rochester, NY undefined
-              </p>
-              <button
-                className="search-result-btn"
-                onClick={[Function]}
-              >
-                Select
-              </button>
-            </div>,
-            <div
-              className="course-search-result"
-            >
-              <p>
-                Lookup Park undefined, Henrietta, NY undefined
-              </p>
-              <button
-                className="search-result-btn"
-                onClick={[Function]}
-              >
-                Select
-              </button>
-            </div>,
-            <div
-              className="course-search-result"
-            >
-              <p>
-                Monroe Community College DGC undefined, Henrietta, NY undefined
-              </p>
-              <button
-                className="search-result-btn"
-                onClick={[Function]}
-              >
-                Select
-              </button>
-            </div>,
-            <div
-              className="course-search-result"
-            >
-              <p>
-                Ellison Park undefined, Rochester, NY undefined
-              </p>
-              <button
-                className="search-result-btn"
-                onClick={[Function]}
-              >
-                Select
-              </button>
-            </div>,
-            <div
-              className="course-search-result"
-            >
-              <p>
-                North Ponds DGC undefined, Webster, NY undefined
-              </p>
-              <button
-                className="search-result-btn"
-                onClick={[Function]}
-              >
-                Select
-              </button>
-            </div>,
-          ],
-        ],
-        "className": "SearchResultsCard",
+        "children": [Function],
       },
       "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Search Results",
-            "className": "search-result-header",
-          },
-          "ref": null,
-          "rendered": "Search Results",
-          "type": "h2",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Nearby Courses",
-            "className": "nearby-courses",
-          },
-          "ref": null,
-          "rendered": "Nearby Courses",
-          "type": "h4",
-        },
-        Object {
-          "instance": null,
-          "key": "Genesee Valley Park",
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              <p>
-                Genesee Valley Park undefined, Rochester, NY undefined
-              </p>,
-              <button
-                className="search-result-btn"
-                onClick={[Function]}
-              >
-                Select
-              </button>,
-            ],
-            "className": "course-search-result",
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Genesee Valley Park undefined, Rochester, NY undefined",
-              },
-              "ref": null,
-              "rendered": "Genesee Valley Park undefined, Rochester, NY undefined",
-              "type": "p",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Select",
-                "className": "search-result-btn",
-                "onClick": [Function],
-              },
-              "ref": null,
-              "rendered": "Select",
-              "type": "button",
-            },
-          ],
-          "type": "div",
-        },
-        Object {
-          "instance": null,
-          "key": "Lookup Park",
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              <p>
-                Lookup Park undefined, Henrietta, NY undefined
-              </p>,
-              <button
-                className="search-result-btn"
-                onClick={[Function]}
-              >
-                Select
-              </button>,
-            ],
-            "className": "course-search-result",
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Lookup Park undefined, Henrietta, NY undefined",
-              },
-              "ref": null,
-              "rendered": "Lookup Park undefined, Henrietta, NY undefined",
-              "type": "p",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Select",
-                "className": "search-result-btn",
-                "onClick": [Function],
-              },
-              "ref": null,
-              "rendered": "Select",
-              "type": "button",
-            },
-          ],
-          "type": "div",
-        },
-        Object {
-          "instance": null,
-          "key": "Monroe Community College DGC",
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              <p>
-                Monroe Community College DGC undefined, Henrietta, NY undefined
-              </p>,
-              <button
-                className="search-result-btn"
-                onClick={[Function]}
-              >
-                Select
-              </button>,
-            ],
-            "className": "course-search-result",
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Monroe Community College DGC undefined, Henrietta, NY undefined",
-              },
-              "ref": null,
-              "rendered": "Monroe Community College DGC undefined, Henrietta, NY undefined",
-              "type": "p",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Select",
-                "className": "search-result-btn",
-                "onClick": [Function],
-              },
-              "ref": null,
-              "rendered": "Select",
-              "type": "button",
-            },
-          ],
-          "type": "div",
-        },
-        Object {
-          "instance": null,
-          "key": "Ellison Park",
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              <p>
-                Ellison Park undefined, Rochester, NY undefined
-              </p>,
-              <button
-                className="search-result-btn"
-                onClick={[Function]}
-              >
-                Select
-              </button>,
-            ],
-            "className": "course-search-result",
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Ellison Park undefined, Rochester, NY undefined",
-              },
-              "ref": null,
-              "rendered": "Ellison Park undefined, Rochester, NY undefined",
-              "type": "p",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Select",
-                "className": "search-result-btn",
-                "onClick": [Function],
-              },
-              "ref": null,
-              "rendered": "Select",
-              "type": "button",
-            },
-          ],
-          "type": "div",
-        },
-        Object {
-          "instance": null,
-          "key": "North Ponds DGC",
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              <p>
-                North Ponds DGC undefined, Webster, NY undefined
-              </p>,
-              <button
-                className="search-result-btn"
-                onClick={[Function]}
-              >
-                Select
-              </button>,
-            ],
-            "className": "course-search-result",
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "North Ponds DGC undefined, Webster, NY undefined",
-              },
-              "ref": null,
-              "rendered": "North Ponds DGC undefined, Webster, NY undefined",
-              "type": "p",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Select",
-                "className": "search-result-btn",
-                "onClick": [Function],
-              },
-              "ref": null,
-              "rendered": "Select",
-              "type": "button",
-            },
-          ],
-          "type": "div",
-        },
-      ],
-      "type": "div",
+      "rendered": [Function],
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {
