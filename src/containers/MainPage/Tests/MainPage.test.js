@@ -10,15 +10,21 @@ jest.mock('../../../utilities/API');
 describe('MainPage', () => {
 	let mockFunc;
 	let wrapper;
+	let mockFetchGolfCourses;
+	let mockToggleSearch;
+	let mockToggleCourse;
 
 	beforeEach(() => {
 		mockFunc = jest.fn();
+		mockFetchGolfCourses = jest.fn();
+		mockToggleSearch = jest.fn();
+		mockToggleCourse = jest.fn();
 		wrapper = shallow(
 									<MainPage 
-										setCourses={mockFunc} 
+										fetchGolfCourses={mockFetchGolfCourses} 
 										golfCourses={mockCoursesCleaned}
-										toggleSearchResults={mockFunc}
-										toggleCourseDetails={mockFunc}/>);
+										toggleSearchResults={mockToggleSearch}
+										toggleCourseDetails={mockToggleCourse}/>);
 	})
 
 	it('should render like snapshot', () => {
@@ -79,22 +85,16 @@ describe('MainPage', () => {
 			mockZip = 14526;
 		})
 
-		xit('should call fetchGolfCourses when getGolfCourses is called', async () => {
-			// await wrapper.instance().getGolfCourses(mockZip);
-			// expect(mockFunc).toHaveBeenCalled();
+		it('should call fetchGolfCourses when getGolfCourses is called', async () => {
+			await wrapper.instance().getGolfCourses(mockZip);
+			expect(mockFetchGolfCourses).toHaveBeenCalled();
 		})
 
-		xit('should call toggleSearchResults when getGolfCourses is called', async () => {
-
-		})
-	})
-	
-	describe('', () => {
-		it('', () => {
-
+		it('should call toggleSearchResults when getGolfCourses is called', async () => {
+			await wrapper.instance().getGolfCourses(mockZip);
+			expect(mockToggleSearch).toHaveBeenCalled();
 		})
 	})
-
 
 	describe('mapStateToProps', () => {
 		it('should create the correct props object', () => {
@@ -118,11 +118,33 @@ describe('MainPage', () => {
 			expect(dispatchedProps.fetchGolfCourses).toBeDefined()
 		})
 
-		it('fetchGolfCourses should call dispatch', () => {
+		it('should map a key of toggleSearchResults', () => {
+			const dispatchedProps = mapDispatchToProps(dispatch);
+			expect(dispatchedProps.toggleSearchResults).toBeDefined()
+		})
+
+		it('should map a key of toggleCourseDetails', () => {
+			const dispatchedProps = mapDispatchToProps(dispatch);
+			expect(dispatchedProps.toggleCourseDetails).toBeDefined()
+		})
+
+		it('should have fetchGolfCourses call dispatch', () => {
 			const dispatchedProps = mapDispatchToProps(dispatch);
 			dispatchedProps.fetchGolfCourses(mockCoursesCleaned);
 			expect(dispatch).toHaveBeenCalled();
 		})
+
+		it('toggleSearchResults should call dispatch', () => {
+      const dispatchProps = mapDispatchToProps(dispatch);
+      dispatchProps.toggleSearchResults();
+      expect(dispatch).toHaveBeenCalled();
+    });
+
+  	it('toggleCourseDetails should call dispatch', () => {
+      const dispatchProps = mapDispatchToProps(dispatch);
+      dispatchProps.toggleCourseDetails();
+      expect(dispatch).toHaveBeenCalled();
+    });
 	})
 
 })

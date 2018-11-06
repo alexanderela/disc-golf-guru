@@ -4,6 +4,7 @@ exports[`MainPage should render like snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <MainPage
+    fetchGolfCourses={[MockFunction]}
     golfCourses={
       Array [
         Object {
@@ -78,7 +79,6 @@ ShallowWrapper {
         },
       ]
     }
-    setCourses={[MockFunction]}
     toggleCourseDetails={[MockFunction]}
     toggleSearchResults={[MockFunction]}
   />,
