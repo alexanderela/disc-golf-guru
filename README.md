@@ -27,10 +27,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### Wireframes
 #### Wireframe 1
-![Wireframe image 1](./src/assets/Wireframes/Wireframe_Home "Wireframe 1")
+![Wireframe image 1](./src/assets/Wireframes/Wireframe_Home.png "Wireframe 1")
 
 #### Wireframe 2
-![Wireframe image 1](./src/assets/Wireframes/Wireframe_Weather "Wireframe 1")
+![Wireframe image 1](./src/assets/Wireframes/Wireframe_Weather.png "Wireframe 1")
 
 #### Wireframe 3
-![Wireframe image 1](./src/assets/Wireframes/Wireframe_Favorites "Wireframe 1")
+![Wireframe image 1](./src/assets/Wireframes/Wireframe_Favorites.png "Wireframe 1")
