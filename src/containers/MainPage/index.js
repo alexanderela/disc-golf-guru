@@ -10,6 +10,7 @@ import { toggleSearchResults } from '../../actions/searchResultsActions';
 import { toggleCourseDetails } from '../../actions/courseDetailsActions';
 import { fetchGolfCourses } from '../../Thunks/golfCourses.js';
 import { fetchWeather } from '../../Thunks/weather.js';
+import PropTypes from 'prop-types';
 
 export class MainPage extends Component {
   constructor(props) {
@@ -112,6 +113,17 @@ export const mapDispatchToProps = dispatch => ({
   toggleSearchResults: () => dispatch(toggleSearchResults()),
   toggleCourseDetails: () => dispatch(toggleCourseDetails()),
 });
+
+MainPage.propTypes = {
+  golfCourses: PropTypes.array.isRequired,
+  searchResultsSelected: PropTypes.bool.isRequired,
+  courseDetailsSelected: PropTypes.bool.isRequired,
+  weather: PropTypes.object.isRequired,
+  fetchGolfCourses: PropTypes.func.isRequired,
+  fetchWeather: PropTypes.func.isRequired,
+  toggleSearchResults: PropTypes.func.isRequired,
+  toggleCourseDetails: PropTypes.func.isRequired,
+}
 
 export default withRouter(
   connect(

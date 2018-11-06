@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './WeatherCard.css';
 import Icons from '../../utilities/Icons-data';
+import PropTypes from 'prop-types';
 
 class WeatherCard extends Component {
   constructor(props) {
@@ -34,6 +35,10 @@ class WeatherCard extends Component {
       </div>
     );
   }
+}
+
+WeatherCard.propTypes = {
+  weather: PropTypes.object.isRequired
 }
 
 export default WeatherCard;

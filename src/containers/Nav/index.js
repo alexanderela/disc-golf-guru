@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Nav.css';
 import { NavLink } from 'react-router-dom';
 import { withRouter } from 'react-router';
+import PropTypes from 'prop-types';
 
 export class Nav extends Component {
   constructor(props) {
@@ -70,6 +71,10 @@ export class Nav extends Component {
       </div>
     );
   }
+}
+
+Nav.propTypes = {
+  location: PropTypes.object.isRequired
 }
 
 export default withRouter(Nav);

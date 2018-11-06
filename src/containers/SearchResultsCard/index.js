@@ -1,9 +1,10 @@
 import React from 'react';
 import './SearchResultsCard.css';
 import { withRouter, Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-const SearchResultsCard = props => {
-  const courseResults = props.courses.map(course => {
+const SearchResultsCard = ({ courses }) => {
+  const courseResults = courses.map(course => {
     const { name, address, city, state, zip, id } = course;
 
     return (
@@ -20,11 +21,15 @@ const SearchResultsCard = props => {
     <div className="SearchResultsCard">
       <h2 className="search-result-header">Search Results</h2>
       <h4 className="nearby-courses">Nearby Courses</h4>
-      {props.courses.length
+      {courses.length
         ? courseResults
         : 'Oops! There are no courses near where you searched.'}
     </div>
   );
 };
+
+SearchResultsCard.propTypes = {
+  courses: PropTypes.array.isRequired
+}
 
 export default withRouter(SearchResultsCard);

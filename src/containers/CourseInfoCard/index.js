@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './CourseInfoCard.css';
 import { connect } from 'react-redux';
 import { toggleFavorite } from '../../actions/courseActions';
+import PropTypes from 'prop-types';
 
 export class CourseInfoCard extends Component {
   constructor(props) {
@@ -48,7 +49,7 @@ export class CourseInfoCard extends Component {
         </p>
 
         <p className="course-info">
-          <span className="course-info-header">Rating:</span> {rating}
+          <span className="course-info-header">Rating:</span> {rating}/5
         </p>
 
         <p className="course-info">
@@ -68,6 +69,12 @@ export const mapStateToProps = ({ golfCourses }) => ({ golfCourses });
 export const mapDispatchToProps = dispatch => ({
   toggleFavorite: courseId => dispatch(toggleFavorite(courseId)),
 });
+
+CourseInfoCard.propTypes = {
+  course: PropTypes.object.isRequired,
+  golfCourses: PropTypes.array.isRequired,
+  toggleFavorite: PropTypes.func.isRequired
+}
 
 export default connect(
   mapStateToProps,

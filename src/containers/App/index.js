@@ -9,6 +9,7 @@ import Home from '../../components/Home';
 import Error from '../../components/Error';
 import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 class App extends Component {
   filterFavorites = () => {
@@ -76,6 +77,10 @@ class App extends Component {
 export const mapStateToProps = ({ golfCourses }) => ({ golfCourses });
 
 export const mapDispatchToProps = dispatch => ({});
+
+App.propTypes = {
+  golfCourses: PropTypes.array.isRequired
+}
 
 export default withRouter(
   connect(
