@@ -2,14 +2,14 @@ import React from 'react';
 import './Error.css'
 import { NavLink } from 'react-router-dom';
 
-const Error = (props) => (
+const Error = ({ message }) => (
 	<div className='Error'>
 		<p className='home-search-instructions'>
 			Oops!
 		</p>
 
 		<p className='home-intro'>
-			The page you're looking for doesn't exist.
+			{message}
 		</p>
 	</div>
 )
