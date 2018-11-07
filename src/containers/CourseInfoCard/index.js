@@ -7,15 +7,27 @@ import PropTypes from 'prop-types';
 export class CourseInfoCard extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      favorite: false
+    };
   }
 
   handleFavorite = async course => {
     const { toggleFavorite, updateFavorites } = this.props
+    this.checkIfFavorite(course)
     await toggleFavorite(course.id);
-    this.filterFavorites()
+    this.filterFavorites(course)
     updateFavorites(course.name)
   };
+
+  checkIfFavorite = (course) => {
+    console.log('checkiffavorite running')
+    if(course.isFavorite === true) {
+      this.setState({ favorite: true })
+    } else {
+      this.setState({ favorite: false })      
+    }
+  }
 
   filterFavorites = () => {
     const { golfCourses } = this.props;
@@ -25,7 +37,6 @@ export class CourseInfoCard extends Component {
     } else {
       retrievedStorage = golfCourses.filter(course => course.isFavorite);
     }
-    // console.log(retrievedStorage)
     this.setLocalStorage('favorites', retrievedStorage);
   };
 
@@ -33,9 +44,7 @@ export class CourseInfoCard extends Component {
       const { golfCourses, toggleFavorite } = this.props
       let retrievedStorage = []
       const filteredFromState = golfCourses.filter(course => course.isFavorite);
-      console.log(filteredFromState)
       filteredFromState.forEach((fav) => {
-        console.log("heres the fav", fav)
         if(!localStorage.favorites.includes(fav)) {
           retrievedStorage.push(fav)
         } else {
@@ -59,6 +68,7 @@ export class CourseInfoCard extends Component {
   };
 
   render() {
+    const { favorite } = this.state;
     const { course } = this.props;
     const {
       name,
@@ -78,10 +88,10 @@ export class CourseInfoCard extends Component {
         <div className="header-container">
           <h2 className="course-name">{name}</h2>
           <button
-            className="favorite-btn"
+            className={`favorite-btn ${favorite ? "fav-btn-active" : "fav-btn-inactive" }`}
             onClick={() => this.handleFavorite(course)}
           >
-            <i className="fas fa-heart" />
+            <i className={`fas fa-heart ${favorite ? "heart-active" : "heart-inactive"}`} />
           </button>
         </div>
         <div className="course-address">

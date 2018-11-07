@@ -47,9 +47,27 @@
 	color: #febb00;
 }
 
+.fav-btn-active {
+	background-color: #2c9a2c;	
+	color: #febb00;
+}
+
+.fav-btn-inactive {
+	background-color: #febb00;	
+	color: #febb00;
+}
+
 .fa-heart {
 	color: #2c9a2c;
 	font-size: 1.5rem;
+}
+
+.heart-active {
+	color: #febb00;
+}
+
+.heart-inactive {
+	color: #2c9a2c;
 }
 
 .course-name {
