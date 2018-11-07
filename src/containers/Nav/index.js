@@ -5,10 +5,6 @@ import { withRouter } from 'react-router';
 import PropTypes from 'prop-types';
 
 export class Nav extends Component {
-  constructor() {
-    super();
-  }
-
   render() {
     const { location } = this.props;
 
