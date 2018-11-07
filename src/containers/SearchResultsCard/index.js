@@ -4,8 +4,9 @@ import { withRouter, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { toggleSearchResults } from '../../actions/searchResultsActions';
+import { toggleCourseDetails } from '../../actions/courseDetailsActions';
 
-const SearchResultsCard = ({ courses, toggleSearchResults }) => {
+const SearchResultsCard = ({ courses, toggleSearchResults, toggleCourseDetails }) => {
   const courseResults = courses.map(course => {
     const { name, address, city, state, zip, id } = course;
 
@@ -15,7 +16,7 @@ const SearchResultsCard = ({ courses, toggleSearchResults }) => {
         <Link to={`/findcourses/searchresults/courseinfo/${id}`}>
           <button 
           className="search-result-btn"
-          onClick={toggleSearchResults}>Select</button>
+          onClick={toggleCourseDetails}>Select</button>
         </Link>
       </div>
     );
@@ -37,6 +38,7 @@ SearchResultsCard.propTypes = {
 }
 
 export const mapDispatchToProps = dispatch => ({
-  toggleSearchResults: () => dispatch(toggleSearchResults())
+  toggleSearchResults: () => dispatch(toggleSearchResults()),
+  toggleCourseDetails: () => dispatch(toggleCourseDetails())
 });
 export default withRouter(connect(null, mapDispatchToProps)(SearchResultsCard));

@@ -64,7 +64,7 @@ export class MainPage extends Component {
           exact
           path="/findcourses"
           render={() => {
-            if (searchResultsSelected) {
+            if (searchResultsSelected === 'search results') {
               return <Redirect to="/findcourses/searchresults" />;
             } else {
               return null;
@@ -87,15 +87,15 @@ export class MainPage extends Component {
             const selectedCourse = golfCourses.find(course => {
               return course.id === match.params.id;
             });
-            if (searchResultsSelected) {
-              return <Redirect to="/findcourses/searchresults" />;
+            if (searchResultsSelected === 'course details') {
+              return (
+                <div className="course-weather-container">
+                  <CourseInfoCard course={selectedCourse} />
+                  <WeatherCard weather={weather} />
+                </div>
+              );
             } else {
-            return (
-              <div className="course-weather-container">
-                <CourseInfoCard course={selectedCourse} />
-                <WeatherCard weather={weather} />
-              </div>
-            );
+              return <Redirect to="/findcourses/searchresults" />;
           }
           }}
         />
