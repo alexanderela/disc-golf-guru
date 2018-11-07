@@ -17,10 +17,12 @@ export class CourseInfoCard extends Component {
 
   filterFavorites = () => {
     const { golfCourses } = this.props;
+    console.log('filter favorites', golfCourses)
     let retrievedStorage = []
 
-    if(localStorage) {
+    if(localStorage.length) {
       const gottenStorage = this.getLocalStorage('favorites')
+      console.log(gottenStorage)
       const filteredFavorites = golfCourses.filter(course => course.isFavorite);
       retrievedStorage = [...gottenStorage, ...filteredFavorites]
     } else {
@@ -37,7 +39,7 @@ export class CourseInfoCard extends Component {
     if (localStorage) {
       return JSON.parse(localStorage.getItem(categoryName));
     } else {
-      return
+      return []
     }
   };
 

@@ -19,7 +19,6 @@ export const fetchGolfCourseData = async input => {
 
   const golfCourseData = await API.fetchData(url);
   const golfCourseResults = await formatGolfCourseData(golfCourseData);
-  console.log(golfCourseResults)
   return golfCourseResults;
 };
 
