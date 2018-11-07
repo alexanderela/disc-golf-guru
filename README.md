@@ -19,11 +19,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ### Search Results
 ![Search Results image](./src/assets/Site_Images/Find_A_Course.png "Search Results")
 
-###Golf Course Info
+### Golf Course Info
 ![Search Results image](./src/assets/Site_Images/Course_Info.png "Search Results")
 
-###Favorite Courses
-![Favorite Courses image](./src/assets/Site_Images/Home-Page.png "Favorite Courses")
+### Favorite Courses
+![Favorite Courses image](./src/assets/Site_Images/Favorites.png "Favorite Courses")
 
 ### Wireframes
 #### Wireframe 1
