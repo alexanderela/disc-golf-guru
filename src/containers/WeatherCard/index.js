@@ -38,7 +38,10 @@ class WeatherCard extends Component {
 }
 
 WeatherCard.propTypes = {
-  weather: PropTypes.object.isRequired
+  weather: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.array
+    ]),
 }
 
 export default WeatherCard;

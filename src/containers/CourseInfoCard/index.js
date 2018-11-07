@@ -17,18 +17,35 @@ export class CourseInfoCard extends Component {
 
   filterFavorites = () => {
     const { golfCourses } = this.props;
-    console.log('filter favorites', golfCourses)
-    let retrievedStorage = []
+    let retrievedStorage;
 
     if(localStorage.length) {
-      const gottenStorage = this.getLocalStorage('favorites')
-      console.log(gottenStorage)
-      const filteredFavorites = golfCourses.filter(course => course.isFavorite);
-      retrievedStorage = [...gottenStorage, ...filteredFavorites]
+      retrievedStorage = this.getCoursesFromLocalStorage()
     } else {
       retrievedStorage = golfCourses.filter(course => course.isFavorite);
     }
     this.setLocalStorage('favorites', retrievedStorage);
+  };
+
+  getCoursesFromLocalStorage = () => {
+      const { golfCourses, toggleFavorite } = this.props
+      let retrievedStorage = []
+      const filteredFromState = golfCourses.filter(course => course.isFavorite);
+
+      filteredFromState.forEach((fav) => {
+        if(!localStorage.favorites.includes(fav)) {
+          retrievedStorage.push(fav)
+        } else {
+          toggleFavorite(fav.id)
+        }
+      })
+
+      return retrievedStorage
+  }
+
+
+  isInFavorites = (entry) => {
+    return localStorage.favorites.find((fav) => fav.id === entry.id)
   };
 
   setLocalStorage = (key, category) => {

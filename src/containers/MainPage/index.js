@@ -87,12 +87,16 @@ export class MainPage extends Component {
             const selectedCourse = golfCourses.find(course => {
               return course.id === match.params.id;
             });
+            if(selectedCourse) {
               return (
                 <div className="course-weather-container">
                   <CourseInfoCard course={selectedCourse} />
                   <WeatherCard weather={weather} />
                 </div>
               );
+            } else {
+             return <Redirect to="/" />;
+            }
           }}
         />
       </form>
@@ -116,9 +120,12 @@ export const mapDispatchToProps = dispatch => ({
 
 MainPage.propTypes = {
   golfCourses: PropTypes.array.isRequired,
-  searchResultsSelected: PropTypes.bool.isRequired,
+  searchResultsSelected: PropTypes.string.isRequired,
   courseDetailsSelected: PropTypes.bool.isRequired,
-  weather: PropTypes.array.isRequired,
+  weather: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.array
+    ]),
   fetchGolfCourses: PropTypes.func.isRequired,
   fetchWeather: PropTypes.func.isRequired,
   toggleSearchResults: PropTypes.func.isRequired,

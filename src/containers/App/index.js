@@ -13,7 +13,7 @@ import PropTypes from 'prop-types';
 
 
 class App extends Component {
-  
+
   getLocalStorage = categoryName => {
     if (localStorage) {
       return JSON.parse(localStorage.getItem(categoryName));
@@ -47,7 +47,7 @@ class App extends Component {
           <Route
             path="/favorites"
             render={() =>
-              filteredFavorites.length ? (
+              filteredFavorites ? (
                 <CardContainer favorites={filteredFavorites} />
               ) : (
                 <Error message={'You currently have no favorites selected'} />
