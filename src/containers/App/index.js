@@ -43,6 +43,7 @@ class App extends Component {
 
   render() {
     const filteredFavorites = this.checkLocalStorage()
+    const { favoriteClicked } = this.state
 
     return (
       <div className="App">
@@ -64,7 +65,7 @@ class App extends Component {
                 <CardContainer 
                   favorites={filteredFavorites} 
                   updateFavorites={this.updateFavorites}
-                />
+                  favoriteSelected={favoriteClicked}                />
               ) : (
                 <Error message={'You currently have no favorites selected'} />
               )

@@ -4,12 +4,13 @@ import CourseInfoCard from '../../containers/CourseInfoCard';
 import Error from '../Error';
 import PropTypes from 'prop-types';
 
-const CardContainer = ({ favorites, updateFavorites }) => {
+const CardContainer = ({ favorites, updateFavorites, favoriteSelected }) => {
   const favoriteCards = favorites.map(course => {
     return <CourseInfoCard 
                 course={course} 
                 key={course.name} 
                 updateFavorites={updateFavorites}
+                favoriteSelected={favoriteSelected}
             />;
   });
   return (

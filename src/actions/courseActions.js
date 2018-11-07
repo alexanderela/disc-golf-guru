@@ -8,10 +8,3 @@ export const toggleFavorite = courseId => ({
   courseId,
 });
 
-export const toggleSearchResults = () => ({
-  type: 'TOGGLE_SEARCH_RESULTS',
-});
-
-export const toggleCourseDetails = () => ({
-  type: 'TOGGLE_COURSE_DETAILS',
-});
