@@ -2,32 +2,10 @@ import React, { Component } from 'react';
 import './Nav.css';
 import { NavLink } from 'react-router-dom';
 import { withRouter } from 'react-router';
+import PropTypes from 'prop-types';
 
 export class Nav extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      home: false,
-      findCourse: false,
-      favorites: false,
-    };
-  }
-
-  handleActiveClass = e => {
-    const { name } = e.target;
-    const stateKeys = Object.keys(this.state);
-
-    stateKeys.forEach(key => {
-      if (name === key) {
-        this.setState({ [key]: true });
-      } else {
-        this.setState({ [key]: false });
-      }
-    });
-  };
-
   render() {
-    const { home, findCourse, favorites } = this.state;
     const { location } = this.props;
 
     return (
@@ -35,7 +13,7 @@ export class Nav extends Component {
         <NavLink to="/">
           <button
             className={`nav-btn ${
-              home || location.pathname === '/'
+              location.pathname === '/'
                 ? 'nav-btn-active'
                 : 'nav-btn-inactive'
             }`}
@@ -48,7 +26,9 @@ export class Nav extends Component {
         <NavLink to="/findcourses">
           <button
             className={`nav-btn ${
-              findCourse ? 'nav-btn-active' : 'nav-btn-inactive'
+              location.pathname === '/findcourses' 
+                ? 'nav-btn-active' 
+                : 'nav-btn-inactive'
             }`}
             name="findCourse"
             onClick={this.handleActiveClass}
@@ -59,7 +39,9 @@ export class Nav extends Component {
         <NavLink to="/favorites">
           <button
             className={`nav-btn ${
-              favorites ? 'nav-btn-active' : 'nav-btn-inactive'
+              location.pathname === '/favorites' 
+                ? 'nav-btn-active' 
+                : 'nav-btn-inactive'
             }`}
             name="favorites"
             onClick={this.handleActiveClass}
@@ -70,6 +52,13 @@ export class Nav extends Component {
       </div>
     );
   }
+}
+
+Nav.propTypes = {
+  location: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.string
+  ]),
 }
 
 export default withRouter(Nav);

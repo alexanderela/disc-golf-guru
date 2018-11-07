@@ -1,7 +1,7 @@
 import React from 'react';
 import './Home.css';
 
-const Home = props => (
+const Home = () => (
   <div className="Home">
     <h2 className="home-header">Welcome to Disc Golf Guru!</h2>
     <p className="home-intro">

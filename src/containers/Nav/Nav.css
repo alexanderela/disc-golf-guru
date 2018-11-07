@@ -1,5 +1,6 @@
 .Nav {
   align-items: center;
+    cursor: pointer;
   background-color: #febb00;
   background-color: #FFF;
   display: flex;

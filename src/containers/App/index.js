@@ -9,36 +9,40 @@ import Home from '../../components/Home';
 import Error from '../../components/Error';
 import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
 
 class App extends Component {
-  filterFavorites = () => {
-    const { golfCourses } = this.props;
-    const filteredFavorites = golfCourses.filter(course => course.isFavorite);
-    this.setLocalStorage('favorites', filteredFavorites);
-    return filteredFavorites;
-  };
+  constructor() {
+    super();
+    this.state = {
+      favoriteClicked: ''
+    }
+  }
 
-  setLocalStorage = (key, category) => {
-    localStorage.setItem(key, JSON.stringify(category));
-  };
+  updateFavorites = (favoriteCourse) => {
+    this.setState({ favoriteClicked: favoriteCourse })
+  }
 
   getLocalStorage = categoryName => {
-    if (localStorage.length) {
+    if (localStorage) {
       return JSON.parse(localStorage.getItem(categoryName));
+    } else {
+      return
     }
   };
 
-  checkLocalStorage = course => {
-    if (localStorage.favorites.length) {
+  checkLocalStorage = () => {
+    if (localStorage.favorites) {
       const retrievedFavorites = this.getLocalStorage('favorites');
       return retrievedFavorites;
     } else {
-      this.filterFavorites();
+      return [];
     }
   };
 
   render() {
-    const filteredFavorites = this.checkLocalStorage();
+    const filteredFavorites = this.checkLocalStorage()
 
     return (
       <div className="App">
@@ -48,13 +52,19 @@ class App extends Component {
           <Route exact path="/" render={() => <Home />} />
           <Route
             path="/findcourses"
-            render={() => <MainPage pageName={'Find A Disc Golf Course'} />}
+            render={() => <MainPage 
+              pageName={'Find A Disc Golf Course'} 
+              updateFavorites={this.updateFavorites}
+              />}
           />
           <Route
             path="/favorites"
             render={() =>
-              filteredFavorites.length ? (
-                <CardContainer favorites={filteredFavorites} />
+              localStorage.favorites ? (
+                <CardContainer 
+                  favorites={filteredFavorites} 
+                  updateFavorites={this.updateFavorites}
+                />
               ) : (
                 <Error message={'You currently have no favorites selected'} />
               )
@@ -75,11 +85,13 @@ class App extends Component {
 
 export const mapStateToProps = ({ golfCourses }) => ({ golfCourses });
 
-export const mapDispatchToProps = dispatch => ({});
+App.propTypes = {
+  golfCourses: PropTypes.array.isRequired
+}
 
 export default withRouter(
   connect(
     mapStateToProps,
-    mapDispatchToProps
+    null
   )(App)
 );

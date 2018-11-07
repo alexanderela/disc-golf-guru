@@ -2,18 +2,73 @@ import React, { Component } from 'react';
 import './CourseInfoCard.css';
 import { connect } from 'react-redux';
 import { toggleFavorite } from '../../actions/courseActions';
+import PropTypes from 'prop-types';
 
 export class CourseInfoCard extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      favorite: false
+    };
   }
 
   handleFavorite = async course => {
-    this.props.toggleFavorite(course.id);
+    const { toggleFavorite, updateFavorites } = this.props
+    this.checkIfFavorite(course)
+    await toggleFavorite(course.id);
+    this.filterFavorites(course)
+    updateFavorites(course.name)
+  };
+
+  checkIfFavorite = (course) => {
+    console.log('checkiffavorite running')
+    if(course.isFavorite === true) {
+      this.setState({ favorite: true })
+    } else {
+      this.setState({ favorite: false })      
+    }
+  }
+
+  filterFavorites = () => {
+    const { golfCourses } = this.props;
+    let retrievedStorage;
+    if(localStorage.length) {
+      retrievedStorage = this.getCoursesFromLocalStorage()
+    } else {
+      retrievedStorage = golfCourses.filter(course => course.isFavorite);
+    }
+    this.setLocalStorage('favorites', retrievedStorage);
+  };
+
+  getCoursesFromLocalStorage = () => {
+      const { golfCourses, toggleFavorite } = this.props
+      let retrievedStorage = []
+      const filteredFromState = golfCourses.filter(course => course.isFavorite);
+      filteredFromState.forEach((fav) => {
+        if(!localStorage.favorites.includes(fav)) {
+          retrievedStorage.push(fav)
+        } else {
+          toggleFavorite(fav.id)
+        }
+      })
+
+      return retrievedStorage
+  }
+
+  setLocalStorage = (key, category) => {
+    localStorage.setItem(key, JSON.stringify(category));
+  };
+
+  getLocalStorage = categoryName => {
+    if (localStorage) {
+      return JSON.parse(localStorage.getItem(categoryName));
+    } else {
+      return []
+    }
   };
 
   render() {
+    const { favorite } = this.state;
     const { course } = this.props;
     const {
       name,
@@ -25,6 +80,7 @@ export class CourseInfoCard extends Component {
       rating,
       isPrivate,
       isPayToPlay,
+      reviews
     } = course;
 
     return (
@@ -32,10 +88,10 @@ export class CourseInfoCard extends Component {
         <div className="header-container">
           <h2 className="course-name">{name}</h2>
           <button
-            className="favorite-btn"
+            className={`favorite-btn ${favorite ? "fav-btn-active" : "fav-btn-inactive" }`}
             onClick={() => this.handleFavorite(course)}
           >
-            <i className="fas fa-heart" />
+            <i className={`fas fa-heart ${favorite ? "heart-active" : "heart-inactive"}`} />
           </button>
         </div>
         <div className="course-address">
@@ -44,19 +100,25 @@ export class CourseInfoCard extends Component {
         </div>
 
         <p className="course-info">
-          <span className="course-info-header">Number of holes:</span> {holes}
+          <span className="course-info-header">{holes.header}</span> {holes.text}
         </p>
 
         <p className="course-info">
-          <span className="course-info-header">Rating:</span> {rating}
+          <span className="course-info-header">{rating.header}</span> {rating.text}/5
         </p>
 
         <p className="course-info">
-          <span className="course-info-header">Private:</span> {isPrivate}
+          <span className="course-info-header">{isPrivate.header}</span> {isPrivate.text}
         </p>
 
         <p className="course-info">
-          <span className="course-info-header">Pay to play:</span> {isPayToPlay}
+          <span className="course-info-header">{isPayToPlay.header}</span> {isPayToPlay.text}
+        </p>
+
+        <p className="course-info-link">
+          <span className="course-info-header">{reviews.header}</span> 
+          <a className='review-link' href={reviews.text} 
+          target='_blank' rel='noopener noreferrer'>Disc Golf Course Review</a>
         </p>
       </div>
     );
@@ -68,6 +130,12 @@ export const mapStateToProps = ({ golfCourses }) => ({ golfCourses });
 export const mapDispatchToProps = dispatch => ({
   toggleFavorite: courseId => dispatch(toggleFavorite(courseId)),
 });
+
+CourseInfoCard.propTypes = {
+  course: PropTypes.object.isRequired,
+  golfCourses: PropTypes.array.isRequired,
+  toggleFavorite: PropTypes.func.isRequired
+}
 
 export default connect(
   mapStateToProps,
