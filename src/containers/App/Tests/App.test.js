@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from '../';
 import { shallow } from 'enzyme';
+import { mapStateToProps, mapDispatchToProps } from '../';
 
 describe('App', () => {
   let wrapper;
@@ -18,23 +19,16 @@ describe('App', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  describe('getLocalStorage', () => {
-		it('gets and parses data from local storage', () => {
-			const mockData = [{ "class": "wheeled", "model": "Digger Crawler" }, 
-			{"class": "tires", "model": "Mustang"}]
-			localStorage.setItem('mockData', JSON.stringify(mockData))
-			const	getStorage = wrapper.instance().getLocalStorage('mockData')
-			expect(getStorage).toEqual(mockData) 
-		})
-  })
-
-  describe('checkLocalStorage', () => {
-		// it('retrieves planets from local storage if there are planets in local storage', async () => {
-		// 		localStorage.setItem('planets', JSON.stringify(mockVehicle))
-		// 		const spy = spyOn(wrapper.instance(), 'getLocalStorage')	
-		// 		wrapper.instance().showPlanets()	
-		// 		expect(spy).toHaveBeenCalled()				
-		// 	})
-  	
-	})
+describe('mapStateToProps', () => {
+    it('should create the correct props object', () => {
+      const expected = {
+        golfCourses: [
+          { id: 1234, name: 'mockCourse1' },
+          { id: 4321, name: 'mockCourse2' },
+        ],
+      };
+      const result = mapStateToProps(expected);
+      expect(result).toEqual(expected);
+    });
+  });
 });

@@ -85,8 +85,6 @@ class App extends Component {
 
 export const mapStateToProps = ({ golfCourses }) => ({ golfCourses });
 
-export const mapDispatchToProps = dispatch => ({});
-
 App.propTypes = {
   golfCourses: PropTypes.array.isRequired
 }
@@ -94,6 +92,6 @@ App.propTypes = {
 export default withRouter(
   connect(
     mapStateToProps,
-    mapDispatchToProps
+    null
   )(App)
 );
