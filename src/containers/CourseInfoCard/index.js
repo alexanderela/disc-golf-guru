@@ -115,9 +115,9 @@ export class CourseInfoCard extends Component {
           <span className="course-info-header">{isPayToPlay.header}</span> {isPayToPlay.text}
         </p>
 
-        <p className="course-info">
+        <p className="course-info-link">
           <span className="course-info-header">{reviews.header}</span> 
-          <a href={reviews.text} 
+          <a className='review-link' href={reviews.text} 
           target='_blank' rel='noopener noreferrer'>Disc Golf Course Review</a>
         </p>
       </div>
