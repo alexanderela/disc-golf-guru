@@ -14,15 +14,15 @@ export class CourseInfoCard extends Component {
 
   handleFavorite = async course => {
     const { toggleFavorite, updateFavorites } = this.props
-    this.checkIfFavorite(course)
+    
     await toggleFavorite(course.id);
     this.filterFavorites(course)
     updateFavorites(course.name)
+    this.checkIfFavorite(course)
   };
 
   checkIfFavorite = (course) => {
-    console.log('checkiffavorite running')
-    if(course.isFavorite === true) {
+    if(course.isFavorite === false) {
       this.setState({ favorite: true })
     } else {
       this.setState({ favorite: false })      
@@ -69,7 +69,7 @@ export class CourseInfoCard extends Component {
 
   render() {
     const { favorite } = this.state;
-    const { course } = this.props;
+    const { course, favoriteSelected } = this.props;
     const {
       name,
       address,
@@ -88,10 +88,14 @@ export class CourseInfoCard extends Component {
         <div className="header-container">
           <h2 className="course-name">{name}</h2>
           <button
-            className={`favorite-btn ${favorite ? "fav-btn-active" : "fav-btn-inactive" }`}
+            className={`favorite-btn ${favorite || favoriteSelected === name 
+              ? "fav-btn-active" 
+              : "fav-btn-inactive" }`}
             onClick={() => this.handleFavorite(course)}
           >
-            <i className={`fas fa-heart ${favorite ? "heart-active" : "heart-inactive"}`} />
+            <i className={`fas fa-heart ${favorite || favoriteSelected === name 
+              ? "heart-active" 
+              : "heart-inactive"}`} />
           </button>
         </div>
         <div className="course-address">

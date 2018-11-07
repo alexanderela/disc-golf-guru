@@ -5,7 +5,6 @@ export const courseReducer = (state = [], action) => {
     case 'TOGGLE_FAVORITE':
       return state.map(course => {
         if (course.id === action.courseId) {
-          console.log('of course', course)
           return { ...course, isFavorite: !course.isFavorite };
         } else {
           return course;
