@@ -13,6 +13,16 @@ import PropTypes from 'prop-types';
 
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      favoriteClicked: ''
+    }
+  }
+
+  updateFavorites = (favoriteCourse) => {
+    this.setState({ favoriteClicked: favoriteCourse })
+  }
 
   getLocalStorage = categoryName => {
     if (localStorage) {
@@ -22,17 +32,17 @@ class App extends Component {
     }
   };
 
-  checkLocalStorage = course => {
+  checkLocalStorage = () => {
     if (localStorage.favorites) {
       const retrievedFavorites = this.getLocalStorage('favorites');
       return retrievedFavorites;
     } else {
-      return;
+      return [];
     }
   };
 
   render() {
-    const filteredFavorites = this.checkLocalStorage();
+    const filteredFavorites = this.checkLocalStorage()
 
     return (
       <div className="App">
@@ -42,13 +52,19 @@ class App extends Component {
           <Route exact path="/" render={() => <Home />} />
           <Route
             path="/findcourses"
-            render={() => <MainPage pageName={'Find A Disc Golf Course'} />}
+            render={() => <MainPage 
+              pageName={'Find A Disc Golf Course'} 
+              updateFavorites={this.updateFavorites}
+              />}
           />
           <Route
             path="/favorites"
             render={() =>
-              filteredFavorites ? (
-                <CardContainer favorites={filteredFavorites} />
+              localStorage.favorites ? (
+                <CardContainer 
+                  favorites={filteredFavorites} 
+                  updateFavorites={this.updateFavorites}
+                />
               ) : (
                 <Error message={'You currently have no favorites selected'} />
               )

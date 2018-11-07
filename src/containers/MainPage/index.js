@@ -43,6 +43,7 @@ export class MainPage extends Component {
       golfCourses,
       cardSelected,
       weather,
+      updateFavorites
     } = this.props;
     const { searchTerms } = this.state;
 
@@ -90,7 +91,7 @@ export class MainPage extends Component {
             if(selectedCourse) {
               return (
                 <div className="course-weather-container">
-                  <CourseInfoCard course={selectedCourse} />
+                  <CourseInfoCard course={selectedCourse} updateFavorites={updateFavorites}/>
                   <WeatherCard weather={weather} />
                 </div>
               );

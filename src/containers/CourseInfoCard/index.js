@@ -11,19 +11,21 @@ export class CourseInfoCard extends Component {
   }
 
   handleFavorite = async course => {
-    await this.props.toggleFavorite(course.id);
+    const { toggleFavorite, updateFavorites } = this.props
+    await toggleFavorite(course.id);
     this.filterFavorites()
+    updateFavorites(course.name)
   };
 
   filterFavorites = () => {
     const { golfCourses } = this.props;
     let retrievedStorage;
-
     if(localStorage.length) {
       retrievedStorage = this.getCoursesFromLocalStorage()
     } else {
       retrievedStorage = golfCourses.filter(course => course.isFavorite);
     }
+    // console.log(retrievedStorage)
     this.setLocalStorage('favorites', retrievedStorage);
   };
 
@@ -31,8 +33,9 @@ export class CourseInfoCard extends Component {
       const { golfCourses, toggleFavorite } = this.props
       let retrievedStorage = []
       const filteredFromState = golfCourses.filter(course => course.isFavorite);
-
+      console.log(filteredFromState)
       filteredFromState.forEach((fav) => {
+        console.log("heres the fav", fav)
         if(!localStorage.favorites.includes(fav)) {
           retrievedStorage.push(fav)
         } else {
