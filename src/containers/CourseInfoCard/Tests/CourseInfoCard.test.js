@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { CourseInfoCard } from '../';
 import { shallow } from 'enzyme';
 import mockCoursesCleaned from '../../../mockData/mockCoursesCleaned.js';
+import { mapStateToProps, mapDispatchToProps } from '../';
 
 describe('CourseInfoCard', () => {
   let wrapper;
@@ -37,5 +38,38 @@ describe('CourseInfoCard', () => {
   });
   it('should render like snapshot', () => {
     expect(wrapper).toMatchSnapshot();
+  });
+
+  describe('mapStateToProps', () => {
+    it('should create the correct props object', () => {
+      const expected = {
+        golfCourses: [
+          { id: 1234, name: 'mockCourse1' },
+          { id: 4321, name: 'mockCourse2' },
+        ],
+      };
+      const result = mapStateToProps(expected);
+      expect(result).toEqual(expected);
+    });
+  });
+
+  describe('mapDispatchToProps', () => {
+    let dispatch;
+
+    beforeEach(() => {
+      dispatch = jest.fn();
+    });
+
+    it('should map a key of toggleFavorite', () => {
+      const dispatchedProps = mapDispatchToProps(dispatch);
+      expect(dispatchedProps.toggleFavorite).toBeDefined();
+    });
+
+
+    it('should have toggleFavorite call dispatch', () => {
+      const dispatchedProps = mapDispatchToProps(dispatch);
+      dispatchedProps.toggleFavorite(mockCoursesCleaned.id);
+      expect(dispatch).toHaveBeenCalled();
+    });
   });
 });

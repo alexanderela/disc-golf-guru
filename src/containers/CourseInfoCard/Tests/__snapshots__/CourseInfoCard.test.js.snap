@@ -135,11 +135,11 @@ ShallowWrapper {
             Prospect Park - Nethermead
           </h2>
           <button
-            className="favorite-btn"
+            className="favorite-btn fav-btn-inactive"
             onClick={[Function]}
           >
             <i
-              className="fas fa-heart"
+              className="fas fa-heart heart-inactive"
             />
           </button>
         </div>,
@@ -203,7 +203,7 @@ ShallowWrapper {
           No
         </p>,
         <p
-          className="course-info"
+          className="course-info-link"
         >
           <span
             className="course-info-header"
@@ -211,6 +211,7 @@ ShallowWrapper {
             Reviews: 
           </span>
           <a
+            className="review-link"
             href="http://www.dgcoursereview.com/course.php?id=1714"
             rel="noopener noreferrer"
             target="_blank"
@@ -235,11 +236,11 @@ ShallowWrapper {
               Prospect Park - Nethermead
             </h2>,
             <button
-              className="favorite-btn"
+              className="favorite-btn fav-btn-inactive"
               onClick={[Function]}
             >
               <i
-                className="fas fa-heart"
+                className="fas fa-heart heart-inactive"
               />
             </button>,
           ],
@@ -265,9 +266,9 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": <i
-                className="fas fa-heart"
+                className="fas fa-heart heart-inactive"
               />,
-              "className": "favorite-btn",
+              "className": "favorite-btn fav-btn-inactive",
               "onClick": [Function],
             },
             "ref": null,
@@ -276,7 +277,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "className": "fas fa-heart",
+                "className": "fas fa-heart heart-inactive",
               },
               "ref": null,
               "rendered": null,
@@ -489,6 +490,7 @@ ShallowWrapper {
               Reviews: 
             </span>,
             <a
+              className="review-link"
               href="http://www.dgcoursereview.com/course.php?id=1714"
               rel="noopener noreferrer"
               target="_blank"
@@ -496,7 +498,7 @@ ShallowWrapper {
               Disc Golf Course Review
             </a>,
           ],
-          "className": "course-info",
+          "className": "course-info-link",
         },
         "ref": null,
         "rendered": Array [
@@ -518,6 +520,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": "Disc Golf Course Review",
+              "className": "review-link",
               "href": "http://www.dgcoursereview.com/course.php?id=1714",
               "rel": "noopener noreferrer",
               "target": "_blank",
@@ -548,11 +551,11 @@ ShallowWrapper {
               Prospect Park - Nethermead
             </h2>
             <button
-              className="favorite-btn"
+              className="favorite-btn fav-btn-inactive"
               onClick={[Function]}
             >
               <i
-                className="fas fa-heart"
+                className="fas fa-heart heart-inactive"
               />
             </button>
           </div>,
@@ -616,7 +619,7 @@ ShallowWrapper {
             No
           </p>,
           <p
-            className="course-info"
+            className="course-info-link"
           >
             <span
               className="course-info-header"
@@ -624,6 +627,7 @@ ShallowWrapper {
               Reviews: 
             </span>
             <a
+              className="review-link"
               href="http://www.dgcoursereview.com/course.php?id=1714"
               rel="noopener noreferrer"
               target="_blank"
@@ -648,11 +652,11 @@ ShallowWrapper {
                 Prospect Park - Nethermead
               </h2>,
               <button
-                className="favorite-btn"
+                className="favorite-btn fav-btn-inactive"
                 onClick={[Function]}
               >
                 <i
-                  className="fas fa-heart"
+                  className="fas fa-heart heart-inactive"
                 />
               </button>,
             ],
@@ -678,9 +682,9 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": <i
-                  className="fas fa-heart"
+                  className="fas fa-heart heart-inactive"
                 />,
-                "className": "favorite-btn",
+                "className": "favorite-btn fav-btn-inactive",
                 "onClick": [Function],
               },
               "ref": null,
@@ -689,7 +693,7 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "className": "fas fa-heart",
+                  "className": "fas fa-heart heart-inactive",
                 },
                 "ref": null,
                 "rendered": null,
@@ -902,6 +906,7 @@ ShallowWrapper {
                 Reviews: 
               </span>,
               <a
+                className="review-link"
                 href="http://www.dgcoursereview.com/course.php?id=1714"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -909,7 +914,7 @@ ShallowWrapper {
                 Disc Golf Course Review
               </a>,
             ],
-            "className": "course-info",
+            "className": "course-info-link",
           },
           "ref": null,
           "rendered": Array [
@@ -931,6 +936,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": "Disc Golf Course Review",
+                "className": "review-link",
                 "href": "http://www.dgcoursereview.com/course.php?id=1714",
                 "rel": "noopener noreferrer",
                 "target": "_blank",
