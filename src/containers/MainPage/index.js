@@ -87,16 +87,12 @@ export class MainPage extends Component {
             const selectedCourse = golfCourses.find(course => {
               return course.id === match.params.id;
             });
-            if (searchResultsSelected === 'course details') {
               return (
                 <div className="course-weather-container">
                   <CourseInfoCard course={selectedCourse} />
                   <WeatherCard weather={weather} />
                 </div>
               );
-            } else {
-              return <Redirect to="/findcourses/searchresults" />;
-          }
           }}
         />
       </form>
