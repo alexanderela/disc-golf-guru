@@ -2,13 +2,11 @@ import { combineReducers } from 'redux';
 import { courseReducer } from './courseReducer';
 import { weatherReducer } from './weatherReducer';
 import { hasErroredReducer } from './hasErroredReducer';
-import { searchResultsReducer } from './searchResultsReducer';
-import { courseDetailsReducer } from './courseDetailsReducer';
+import { cardReducer } from './cardReducer';
 
 export const rootReducer = combineReducers({
   golfCourses: courseReducer,
   weather: weatherReducer,
-  searchResultsSelected: searchResultsReducer,
-  courseDetailsSelected: courseDetailsReducer,
+  cardSelected: cardReducer,
   hasErrored: hasErroredReducer,
 });

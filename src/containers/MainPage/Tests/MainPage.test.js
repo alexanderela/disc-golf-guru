@@ -12,22 +12,23 @@ describe('MainPage', () => {
   let wrapper;
   let mockFetchGolfCourses;
   let mockFetchWeather;
-  let mockToggleSearch;
-  let mockToggleCourse;
+  let mockShowSearch;
+  let mockShowCourseDetails;
 
   beforeEach(() => {
     mockFunc = jest.fn();
     mockFetchGolfCourses = jest.fn();
     mockFetchWeather = jest.fn();
-    mockToggleSearch = jest.fn();
-    mockToggleCourse = jest.fn();
+    mockShowSearch = jest.fn();
+    mockShowCourseDetails = jest.fn();
     wrapper = shallow(
       <MainPage
         fetchGolfCourses={mockFetchGolfCourses}
         fetchWeather={mockFetchWeather}
         golfCourses={mockCoursesCleaned}
-        toggleSearchResults={mockToggleSearch}
-        toggleCourseDetails={mockToggleCourse}
+        showSearchResultsCard={mockShowSearch}
+        showCourseDetailsCard={mockShowCourseDetails}
+        cardSelected={''}
       />
     );
   });
@@ -95,9 +96,9 @@ describe('MainPage', () => {
       expect(mockFetchGolfCourses).toHaveBeenCalled();
     });
 
-    it('should call toggleSearchResults when getGolfCourses is called', async () => {
+    it('should call showSearchResultsCard when getGolfCourses is called', async () => {
       await wrapper.instance().getGolfCourses(mockZip);
-      expect(mockToggleSearch).toHaveBeenCalled();
+      expect(mockShowSearch).toHaveBeenCalled();
     });
   });
 
@@ -126,14 +127,14 @@ describe('MainPage', () => {
       expect(dispatchedProps.fetchGolfCourses).toBeDefined();
     });
 
-    it('should map a key of toggleSearchResults', () => {
+    it('should map a key of showSearchResultsCard', () => {
       const dispatchedProps = mapDispatchToProps(dispatch);
-      expect(dispatchedProps.toggleSearchResults).toBeDefined();
+      expect(dispatchedProps.showSearchResultsCard).toBeDefined();
     });
 
-    it('should map a key of toggleCourseDetails', () => {
+    it('should map a key of showCourseDetailsCard', () => {
       const dispatchedProps = mapDispatchToProps(dispatch);
-      expect(dispatchedProps.toggleCourseDetails).toBeDefined();
+      expect(dispatchedProps.showCourseDetailsCard).toBeDefined();
     });
 
     it('should have fetchGolfCourses call dispatch', () => {
@@ -142,15 +143,15 @@ describe('MainPage', () => {
       expect(dispatch).toHaveBeenCalled();
     });
 
-    it('toggleSearchResults should call dispatch', () => {
+    it('showSearchResultsCard should call dispatch', () => {
       const dispatchProps = mapDispatchToProps(dispatch);
-      dispatchProps.toggleSearchResults();
+      dispatchProps.showSearchResultsCard();
       expect(dispatch).toHaveBeenCalled();
     });
 
-    it('toggleCourseDetails should call dispatch', () => {
+    it('showCourseDetailsCard should call dispatch', () => {
       const dispatchProps = mapDispatchToProps(dispatch);
-      dispatchProps.toggleCourseDetails();
+      dispatchProps.showCourseDetailsCard();
       expect(dispatch).toHaveBeenCalled();
     });
   });

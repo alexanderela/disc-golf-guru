@@ -74,7 +74,10 @@ export class Nav extends Component {
 }
 
 Nav.propTypes = {
-  location: PropTypes.object.isRequired
+  location: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.string
+  ]),
 }
 
 export default withRouter(Nav);

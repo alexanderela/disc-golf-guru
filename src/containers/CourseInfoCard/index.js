@@ -43,11 +43,6 @@ export class CourseInfoCard extends Component {
       return retrievedStorage
   }
 
-
-  isInFavorites = (entry) => {
-    return localStorage.favorites.find((fav) => fav.id === entry.id)
-  };
-
   setLocalStorage = (key, category) => {
     localStorage.setItem(key, JSON.stringify(category));
   };

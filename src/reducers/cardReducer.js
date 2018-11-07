@@ -1,4 +1,4 @@
-export const searchResultsReducer = (state = '', action) => {
+export const cardReducer = (state = '', action) => {
   switch (action.type) {
     case 'TOGGLE_SEARCH_RESULTS':
       return state = 'search results';
@@ -8,3 +8,4 @@ export const searchResultsReducer = (state = '', action) => {
       return state;
   }
 };
+

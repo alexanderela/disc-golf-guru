@@ -30,6 +30,14 @@
   ],
   "devDependencies": {
     "enzyme": "^3.7.0",
-    "enzyme-adapter-react-16": "^1.6.0"
-  }
+    "enzyme-adapter-react-16": "^1.6.0",
+    "prettier": "1.14.3"
+  },
+  "husky": { "hooks": { "pre-commit": "pretty-quick --staged" } },
+  "prettier" : {
+  "trailingComma": "es5",
+  "tabWidth": 2,
+  "semi": true,
+  "singleQuote": true
+} 
 }

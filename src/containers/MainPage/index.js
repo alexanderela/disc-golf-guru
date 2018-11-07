@@ -6,8 +6,8 @@ import './MainPage.css';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { Route, Redirect } from 'react-router-dom';
-import { toggleSearchResults } from '../../actions/searchResultsActions';
-import { toggleCourseDetails } from '../../actions/courseDetailsActions';
+import { showSearchResultsCard } from '../../actions/cardActions';
+import { showCourseDetailsCard } from '../../actions/cardActions';
 import { fetchGolfCourses } from '../../Thunks/golfCourses.js';
 import { fetchWeather } from '../../Thunks/weather.js';
 import PropTypes from 'prop-types';
@@ -31,17 +31,17 @@ export class MainPage extends Component {
   };
 
   getGolfCourses = async searchTerms => {
-    const { toggleSearchResults, fetchGolfCourses, fetchWeather } = this.props;
+    const { showSearchResultsCard, fetchGolfCourses, fetchWeather } = this.props;
     fetchGolfCourses(searchTerms);
     fetchWeather(searchTerms);
-    toggleSearchResults();
+    showSearchResultsCard();
   };
 
   render() {
     const {
       pageName,
       golfCourses,
-      searchResultsSelected,
+      cardSelected,
       weather,
     } = this.props;
     const { searchTerms } = this.state;
@@ -64,7 +64,7 @@ export class MainPage extends Component {
           exact
           path="/findcourses"
           render={() => {
-            if (searchResultsSelected === 'search results') {
+            if (cardSelected === 'search results') {
               return <Redirect to="/findcourses/searchresults" />;
             } else {
               return null;
@@ -106,30 +106,30 @@ export class MainPage extends Component {
 
 export const mapStateToProps = ({
   golfCourses,
+  cardSelected,
   searchResultsSelected,
   courseDetailsSelected,
   weather,
-}) => ({ golfCourses, searchResultsSelected, courseDetailsSelected, weather });
+}) => ({ golfCourses, cardSelected, searchResultsSelected, courseDetailsSelected, weather });
 
 export const mapDispatchToProps = dispatch => ({
   fetchGolfCourses: courses => dispatch(fetchGolfCourses(courses)),
   fetchWeather: weather => dispatch(fetchWeather(weather)),
-  toggleSearchResults: () => dispatch(toggleSearchResults()),
-  toggleCourseDetails: () => dispatch(toggleCourseDetails()),
+  showSearchResultsCard: () => dispatch(showSearchResultsCard()),
+  showCourseDetailsCard: () => dispatch(showCourseDetailsCard()),
 });
 
 MainPage.propTypes = {
   golfCourses: PropTypes.array.isRequired,
-  searchResultsSelected: PropTypes.string.isRequired,
-  courseDetailsSelected: PropTypes.bool.isRequired,
+  cardSelected: PropTypes.string.isRequired,
   weather: PropTypes.oneOfType([
     PropTypes.object,
     PropTypes.array
     ]),
   fetchGolfCourses: PropTypes.func.isRequired,
   fetchWeather: PropTypes.func.isRequired,
-  toggleSearchResults: PropTypes.func.isRequired,
-  toggleCourseDetails: PropTypes.func.isRequired,
+  showSearchResultsCard: PropTypes.func.isRequired,
+  showCourseDetailsCard: PropTypes.func.isRequired,
 }
 
 export default withRouter(

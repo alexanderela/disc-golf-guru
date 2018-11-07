@@ -3,10 +3,9 @@ import './SearchResultsCard.css';
 import { withRouter, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { toggleSearchResults } from '../../actions/searchResultsActions';
-import { toggleCourseDetails } from '../../actions/courseDetailsActions';
+import { showSearchResultsCard, showCourseDetailsCard } from '../../actions/cardActions';
 
-const SearchResultsCard = ({ courses, toggleSearchResults, toggleCourseDetails }) => {
+const SearchResultsCard = ({ courses, showSearchResultsCard, showCourseDetailsCard }) => {
   const courseResults = courses.map(course => {
     const { name, address, city, state, zip, id } = course;
 
@@ -16,7 +15,7 @@ const SearchResultsCard = ({ courses, toggleSearchResults, toggleCourseDetails }
         <Link to={`/findcourses/searchresults/courseinfo/${id}`}>
           <button 
           className="search-result-btn"
-          onClick={toggleCourseDetails}>Select</button>
+          onClick={showCourseDetailsCard}>Select</button>
         </Link>
       </div>
     );
@@ -38,7 +37,7 @@ SearchResultsCard.propTypes = {
 }
 
 export const mapDispatchToProps = dispatch => ({
-  toggleSearchResults: () => dispatch(toggleSearchResults()),
-  toggleCourseDetails: () => dispatch(toggleCourseDetails())
+  showSearchResultsCard: () => dispatch(showSearchResultsCard()),
+  showCourseDetailsCard: () => dispatch(showCourseDetailsCard())
 });
 export default withRouter(connect(null, mapDispatchToProps)(SearchResultsCard));
