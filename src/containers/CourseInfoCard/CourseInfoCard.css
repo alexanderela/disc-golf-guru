@@ -70,8 +70,8 @@
 }
 
 .course-name {
-  font-size: 1.25rem;
   color: #2c9a2c;
+  font-size: 1.25rem;
   font-weight: 600;
   overflow-wrap: break-word;
 	width: 77%;
@@ -92,13 +92,13 @@
 }
 
 .course-info {
-	margin: 0.8rem 0;
+	margin: 0 0 0.5rem;
 }
 
 .course-info-link {
 	display: flex;
 	flex-direction: column;
-	margin: 0.8rem 0;
+	margin: 0.4rem 0;
 }
 
 .review-link {

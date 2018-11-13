@@ -16,8 +16,9 @@
 .course-search-result {
   align-items: center;
   display: flex;
-  margin: 0 0 1.5rem;
+  align-items: center;
   overflow-wrap: break-word;
+  height: 2.5rem;
 }
 
 .search-result-btn {
