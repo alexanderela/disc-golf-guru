@@ -17,7 +17,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "eslint": "./node_modules/eslint/bin/eslint.js ./src/**/**/*.js"
+    "eslint": "./node_modules/eslint/bin/eslint.js ./src/**/**/*.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -31,13 +33,19 @@
   "devDependencies": {
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.6.0",
+    "gh-pages": "^2.0.1",
     "prettier": "1.14.3"
   },
-  "husky": { "hooks": { "pre-commit": "pretty-quick --staged" } },
-  "prettier" : {
-  "trailingComma": "es5",
-  "tabWidth": 2,
-  "semi": true,
-  "singleQuote": true
-} 
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": true
+  },
+  "homepage": "https://alexanderela.github.io/disc-golf-guru"
 }
