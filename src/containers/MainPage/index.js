@@ -96,7 +96,7 @@ export class MainPage extends Component {
                 </div>
               );
             } else {
-             return <Redirect to="/disc-golf-guru" />;
+             return <Redirect to="/" />;
             }
           }}
         />
