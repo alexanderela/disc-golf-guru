@@ -2,7 +2,7 @@
   "name": "self-directed-project-m3",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://alexanderela.github.io/disc-golf-guru",
+  "homepage": "https://alexanderela.github.io/",
   "dependencies": {
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
