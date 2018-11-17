@@ -13,7 +13,7 @@ export class Nav extends Component {
         <NavLink to="/">
           <button
             className={`nav-btn ${
-              location.pathname === '/'
+              location.pathname === "/"
                 ? 'nav-btn-active'
                 : 'nav-btn-inactive'
             }`}
