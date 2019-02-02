@@ -50,7 +50,7 @@ class App extends Component {
         <Header />
         <Nav />
         <Switch>
-          <Route exact path="/disc-golf-guru" render={() => <Home />} />
+          <Route exact path="/" render={() => <Home />} />
           <Route
             path="/findcourses"
             render={() => <MainPage 
