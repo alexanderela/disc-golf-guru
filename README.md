@@ -94,7 +94,7 @@ git push origin branch-name-here
 - CSS3
 - Fetch calls with asynchronous JavaScript
 - Open Weather Map API
-- Disc Golf Course Review API
+- Disc Golf Course Review (DGCR) API
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
